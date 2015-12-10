@@ -1,0 +1,5 @@
+---
+command: python manage.py migrate --fake-initial && python manage.py rebuild_index --noinput --remove && python manage.py collectstatic --noinput && waitress-serve --port=$VCAP_APP_PORT fec_eregs.wsgi:application
+
+env:
+  DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
