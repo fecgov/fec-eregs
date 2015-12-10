@@ -1,8 +1,8 @@
-# ATF's eRegs
+# FEC's eRegs
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/e2ee92b5c3db486f89d47371c4d89a2f/badge.svg)](https://www.quantifiedcode.com/app/project/e2ee92b5c3db486f89d47371c4d89a2f)
 
 Glue project which combines regulations-site, regulations-core and
-styles/templates specific to ATF. Packaged as a cloud.gov app.
+styles/templates specific to FEC. Packaged as a cloud.gov app.
 
 ## Local Development
 Like regulations-site and regulations-core, this application requires Python 2.7.
@@ -37,7 +37,7 @@ If you aren't working on the parser, you may want to just configure the
 application to run against the live API:
 
 ```bash
-$ echo "API_BASE = 'https://atf-eregs.18f.gov/api/'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-eregs.18f.gov/api/'" >> local_settings.py
 ```
 
 ### Ports
@@ -67,14 +67,14 @@ $ echo "API_BASE = 'http://localhost:1234/api/'" >> local_settings.py
 ![General Architecture (described below)](docs/architecture.png)
 
 This repository is a cloud.gov app which stitches together two large Django
-libraries with cloud.gov datastores and some ATF-specific styles and
+libraries with cloud.gov datastores and some FEC-specific styles and
 templates. The first library, `regulations-core`, defines an API for reading
-and writing regulation and associated data. `atf-eregs` mounts this
+and writing regulation and associated data. `fec-eregs` mounts this
 application at the `/api` endpoint (details about the "write" API will be
 discussed later). The second library, `regulations-site`, defines the UI. When
-rendering templates, `regulations-site` will first look in `atf-eregs` to see
+rendering templates, `regulations-site` will first look in `fec-eregs` to see
 if the templates have been overridden. These views pull their data from the
-API; this means that `atf-eregs` makes HTTP calls to itself to retrieve data
+API; this means that `fec-eregs` makes HTTP calls to itself to retrieve data
 (when it's not already cached).
 
 ## Updating Data
@@ -104,7 +104,7 @@ data.
 
 ## Deploying Code
 
-If the code within `atf-eregs`, `regulations-core`, or `regulations-site` has
+If the code within `fec-eregs`, `regulations-core`, or `regulations-site` has
 been updated, you will want to deploy the updated code to cloud.gov. At the
 moment, we build all of the front-end code locally, shipping the compiled
 CSS/JS when deploying. This means we'll need to update our libraries, build
