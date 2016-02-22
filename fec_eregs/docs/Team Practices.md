@@ -14,7 +14,7 @@ Many of these practices come from Agile development processes; with no specific 
 * Ed Mullen - UX and Design
 * Leah Bannon - Engagement Manager
 * Porta Antiporta - Product Steward
-* Tadgh O'Higgins - Back End Developer
+* Tadhg O'Higgins - Back End Developer
 
 # Tools & Repositories
 WIP - integration between tools is still under investigation.  Tools were selected to give different views of our project
@@ -28,8 +28,6 @@ Owners of each card should comment frequently to provide visibility to progress 
 
 While the product steward will likely be creating the bulk of the cards (in collaboration with the FEC product owner), any team member can create cards that will be prioritized into grooming sessions.
 
-TBD - Creating / Syncing cards from whatever forum will be used for user feedback, reported defects etc.
-
 ## GitHub
 Our code repositories.  
 The following are GH repositories of note:
@@ -38,10 +36,10 @@ The following are GH repositories of note:
 * [regulations-site](https://github.com/18F/regulations-site)
 * [regulations-parser](https://github.com/18F/regulations-parser)
 * [openFEC-web-app](https://github.com/18F/openFEC-web-app)
-* [fec-styles](https://github.com/18F/fec-styles)
+* [fec-style](https://github.com/18F/fec-style)
 * [fec-cms](https://github.com/18F/fec-cms)
 
-TBD - GH Issues syncing wih Trello
+GH Issues syncing wih Trello is currently not going to be supported as various tools (Zapier, IFTTT, Trello Business Class) are either not authorized, do not provide the needed functionality, or are in the process of being purchased.
 
 ## Slack
 Given our distributed model, slack will be used for async comms.  The following are channels of note:
@@ -53,7 +51,7 @@ Given our distributed model, slack will be used for async comms.  The following 
 # Sprint Cadence
 Sprints will be used to time box our development cycles.  
 Sprints will be two weeks long.  
-It will start with Backog grooming and planning, and end with Demos and Retrospectives.
+Sprints will start with Backlog grooming and planning, and end with a Demo and Retrospective.
 
 ## Backlog Grooming/Planning
 At the beginning of a sprint a prioritized list of activities will be present on the team taskboard.
@@ -73,17 +71,7 @@ The difference between the two is described through the example of tasks that ar
 Given the forming nature of the team, effort estimates will be used.  
 Aligning on a baseline of complexity may come at a later time.
 
-*Units of Measure*
-
-|Points| Measure|
-|------|--------|
-|0.5| Under 1 hour of work|
-|1| Half day|
-|2| Full day|
-|3| 2-3 days|
-|5| Full week|
-|8| Full sprint|
-
+Regardless of whether effort or complexity were used as a basis, 
 In general, stories that initially get a 5 or 8 estimate should be considered to be broken down further.
 
 During grooming, discussion on a particular story can extend for quite a bit of time leading to the bulk of the time spent on one story.
@@ -128,16 +116,28 @@ From Notice and Comment working out of the shared eRegs repos to FEC-data workin
 
 Therefore it is necessary to ensure that code changes preserve current functionality available to the public.  The team will invest in strengthening our automation and continous integration as we develop this product.
 
-### Smoke Tests
-Smoke tests are run on every pull request.  They are intended to validate that critical functionality is kept intact after the pull request is merged.  Smoke tests should be part of the build process and by design should complete within 5 minutes (at the very latest).  If a PR results in a failed smoke test, then the responsible dev should either address failing test or revert their code **before leaving their workstation**.  This ensures that any pull / sync from master into a branch will contain stable code.
+### Regression Tests
+Regression tests are run on every pull request.  They are intended to validate that critical functionality is kept intact after the pull request is merged.  Smoke tests should be part of the build process and by design should complete within 5 minutes (at the very latest).  If a PR results in a failed smoke test, then the responsible dev should either address failing test or revert their code **before leaving their workstation**.  This ensures that any pull / sync from master into a branch will contain stable code.
 
-### Daily Dev Builds
-Daily builds to a development environment will allow us to kick off a more extensive set of tests.  For example, a smoke test (due to the need to execute quickly) may just validate that the output of the most extensive regulation is working.  However, we want to ensure all 53 regulations are valid.  So a daily build to a development environment will allow a nightly regression test to be run.
+The need for test execution to be very fast is to encourage frequent and small PRs.  If at a later time we find the regression tests are taking too long to execute; they can be divided up into smoke tests (run continuously) and daily regression.
 
-Both Smoke Tests and Daily Builds require effort to create, maintain and adhere to.  When discussing stories, this effort should be assumed as implicit acceptance criteria.
+Regression tests require effort to create, maintain and adhere to.  When discussing stories, this effort should be assumed as implicit acceptance criteria.
+
+### Single Command (Push Button) Builds and Deployments
+With strong regression we have confidence that our codebase remains stable.  Investing in automated builds and deployments is also going to become key as we get into usability testing, acceptance testing and have multiple environments that we will deploy code to.  Having to execute manual steps to perform a deployment eats into the team's productivity (and morale)
+
+Our goal will be to be able to deploy a version of code (i.e. includes rollbacks) through a single command/button push to any environment.  Further we should structure them so they do not need to be done during low traffic times. i.e.
+* Deployments will include rolling restarts
+* Modules/Migrations deployed in an order where there is no downtime
+    - N-1 backwards compatibility should be considered during implementation
 
 ## Continuous Learning
 We have spent a considerable amount of time analyzing fec.gov.  As we build out beta.fec.gov to support legal resources, we will ensure that the appropriate analytics and feedback loops are present to ensure that we continually measure the impact of the changes being made and take corrective action.  
 
 Again when estimating a story; we should assume these as implicit acceptance criteria.
+
+## Code Reviews and Pull Requests
+All code to be merged as part of a PR will be reviewed by another member of the team.  Upon completion of the review, the reviewer will be responsible for merging the PR.
+
+If the PR results in a breakage of regression tests, the reviewer can engage the original implementer to revert the changes.
 
