@@ -9,6 +9,11 @@ script:
     - python manage.py migrate --fake-initial
     - python manage.py compile_frontend
 
+# Simple smoke tests
+after_deploy:
+  - curl --silent --fail --head https://fec-eregs-dev.apps.cloud.gov || travis_terminate $?
+  - curl --silent --fail --get https://fec-eregs-dev.apps.cloud.gov/api/regulation/2 > /dev/null || travis_terminate $?
+
 # This does not handle zero-downtime deployments
 deploy:
   edge: true
