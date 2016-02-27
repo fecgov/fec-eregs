@@ -26,4 +26,4 @@ deploy:
   space: dev
   manifest: manifest.dev.yml
   on:
-    branch: travis-deploy
+    branch: master
