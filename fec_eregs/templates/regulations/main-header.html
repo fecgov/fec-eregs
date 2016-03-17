@@ -1,0 +1,20 @@
+<div class="main-head">
+    <div class="title">
+        <div class="site-title"><a href="{% url 'universal_landing' %}"><span class="e">e</span>Regulations</a></div>
+        {% if meta.cfr_title_number %}
+        <h2 class="reg-title"><a href="{% url 'regulation_landing_view' reg_part %}">{{ meta.cfr_title_number }} CFR Part {{ reg_part }} {% if meta.reg_letter %}(Regulation {{ meta.reg_letter }}){% endif %}</a></h2>
+        {% endif %}
+    </div> <!-- /reg-title -->
+    <nav class="app-nav">
+        <a href="#" class="mobile-nav-trigger">
+             <span class="cf-icon cf-icon-menu"></span>
+             <span class="icon-text">Mobile navigation</span>
+        </a>
+        <ul class="app-nav-list">
+            <li class="app-nav-list-item"><a href="{% url 'universal_landing' %}">Regulations</a></li>
+            <li class="app-nav-list-item"><a href="{% url 'about' %}">About</a></li>
+            <li class="app-nav-list-item logo-list-item">{% include "regulations/logo.html" %}</li>
+            <li class="app-nav-list-item org-title">{% include "regulations/org-title.html" %}</li>
+        </ul>
+    </nav>
+</div>
