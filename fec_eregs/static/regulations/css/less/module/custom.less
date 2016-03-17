@@ -1,4 +1,8 @@
-// Override font mixins
+/**
+ * Font mixin overrides
+ *
+ * These are used within the regulations-site less.
+ */
 //TODO this change should be upstream in regulations-site
 .font-regular {
     font-family: @sans-serif;
@@ -16,4 +20,52 @@
     font-family: @sans-serif;
     font-weight: 600;
     font-style: italic;
+}
+
+/**
+ * Override overrides
+ * ====================================
+ *
+ * These are fixes where the fec-styles overreach the regulations-site styles
+ * and need to be taken back a bit.
+ *
+ * ====================================
+ */
+
+/*
+ * Typography overrides
+ */
+.version-search {
+  h4 {
+    font-size: 1em;
+  }
+}
+
+
+/*
+ * List overrides
+ */
+.about-ol {
+  padding: 0 0 0 20px;
+}
+
+
+/*
+ * Link overrides
+ *
+ * Many links shouldn't have the border-bottom decoration.
+ */
+.app-nav-list,
+.expandable,
+.reg-list {
+  a {
+    border-bottom: none;
+  }
+}
+
+a {
+  &.close-button,
+  &.next-prev-link {
+    border-bottom: none;
+  }
 }
