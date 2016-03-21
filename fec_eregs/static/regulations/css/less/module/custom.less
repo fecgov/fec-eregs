@@ -90,26 +90,25 @@ a {
 @toc-border: 1px solid @sand;
 @toc-background: @ivory;
 
+
+// Header
+.title a:link, .title a:visited,
+.app-nav a:link, .app-nav a:visited {
+  color: @primary;
+}
+
 .main-head {
   border-bottom: 3px solid @primary;
 }
 
-.panel {
-  background-color: @ivory;
-  border-right: @subhead-primary-border;
+.sub-head {
+  background-color: @cream;
+  border-bottom: @subhead-secondary-border;
+  color: @primary;
 }
 
-// TOC
-.drawer-header .toc-type, .toc-head {
-  border-right: @subhead-primary-border;
-}
 
-.subpart-heading {
-  background-color: @ivory;
-  border-bottom: @toc-border;
-  border-top: @toc-border;
-}
-
+// TOC header
 .toc-head {
   background-color: @cream;
   border-bottom: @subhead-secondary-border;
@@ -119,33 +118,45 @@ a {
   }
 }
 
-.regulation-nav a:link, .regulation-nav a:visited {
-  border-bottom: @toc-border;
-  color: @primary;
-}
-
-.drawer-header .toc-type {
-  background-color: @ivory;
-  border-bottom: @toc-border;
-}
-
-.toc-nav-link.current {
-  color: @cream;
-  background-color: @primary;
-}
-
-.sub-head {
-  background-color: @cream;
-  border-bottom: @subhead-secondary-border;
-  color: @primary;
-}
-
 .drawer-toggles li {
   border-right: @subhead-secondary-border;
 }
 
 .toc-nav-link {
   border-right: @subhead-secondary-border;
+
+  &.current {
+    color: @cream;
+    background-color: @primary;
+  }
+}
+
+
+// TOC
+.panel {
+  background-color: @ivory;
+  border-right: @subhead-primary-border;
+}
+
+.drawer-header .toc-type, .toc-head {
+  border-right: @subhead-primary-border;
+}
+
+.drawer-header .toc-type,
+{
+  background-color: @ivory;
+  border-bottom: @toc-border;
+}
+
+.subpart-heading {
+  background-color: @ivory;
+  border-bottom: @toc-border;
+  border-top: @toc-border;
+}
+
+.regulation-nav a:link, .regulation-nav a:visited {
+  border-bottom: @toc-border;
+  color: @primary;
 }
 
 // FEC is less boxy
@@ -169,10 +180,4 @@ a {
   .expand-drawer {
     border-bottom: @toc-border;
   }
-}
-
-// Header
-.title a:link, .title a:visited,
-.app-nav a:link, .app-nav a:visited {
-  color: @primary;
 }
