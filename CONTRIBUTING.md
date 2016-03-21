@@ -1,4 +1,4 @@
-This document describes how the 18F eRegs team has agreed to work together
+This document describes how the 18F Legal team has agreed to work together
 with regard to Git, GitHub and facilitating changes to the repositories they
 administer.
 
