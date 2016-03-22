@@ -1,4 +1,5 @@
 ---
+buildpack: python_buildpack
 command: python manage.py migrate --fake-initial && python manage.py rebuild_index --noinput --remove && python manage.py collectstatic --noinput && waitress-serve --port=$VCAP_APP_PORT fec_eregs.wsgi:application
 services:
   - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
