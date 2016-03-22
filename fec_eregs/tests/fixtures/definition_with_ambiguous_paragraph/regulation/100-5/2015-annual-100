@@ -1,0 +1,81 @@
+{
+    "children": [
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "a"
+            ],
+            "node_type": "regtext",
+            "text": "(a) Except as provided in 11 CFR 100.5 (b), (c) and (d), any committee, club, association, or other group of persons which receives contributions aggregating in excess of $1,000 or which makes expenditures aggregating in excess of $1,000 during a calendar year is a political committee."
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "b"
+            ],
+            "node_type": "regtext",
+            "text": "(b) Any separate segregated fund established under 52 U.S.C. 30118(b)(2)(C) is a political committee."
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "c"
+            ],
+            "node_type": "regtext",
+            "text": "(c) Any local committee of a political party is a political committee if: it receives contributions aggregating in excess of $5,000 during a calendar year; it makes payments exempted from the definition of contribution, under 11 CFR 100.80, 100.87, and 100.89 and expenditure, under 11 CFR 100.140, 100.147, and 100.149, which payments aggregate in excess of $5,000 during a calendar year; or it makes contributions aggregating in excess of $1,000 or makes expenditures aggregating in excess of $1,000 during a calendar year."
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "d"
+            ],
+            "node_type": "regtext",
+            "text": "(d) An individual's principal campaign committee or authorized committee(s) becomes a political committee(s) when that individual becomes a candidate pursuant to 11 CFR 100.3."
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "e"
+            ],
+            "node_type": "regtext",
+            "text": "(e) The following are examples of political committees:"
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "f"
+            ],
+            "node_type": "regtext",
+            "text": "(f) A political committee is either an authorized committee or an unauthorized committee."
+        },
+        {
+            "children": [],
+            "label": [
+                "100",
+                "5",
+                "g"
+            ],
+            "node_type": "regtext",
+            "text": "(g) Affiliated committee."
+        }
+    ],
+    "label": [
+        "100",
+        "5"
+    ],
+    "node_type": "regtext",
+    "text": "Political committee means any group meeting one of the following conditions:",
+    "title": "\u00a7 100.5 Federal office (52 U.S.C. 30101(3))."
+}
