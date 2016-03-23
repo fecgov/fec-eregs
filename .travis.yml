@@ -10,6 +10,7 @@ script:
     - grunt
     - python manage.py migrate --fake-initial
     - python manage.py compile_frontend
+    - python manage.py test
 
 # Simple smoke tests
 after_deploy:
