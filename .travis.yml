@@ -2,9 +2,30 @@ language: python
 sudo: false
 python:
     - "2.7"
-install: 
+install:
     - pip install -r requirements.txt
     - npm install -g grunt-cli bower
+    - npm install
 script:
+    - grunt
     - python manage.py migrate --fake-initial
     - python manage.py compile_frontend
+
+# Simple smoke tests
+after_deploy:
+  - curl --silent --fail --head https://fec-eregs-dev.apps.cloud.gov || travis_terminate $?
+  - curl --silent --fail --get https://fec-eregs-dev.apps.cloud.gov/api/regulation/2 > /dev/null || travis_terminate $?
+
+# This does not handle zero-downtime deployments
+deploy:
+  edge: true
+  provider: cloudfoundry
+  username: fec_deployer
+  password:
+    secure: Ot4dJAfvO5ucce4afyIgkA3nhERLPnPdrtYoNGiXShP+ZiQbS3GLSlD8xtZU/cbTmembCr/zhZWjpqZwLEwYzzYMY0xx2kUC0jzXxHPIXrKTR6Mm9sM5MEkZN063QoJe1xMNaMExNY+9o2VQfH+1GJtM1VU+tJvbhZv5sHqvzwWSkkMjADsWJGJFDz0WdKQTFvnmwLXpo4LNtMjG+WZUidgZYK2qTFXekqXp4gyS37yB645KxFQt4M3I+8vlfcAq1OZzaUH5aB/ZK1MApUxVy81cfYe/UmKAgpJ/lkJwvZzizTjT0oXvhAuY1z3VebsJ0cf6Tf2PDF09NnTm3+0DVqiF2LGLmnfWlvDt9i2Ozx2hMg61hph7mpds44I4uTPlBsLHWG8xeXNDF8OJAbOVKdmQxiIA653n4ssC3OjNBNwCGHU324TdtTQlUL+Kd0VzqrvkZc2o+5zWonG61lzf8AwHXv72KxMGPxUxO/a4DaqP6+2gXIutWxXTWUPZIe6+MeTcWk1xGE/3qO8TARt69wnlYnHP82MrlO3zOw3ZfindYT4DBCTN2az+tEuzB+QrP/4boQUSWn+fvip4STRqzQ/oB6zC1U0DDmu2D8Jqzivb+ZVpgjWICt6lhdiEqO3uowk5VLXzyW0Bb+Pp4diEF/r6bmx1GoavVCMNiEeK/Y0=
+  api: https://api.cloud.gov
+  organization: fec
+  space: dev
+  manifest: manifest.dev.yml
+  on:
+    branch: master

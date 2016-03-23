@@ -1,0 +1,6 @@
+---
+inherit: manifest.base.yml
+host: fec-eregs
+instances: 5
+applications:
+  - name: fec-eregs

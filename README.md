@@ -1,3 +1,6 @@
+[![Build
+Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-ci.org/18F/fec-eregs)
+
 # FEC's eRegs
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/e2ee92b5c3db486f89d47371c4d89a2f/badge.svg)](https://www.quantifiedcode.com/app/project/e2ee92b5c3db486f89d47371c4d89a2f)
 
@@ -17,6 +20,7 @@ $ npm install -g grunt-cli bower
 Then initialize the database, build the front-end, and run the server:
 
 ```bash
+$ grunt
 $ python manage.py migrate --fake-initial
 $ python manage.py compile_frontend
 $ python manage.py runserver
@@ -30,7 +34,7 @@ changes locally:
 ```bash
 $ python manage.py runserver &    # start the server as a background process
 $ cd path/to/regulations-parser
-$ eregs pipeline 27 479 http://localhost:8000/api   # send the data
+$ eregs pipeline 11 4 http://localhost:8000/api   # send the data
 ```
 
 If you aren't working on the parser, you may want to just configure the
