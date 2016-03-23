@@ -10,6 +10,11 @@ REGSITE_APPS = tuple(INSTALLED_APPS)
 
 INSTALLED_APPS = ('overextends', 'fec_eregs',) + REGCORE_APPS + REGSITE_APPS
 
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=regcore,regulations'
+]
+
 ROOT_URLCONF = 'fec_eregs.urls'
 
 DATABASES = REGCORE_DATABASES
