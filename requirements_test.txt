@@ -1,0 +1,13 @@
+#regualtions-core
+django-nose
+flake8
+mock
+nose
+coverage
+coveralls
+
+#regulations-site
+pep8==1.5.7
+lxml
+nose-exclude
+
