@@ -1,0 +1,41 @@
+{
+  "name": "fec-eregs",
+  "version": "1.0.0",
+  "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
+  "dependencies": {
+    "fec-style": "^1.7.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.2.0",
+    "load-grunt-tasks": "^3.4.1",
+    "grunt-sass": "^1.1.0",
+    "grunt": "^0.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified, use `python manage.py test` instead\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18F/fec-eregs.git"
+  },
+  "keywords": [
+    "eregs",
+    "fec",
+    "regulations",
+    "viewer"
+  ],
+  "author": {
+    "name": "18F",
+    "url": "https://18f.gsa.gov/"
+  },
+  "licenses": [
+    {
+      "type": "CC0",
+      "url": "http://github.com/18F/fec-eregs/blob/master/LICENSE.md"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/18F/fec-eregs/issues"
+  },
+  "homepage": "https://github.com/18F/fec-eregs#readme"
+}

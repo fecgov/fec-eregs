@@ -1,0 +1,756 @@
+/*
+Typograhy styles
+ ==========================================================================
+typography.less contains both global and application specific typography */
+
+
+/*
+ Global Typography
+ ========================================================================== */
+
+/*  Body Font
+    ------------
+    <p>Georgia, 1em, black</p>
+*/
+
+body {
+    color: @primary;
+    font-family: @body_font;
+    font-size: 1em;
+    /*line-height: 1.625;*/ /* 26px */
+    /*line-height: 1.375;*/ /*22px*/
+    line-height: 1.5; /*24px*/
+}
+
+strong {
+    .font-bold;
+}
+
+
+
+/*  Default Headings
+    --------
+    <h1>Heading Level 1</h1>
+    <h2>Heading Level 2</h2>
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .font-bold;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 2.125em;
+}
+
+h2, h3.section-title {
+    font-size: 1.625em;
+}
+
+h3 {
+    font-size: 1.375em;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 0.875em;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: 0.875em;
+    margin: 1em 0 0 0;
+}
+
+
+/*  Sub Headings
+    ------------
+    <h4 class="sub-heading">Sub Heading</h4>
+*/
+
+.sub-text {
+    .font-regular;
+}
+
+.small-header {
+    font-size: 1.125em;
+}
+
+.xsmall-header {
+    font-size: 1em;
+}
+
+.light-header {
+    .font-regular;
+}
+
+.upper-header {
+    text-transform: uppercase;
+}
+
+.sentence-header {
+    text-transform: none;
+}
+
+.effective-date {
+    font-size: .875em;
+    padding-right: 15px;
+}
+
+/*  Lists
+    ------
+    <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+    </ul>
+*/
+
+ul li {
+  list-style: none;
+}
+
+.bullet li {
+    list-style: disc;
+}
+
+li {
+    margin-top: 1em; /*16px*/
+}
+
+address {
+    font-style: normal;
+}
+
+ol[type="no-marker"] {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/*
+ Link Styles
+ ========================================================================== */
+
+a {
+  border-bottom: 1px dotted @primary;
+  color: @primary;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:hover {
+    border-bottom-color: @primary-contrast;
+  }
+
+  img {
+    border: none;
+  }
+}
+
+
+/*  Internal Links
+    ---------------
+    <a href="#" class="internal">internal contents</a>
+*/
+
+.internal,
+.internal:link,
+.internal:visited {
+    color: @primary;
+    text-decoration: none;
+    border-bottom: 1px solid @link_blue;
+}
+
+.internal:hover,
+.internal:active,
+.internal:focus {
+    background-color: #cde3f1;
+}
+
+/*  External Links
+    --------------
+    <a href="#" class="external"">some other website</a>
+*/
+
+.external:after{
+    .cf-icon;
+    content: "\e610";
+    padding: 0 0 0 5px;
+    font-size: 16px;
+}
+
+.phone:link,
+.phone:visited {
+    color: @pacific;
+}
+
+.phone:before {
+    .cf-icon;
+    content: "\e306";
+    margin-right: 6px;
+}
+
+.mail:before {
+    .cf-icon;
+    content: "\e302";
+    margin-right: 6px;
+}
+
+.go:after {
+   .cf-icon;
+    content: "\e002";
+    font-size: 0.75em;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.pdf:after {
+   .cf-icon;
+    content: "\e402";
+    margin-left: 6px;
+}
+
+/*
+.external:hover,
+.mail:hover,
+.go:hover,
+.pdf:hover,
+.standard:hover,
+.what:hover,
+.external:active,
+.mail:active,
+.go:active,
+.pdf:active,
+.standard:active,
+.what:active,
+.external:focus,
+.mail:focus,
+.go:focus,
+.pdf:focus
+.standard:focus,
+.what:focus, {
+    border-bottom: 1px solid;
+}
+*/
+
+/*  Definition Links
+    --------------
+    <a href="#" class="definition">defined term</a>
+*/
+
+.definition,
+.definition:link,
+.definition:visited {
+    color: @primary;
+    text-decoration: none;
+    border-bottom: 1px solid @light_field;
+}
+
+.definition:hover,
+.definition:active {
+    border-bottom: 1px solid @medium_gray;
+    background-color: @grey;
+}
+
+.definition.active {
+    background-color: @grey;
+}
+
+.inline-interpretation {
+    .definition:link,
+    .definition:visited {
+         border-bottom: 1px solid @medium_gray;
+    }
+}
+
+/* button styles */
+
+.btn {
+    .font-regular;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: .57142857em 1em;
+    border: 0;
+    border-radius: .28571429em;
+    margin: 0;
+    vertical-align: middle;
+    font-size: .875em;
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .1s;
+    -webkit-appearance: none;
+}
+
+.btn, .btn:link, .btn:visited {
+    background-color: #0072ce;
+    color: #fff;
+}
+
+.btn.hover, .btn:hover {
+    background-color: #328ed8;
+}
+
+.btn.focus, .btn:focus {
+    background-color: #328ed8;
+    outline: #0072ce dotted 1px;
+    outline-offset: 1px;
+}
+
+/*
+ Regulation Headings
+ ========================================================================== */
+
+/*  Top Level
+    -----------
+    <h2 class="section-number">Top Level Reg Heading</h2>
+*/
+
+.section-number,
+.appendix-heading,
+.supplement-section h3 {
+    font-size: 1.8125em; /* 29px / 16 */
+    .font-bold;
+    line-height: 1.25;
+    letter-spacing: 1px;
+}
+
+.section-number {
+    text-indent: -.94em; /* outdent the § symbol */
+}
+
+/* for a header with no following content */
+
+.empty-header {
+    margin-bottom: 2em;
+}
+
+/*  Sub Headings
+    -----------
+    <h3 class="appendix-subheading">Top Level Reg Heading</h2>
+*/
+
+.appendix-subheading,
+.interp-subheading {
+    .reset;
+    font-size: 1.375em; /* 22 / 16 */
+    line-height: 1.25;
+    margin-top: 1em;
+    text-transform: none;
+}
+
+/*  List Styles
+    ==========================================================================
+Regulations are essentially a giant nested list.
+This attempts to define global rules for a clear hierarchical structure.
+ */
+
+.level-1 > li {
+    padding: 1em 0 0 0;
+}
+
+.level-1 > li p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.supplement-section .level-1 > li {
+    border-bottom: none;
+    padding: 0;
+}
+
+.level-1 > li:last-child {
+    border-bottom: 0;
+}
+
+.level-1 > li:first-child {
+    padding-top: 0;
+}
+
+.level-2 > li > p {
+    margin-top: 1em;
+}
+
+/*
+The list & key-terms are set to the theme bold font
+Paragraphs within the list items are set in the body font
+The `<ol>` tag needs to have the appropriate list type applied
+```
+<ol class="level-1" type="a">
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
+        <ol class="level-2" type="1">
+            <li><p>Ut enim ad minim veniam</p></li>
+            <li><p>Quis nostrud exercitation ullamco laboris nisi ut aliquip</p></li>
+        </ol>
+    </li>
+</ol>
+```
+*/
+
+.main-content ol, dfn, .stripped-marker {
+  .font-bold;
+}
+
+.appendix-section ol {
+  list-style-type: none;
+}
+
+.main-content p {
+  font-family: @body_font;
+  font-weight: 400;
+}
+
+.paragraph-marker, .stripped-marker {
+  display: none;
+}
+
+.appendix-section .stripped-marker {
+  display: block;
+  float: left;
+  margin-left: -20px;
+  width: 20px;
+}
+
+.appendix-section .inline-interpretation-content .stripped-marker {
+    margin-left: -24px;
+    width: 24px;
+}
+
+
+/*  Definition Styles
+    ==========================================================================
+
+The ```<dfn class="key-term">``` tag is used throughout the reg to reference terms as they are defined
+within the context of the regulation.
+
+See [MDN's `<dfn>` tag reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn) for more info.
+
+All key-terms are displayed as block elements to force a line-break.
+
+*/
+
+.key-term {
+    display: block;
+}
+
+/*  Level-1 Key-Terms
+    -----------------
+
+```
+<ol class="level-1">
+    <li>
+        <dfn class="key-term">Level 1 key-term</dfn>
+    </li>
+</ol>
+```
+*/
+
+.level-1 .key-term {
+    font-size: 1.375em; /* 24px / 16px = 1.5em */
+    line-height: 1.5; /* 30px / 24px = 1.25 */
+}
+
+/*  Level-2 key-terms
+    -----------------
+
+```
+<section class="supplement-section">
+<ol class="level-2">
+    <li>
+        <dfn class="key-term">Level 2 key-term</dfn>
+    </li>
+</ol>
+</section>
+```
+*/
+
+.level-2 .key-term,
+.supplement-section .level-1 .key-term {
+    text-transform: uppercase;
+    font-size: 1em;
+    .font-bold;
+}
+
+/*  Level-3 key-terms
+    -----------------
+
+```
+<section class="supplement-section">
+<ol class="level-3">
+    <li>
+        <dfn class="key-term">Level 3 key-term</dfn>
+    </li>
+</ol>
+</section>
+```
+*/
+
+.level-3 .key-term {
+    .font-bold;
+    text-transform: none;
+}
+
+/*
+  Appendix Styles
+ ==========================================================================
+
+Model Form Content
+------------------
+
+```
+<div class="model-form-content"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </div>
+```
+*/
+
+.model-form-content {
+    background: #f6f6f5;
+    border: 1px solid #e3e4e5;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 0.875em; /* 14/16 = .875 */
+    line-height: 1.4;
+}
+
+/* some model forms have dashes in the regulation, such as
+* Location ________
+* we mark those up with span tags and insert the dash with css
+*/
+.model-form-dash {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+
+    span {
+        display: inline-block;
+        *display: inline;
+        min-width: 1em;
+        min-height: 1em;
+        vertical-align: baseline;
+        *vertical-align: auto;
+        zoom: 1;
+        position: relative;
+        padding-right: 0.4em;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1000px;
+            position: absolute;
+            top: 1.2em;
+            border-top: 1px solid @black;
+        }
+
+        &:after {
+          left: 100%;
+        }
+    }
+}
+
+/*
+  Table Styles
+ ========================================================================== */
+table {
+    margin: 1em 0;
+    padding: 0;
+    font-size: .75em;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    table-layout: auto;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 15px;
+    line-height: 20px;
+    border: 1px solid @80_gray;
+}
+
+th {
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+}
+
+td {
+    font-weight: normal;
+}
+
+thead {
+    background-color: #fff;
+}
+
+.table-wrap {
+    -webkit-overflow-scrolling: touch; // smoother scrolling
+}
+
+/*
+    Datatables-specific css
+*/
+
+.dataTable {
+    table& {
+        margin-top:0;
+        thead {
+            height:0;
+        }
+        tr:first-child td {
+            border-top: none;
+        }
+    }
+}
+
+.dataTables_scrollHeadInner {
+    div& {
+        table {
+            margin-bottom: 0px;
+        }
+    }
+}
+table.dataTable, table.dataTable th, table.dataTable td {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/*
+  Code Styles
+ ========================================================================== */
+
+pre {
+    font-size: 0.875em;
+    font-family: Consolas, monaco, monospace;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 10px;
+    background-color: @bg_gray;
+    overflow-x: scroll;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+/*
+  there's some wonkiness going on with the pre tag and responsiveness
+  this is a quick solution */
+
+@media only screen and ( min-width: 1300px ){
+  pre {
+    max-width: 680px;
+  }
+}
+
+@media only screen and ( max-width: 1300px ){
+  pre {
+    max-width: 600px;
+  }
+}
+
+@media only screen and ( max-width: 1100px ){
+  pre {
+    max-width: 500px;
+  }
+}
+
+/*
+  Small screens
+ ==============
+*/
+
+@media only screen and ( max-width: 480px ) {
+
+    .reg-text {
+        margin-top: 20px;
+
+        ol {
+            padding: 0;
+        }
+    }
+
+    .main-content,
+    .secondary-content,
+    .about-content,
+    .landing-content {
+        font-size: 0.875em;
+    }
+
+    .section-number,
+    .appendix-heading,
+    .supplement-section h3 {
+        font-size: 1.571428571em;
+    }
+}
+
+@media only screen and ( max-width: 600px ) {
+
+    .main-content {
+
+        ol {
+            list-style-position: inside;
+        }
+    }
+}
+
+@media only screen and ( max-width: 780px ) {
+
+    /*
+    Typography
+    ========================
+    */
+
+    .section-number {
+        text-indent: 0;
+    }
+
+    /*
+    Main Content
+    =====================
+    */
+
+
+    .level-1 > li:after {
+        margin-left: -5em;
+    }
+
+    h1 .title {
+        display: none;
+    }
+
+     /*
+    Appendix Content
+    =====================
+    */
+
+    .appendix-section .stripped-marker {
+      display: inline-block;
+      float: left;
+      margin-left: 0;
+      width: auto;
+      padding-right: 4px;
+    }
+
+    .appendix-section ol {
+        padding: 0;
+    }
+}
+
+@media only screen and ( max-width: 1100px ) {
+
+    .level-1 > li:after {
+        margin-left: -10em;
+    }
+}

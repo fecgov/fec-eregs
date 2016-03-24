@@ -1,0 +1,39 @@
+{% overextends "regulations/chrome.html" %}
+{% load static from staticfiles %}
+
+{% block sidebar-drawer-icons %}
+<a href="#" id="panel-link" class="toc-toggle panel-slide">
+  <img id="open-active" src="{%static "regulations/img/open-caret.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
+  <img id="open" src="{%static "regulations/img/open-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
+  <img id="close" src="{%static "regulations/img/close-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
+  <img id="close-active" src="{%static "regulations/img/close-caret.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
+</a>
+{% endblock %}
+
+{% block sidebar-toc-link %}
+<li>
+  <a href="#table-of-contents" id="menu-link" class="toc-nav-link current" title="Table of Contents">
+    <span class="icon-text">Table of Contents</span>
+    <img src="{%static "regulations/img/table-of-contents.svg" %}" class="drawer-toggle-icon active" alt="Table of Contents toggle" />
+    <img src="{%static "regulations/img/table-of-contents-blue.svg" %}" class="drawer-toggle-icon" alt="Table of Contents toggle" />
+  </a>
+</li>
+{% endblock %}
+{% block sidebar-history-link %}
+<li>
+  <a href="#timeline" id="timeline-link" class="toc-nav-link" title="Regulation Timeline">
+    <span class="icon-text">Regulation Timeline</span>
+    <img src="{%static "regulations/img/timeline.svg" %}" class="drawer-toggle-icon active" alt="Regulation Timeline toggle"/>
+    <img src="{%static "regulations/img/timeline-blue.svg" %}" class="drawer-toggle-icon" alt="Regulation Timeline toggle"/>
+  </a>
+</li>
+{% endblock %}
+{% block sidebar-search-link %}
+<li>
+  <a href="#search" id="search-link" class="toc-nav-link" title="Search">
+    <span class="icon-text">Search</span>
+    <img src="{%static "regulations/img/search.svg" %}" class="drawer-toggle-icon active" alt="Search toggle"/>
+    <img src="{%static "regulations/img/search-blue.svg" %}" class="drawer-toggle-icon" alt="Search toggle"/>
+  </a>
+</li>
+{% endblock %}
