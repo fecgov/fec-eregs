@@ -17,6 +17,8 @@ NOSE_ARGS = [
     '--verbosity=3'
 ]
 
+TEST_RUNNER = 'django_nose.runner.NoseTestSuiteRunner'
+
 ROOT_URLCONF = 'fec_eregs.urls'
 
 DATABASES = REGCORE_DATABASES
