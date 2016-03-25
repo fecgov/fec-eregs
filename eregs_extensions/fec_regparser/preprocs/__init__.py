@@ -27,6 +27,7 @@ class RepeatedEmphasis(PreProcessorBase):
                 el_index = el_parent.index(el)
                 first = etree.Element("E", attrib=el.attrib)
                 first.text = "%s." % pair[0]
+                first.tail = " "
                 second = etree.Element("E", attrib=el.attrib)
                 second.text = pair[0]
                 second.tail = el.tail

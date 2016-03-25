@@ -9,6 +9,12 @@ entry_points = {
     "%s.preprocessors" % ns: [
         "RepeatedEmphasis = %s.preprocs:RepeatedEmphasis" % fs
     ],
+    "%s.test_suite" % ns: [
+        "testsuite = %s.tests" % fs
+    ],
+    "%s.preprocessors" % ns: [
+        "RepeatedEmphasis = %s.preprocs:RepeatedEmphasis" % fs
+    ],
     "%s.term_ignores" % ns: [
         "fec_ignore_terms = %s.term_defs:ignores" % fs
     ]
