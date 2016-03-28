@@ -1,20 +1,73 @@
+{% load static from staticfiles %}
 <div class="main-head">
-    <div class="title">
-        <div class="site-title"><a href="{% url 'universal_landing' %}"><span class="e">e</span>Regulations</a></div>
-        {% if meta.cfr_title_number %}
-        <h2 class="reg-title"><a href="{% url 'regulation_landing_view' reg_part %}">{{ meta.cfr_title_number }} CFR Part {{ reg_part }} {% if meta.reg_letter %}(Regulation {{ meta.reg_letter }}){% endif %}</a></h2>
-        {% endif %}
-    </div> <!-- /reg-title -->
-    <nav class="app-nav">
-        <a href="#" class="mobile-nav-trigger">
-             <span class="cf-icon cf-icon-menu"></span>
-             <span class="icon-text">Mobile navigation</span>
-        </a>
-        <ul class="app-nav-list">
-            <li class="app-nav-list-item"><a href="{% url 'universal_landing' %}">Regulations</a></li>
-            <li class="app-nav-list-item"><a href="{% url 'about' %}">About</a></li>
-            <li class="app-nav-list-item logo-list-item">{% include "regulations/logo.html" %}</li>
-            <li class="app-nav-list-item org-title">{% include "regulations/org-title.html" %}</li>
+  <div class="disclaimer">
+    <span class="disclaimer__left">Looking for <a href="http://www.fec.gov">FEC.gov?</a></span>
+    <span class="disclaimer__center">
+      An official website of the United States Government.
+      <img alt="US flag signifying that this is a United States Federal Government website" src="{% static "fec_eregs/fec-style/img/us_flag_small.png" %}">
+    </span>
+    <span class="disclaimer__right">This site is currently in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>.</span>
+  </div>
+  <div class="masthead">
+    <a href="/" title="Home" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
+    <ul class="utility-nav list--flat">
+      <li class="utility-nav__item"><a href="{% url 'about' %}">About</a></li>
+      <li class="utility-nav__item">Contact</li>
+    </ul>
+  </div>
+  <nav class="site-nav js-site-nav" aria-label="Site wide navigation">
+    <button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>
+    <ul id="site-menu" class="site-nav__list">
+      <li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">
+        <a href="/data" class="site-nav__link is-current">Campaign finance data</a>
+        <button class="site-nav__link site-nav__toggle js-sublist-toggle" aria-haspopup="true">Campaign finance data</button>
+        <ul class="site-nav__dropdown" aria-label="submenu" aria-hidden="true">
+          <li class="site-nav__item">
+            <a class="t-bold site-nav__link" href="/data">Campaign finance data home</a>
+          </li>
+          <li class="t-bold site-nav__subtitle">Browse:</li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink" href="/data/candidates/?cycle=2012&amp;cycle=2014&amp;cycle=2016">Candidates</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink" href="/data/committees/">Committees</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink" href="/data/filings/">Filings</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink" href="/data/receipts/?max_date=04-13-2016">Receipts</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink" href="/data/disbursements/?max_date=04-13-2016">Disbursements</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__sublink site-nav__sublink--last" href="/data/independent-expenditures/?max_date=04-13-2016">Independent expenditures</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="t-bold site-nav__link" href="/data/elections/">Find candidates by location</a>
+          </li>
         </ul>
-    </nav>
+      </li>
+      <li class="site-nav__item">
+        <a href="/registration-and-reporting/" class="site-nav__link">Registration and reporting</a>
+      </li>
+      <li class="site-nav__item">
+        <a href="/calendar" class="site-nav__link">Calendar</a>
+      </li>
+      <li class="site-nav__item is-disabled">
+        <a href="#" class="site-nav__link" tabindex="-1">(Page TBD)</a>
+      </li>
+      <li class="site-nav__item is-disabled">
+        <a href="#" class="site-nav__link" tabindex="-1">(Page TBD)</a>
+      </li>
+      <li class="site-nav__item utility-nav__item is-disabled">
+        <a href="#" class="site-nav__link">(About)</a>
+      </li>
+      <li class="site-nav__item utility-nav__item">
+        <a href="/contact-us/" class="site-nav__link is-disabled">Contact</a>
+      </li>
+    </ul>
+    <a title="Home" href="" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
+  </nav>
 </div>

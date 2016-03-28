@@ -230,3 +230,50 @@ a {
     border-bottom: @toc-border;
   }
 }
+
+// Masthead
+//
+//
+.reg-header {
+  font-weight: normal;
+  font-style: normal;
+  height: auto;
+}
+
+.hero {
+  width: 100%;
+}
+
+.main-head {
+  height: @header_height;
+
+  .disclaimer {
+    font-size: 12px;
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+
+  .masthead {
+    border-bottom: none;
+    font-size: 14px;
+
+    .site-title {
+      height: 80px;
+    }
+  }
+}
+
+.landing-content,
+.about-content {
+  margin-top: @header_height;
+
+  .inner-wrap:before {
+    display: table;
+    height: auto;
+    margin-top: 0;
+  }
+}
+
+#site-header {
+  //display: none;
+}
