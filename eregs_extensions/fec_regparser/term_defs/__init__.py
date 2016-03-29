@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
 term_defs = {
+    "100": [
+        ("Subordinate committee of a State, district, or local committee",
+         "Subordinate committee of a State, district, or local committee")
+    ]
 }
 
 ignores = {
