@@ -12,6 +12,7 @@ requests==2.8.1
 -e git+https://github.com/18F/regulations-site.git#egg=regulations
 
 # fec-specific/cloud.gov
+cfenv==0.5.2
 dj-database-url==0.3.0
 django-overextends==0.4.0
 pyelasticsearch==1.4
