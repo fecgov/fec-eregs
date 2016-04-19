@@ -2,8 +2,11 @@ import json
 import os
 
 import dj_database_url
+from cfenv import AppEnv
 
 from .base import *
+
+env = AppEnv()
 
 DEBUG = False
 TEMPLATE_DEBUG = False
@@ -26,3 +29,6 @@ if es_config:
         'URL': es_config[0]['credentials']['uri'],
         'INDEX_NAME': 'eregs',
     }
+
+HTTP_AUTH_USER = env.get_credential('HTTP_AUTH_USER')
+HTTP_AUTH_PASSWORD = env.get_credential('HTTP_AUTH_PASSWORD')

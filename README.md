@@ -117,7 +117,7 @@ the new front end, and push the result.
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
 $ python manage.py compile_frontend   # builds the frontend
-$ cf push
+$ cf push -f manifest.prod.yml
 ```
 
 Confusingly, although the front-end compilation step occurs locally, all other
@@ -127,3 +127,16 @@ will pull in the latest from `regulations-site` and `regulations-core`,
 regardless of what you have locally and regardless of what you've built the
 front-end against. Be sure to always update your local libraries (via `pip`)
 before building and pushing.
+
+
+### Environments
+
+We're currently deploying to multiple environments, a `dev` and a `prod`
+instance. `dev` is continuously deployed from
+[travis-ci](https://travis-ci.org/), while `prod` is deployed occasionally,
+manually using the instructions above.
+
+Environment | URL | Description
+----------- | --- | -----------
+`dev`       | https://fec-eregs-dev.apps.cloud.gov/ | Ad-hoc testing, deploys the latest changes from `master`.
+`prod`      | https://fec-eregs.apps.cloud.gov/     | Production site, deployed manually.
