@@ -19,15 +19,10 @@
   </a>
 </li>
 {% endblock %}
+
 {% block sidebar-history-link %}
-<li>
-  <a href="#timeline" id="timeline-link" class="toc-nav-link" title="Regulation Timeline">
-    <span class="icon-text">Regulation Timeline</span>
-    <img src="{%static "regulations/img/timeline.svg" %}" class="drawer-toggle-icon active" alt="Regulation Timeline toggle"/>
-    <img src="{%static "regulations/img/timeline-blue.svg" %}" class="drawer-toggle-icon" alt="Regulation Timeline toggle"/>
-  </a>
-</li>
 {% endblock %}
+
 {% block sidebar-search-link %}
 <li>
   <a href="#search" id="search-link" class="toc-nav-link" title="Search">
@@ -36,4 +31,23 @@
     <img src="{%static "regulations/img/search-blue.svg" %}" class="drawer-toggle-icon" alt="Search toggle"/>
   </a>
 </li>
+{% endblock %}
+
+{% block header-secondary %}
+{% endblock %}
+
+{% block drawer-search %}
+    <div id="search" class="search-drawer toc-container hidden">
+        <div class="drawer-header">
+            <h3 class="toc-type">Search</h3>
+        </div><!-- /.drawer-header -->
+        <div class="drawer-content">
+            <form action="{% url 'chrome_search' reg_part %}" method="GET" role="search">
+                <div class="search-box">
+                    <input type="text" name="q" value="{{ q }}" id="search-input" title="Search term"/><button type="submit"><span class="cf-icon cf-icon-search"></span><strong class="icon-text">Search</strong></button>
+                    <input type="hidden" name="version" id="version-hidden" title="Effective version" value="{{active_version}}" />
+                </div><!--/.search-box-->
+            </form>
+        </div><!-- /.drawer-content -->
+    </div> <!--/#search-->
 {% endblock %}
