@@ -1,0 +1,4 @@
+{% overextends "regulations/generic_universal.html" %}
+{% load arabic %}
+
+{% block cfr_title %}Title {{cfr_title_number|arabic}} {{cfr_title_text}}{% endblock %}
