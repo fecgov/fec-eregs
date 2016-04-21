@@ -1,6 +1,7 @@
 from .base import *
 
 DEBUG = True
+INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
 
 # Analytics settings
 
