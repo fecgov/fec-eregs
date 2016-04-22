@@ -27,3 +27,4 @@ API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('VCAP_APP_PORT', '8000'))
 
 STATICFILES_DIRS = ['compiled']
+STATIC_URL = '/legal-viewer/static/'
