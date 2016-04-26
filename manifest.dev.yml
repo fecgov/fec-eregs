@@ -1,5 +1,3 @@
 ---
 inherit: manifest.base.yml
-host: fec-eregs-dev
-applications:
-  - name: fec-eregs-dev
+host: fec-dev-eregs
