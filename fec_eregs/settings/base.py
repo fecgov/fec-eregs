@@ -27,3 +27,8 @@ API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('VCAP_APP_PORT', '8000'))
 
 STATICFILES_DIRS = ['compiled']
+
+DATA_LAYERS = DATA_LAYERS or []
+
+DATA_LAYERS = DATA_LAYERS + (
+    'regulations.generator.layers.external_citation.ExternalCitationLayer',)
