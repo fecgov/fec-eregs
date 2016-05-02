@@ -60,10 +60,8 @@ And would likely need ``etree``::
 They would also need tests. The tests would need the following import lines::
 
     from unittest import TestCase
-    from tests.xml_builder import XMLBuilderMixin
     from mib_regparser.preprocs import <whatever the test is for>
-
-The ``tests.xml_builder`` namespacing is problematic and will probably be changed to ``regparser.tests.xml_builder`` soon.
+    from regparser.test_utils.xml_builder import XMLBuilder
 
 Note that the test has to reflect the filesystem name ``mib_regparser``—in other words, each test has to change if that name changes.
 
