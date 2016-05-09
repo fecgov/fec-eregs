@@ -116,6 +116,7 @@ the new front end, and push the result.
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
+$ grunt # builds the fec-style css
 $ python manage.py compile_frontend   # builds the frontend
 $ cf push -f manifest.prod.yml
 ```
