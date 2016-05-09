@@ -1,6 +1,4 @@
 ---
 inherit: manifest.base.yml
-host: fec-eregs
+host: fec-prod-eregs
 instances: 2
-applications:
-  - name: fec-eregs

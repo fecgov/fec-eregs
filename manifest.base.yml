@@ -7,3 +7,7 @@ services:
   - fec-eregs-search-1.7.1
 env:
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
+domain: 18f.gov
+applications:
+  - name: eregs
+    memory: 512M
