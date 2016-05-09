@@ -10,13 +10,13 @@ deciding when and how to apply these guidelines.
 
 The most common workflow is:
 
-1. A change is initiated and discussed via a Trello card. Trello cards are
-   prioritized on a per-sprint basis.
+1. A change is initiated and discussed via Zenhub. Zenhub cards are
+   prioritized on a per-sprint basis.  To view the Zenhub board, install the [zenhub plugin](https://www.zenhub.io/).  Once done, a tab in Github called "Boards" should appear.
 1. Team members are assigned cards during sprint planning.
-1. When a team member begins working on a feature, they move the related Trello
+1. When a team member begins working on a feature, they move the related Zenhub
    card to the "In progress" column. Team members should have no more than 2-3
    "In progress" stories at a time.
-1. A Pull Request (PR) is created on Github. The related Trello card is
+1. A Pull Request (PR) is created on Github. The related Zenhub card is
    referenced in the PR description.
 1. The PR is reviewed by someone other than the committer.
 1. Once PR feedback has been addressed and/or incorporated, the reviewer merges
@@ -43,7 +43,7 @@ The most common workflow is:
   your best to break it into multiple PRs.
 * If you come upon a bug while doing something else, you can fix it as part of
   your current work.
-* If a feature or bug has a separate Trello card, it should have its own PR.
+* If a feature or bug has a separate Zenhub card, it should have its own PR.
 * Reviewers expect code to be submitted with test coverage.
 * Travis CI runs the test suite and a PEP8 linter on GitHub PRs. PRs should only
   be merged when Travis is green.
@@ -78,7 +78,7 @@ This team does not have a standard QA process.
   merge your pull request.
 * Standard code review should be kept to reading, not actually running the
   code. If a feature requires local acceptance, that information is included in
-  the Trello card along with who should be included in local acceptance process.
+  the Zenhub card along with who should be included in local acceptance process.
 
 When creating a new pull request:
 
