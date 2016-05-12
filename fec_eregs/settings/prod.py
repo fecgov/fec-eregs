@@ -36,3 +36,5 @@ if es_config:
 
 HTTP_AUTH_USER = env.get_credential('HTTP_AUTH_USER')
 HTTP_AUTH_PASSWORD = env.get_credential('HTTP_AUTH_PASSWORD')
+
+STATIC_URL = '/regulations/static/'
