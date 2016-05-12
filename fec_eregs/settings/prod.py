@@ -1,10 +1,14 @@
 import json
+import logging
 import os
+import sys
 
 import dj_database_url
 from cfenv import AppEnv
 
 from .base import *
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 env = AppEnv()
 
