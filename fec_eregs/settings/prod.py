@@ -1,10 +1,14 @@
 import json
+import logging
 import os
+import sys
 
 import dj_database_url
 from cfenv import AppEnv
 
 from .base import *
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 env = AppEnv()
 
@@ -32,3 +36,5 @@ if es_config:
 
 HTTP_AUTH_USER = env.get_credential('HTTP_AUTH_USER')
 HTTP_AUTH_PASSWORD = env.get_credential('HTTP_AUTH_PASSWORD')
+
+STATIC_URL = '/regulations/static/'
