@@ -1,0 +1,7 @@
+{% overextends "regulations/node.html" %}
+
+{% block paragraph_marker %}
+{% if node.paragraph_marker %}
+<span class="stripped-marker">({{node.paragraph_marker}})</span>
+{% endif %}
+{% endblock %}
