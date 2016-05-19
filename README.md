@@ -41,7 +41,7 @@ If you aren't working on the parser, you may want to just configure the
 application to run against the live API:
 
 ```bash
-$ echo "API_BASE = 'https://fec-eregs.apps.cloud.gov/api/'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-prod-eregs.18f.gov/api/'" >> local_settings.py
 ```
 
 ### Ports
@@ -132,12 +132,13 @@ before building and pushing.
 
 ### Environments
 
-We're currently deploying to multiple environments, a `dev` and a `prod`
+We're currently deploying to multiple environments, a `dev`, `stage`, and a `prod`
 instance. `dev` is continuously deployed from
-[travis-ci](https://travis-ci.org/), while `prod` is deployed occasionally,
-manually using the instructions above.
+[travis-ci](https://travis-ci.org/), while `stage` and `prod` are deployed
+occasionally, manually using the instructions above.
 
 Environment | URL | Description
 ----------- | --- | -----------
-`dev`       | https://fec-eregs-dev.apps.cloud.gov/ | Ad-hoc testing, deploys the latest changes from `master`.
-`prod`      | https://fec-eregs.apps.cloud.gov/     | Production site, deployed manually.
+`dev`       | https://fec-dev-eregs.18f.gov/ | Ad-hoc testing, deploys the latest changes from `master`.
+`stage`     | https://fec-stage-eregs.18f.gov/ | Staging site, deployed manually.
+`prod`      | https://fec-prod-eregs.18f.gov/     | Production site, deployed manually.
