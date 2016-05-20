@@ -1,15 +1,19 @@
 /*
  * These libraries and fonts come from fec-style
  */
+
 // Libraries
 @import 'lib/bourbon/bourbon';
 @import 'lib/neat/neat';
 @import 'fonts';
 @import 'variables';
 @import 'icon-variables';
+
+@import 'functions';
 @import 'grid';
 
 @import 'mixins/utilities';
+@import 'mixins/icon-mixins';
 
 // Base styling for html elements
 @import 'elements/links';
@@ -23,3 +27,8 @@
 @import 'modules/nav';
 
 @import 'headings';
+@import 'components';
+
+$medium-screen: px(640);
+$large-screen: px(860);
+$x-large-screen: px(1088);

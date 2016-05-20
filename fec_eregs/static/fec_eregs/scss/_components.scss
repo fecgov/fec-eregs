@@ -1,0 +1,22 @@
+/*
+ * FEC Components
+ *
+ **/
+
+.t-sans {
+  font-family: $sans-serif;
+  letter-spacing: -.3px;
+}
+
+.t-serif {
+  font-family: $serif;
+}
+
+.regulations .utility-nav {
+  @extend .utility-nav;
+}
+
+.utility-nav__item {
+  margin-top: 0;
+  padding: 0 20px;
+}

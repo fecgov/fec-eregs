@@ -65,3 +65,5 @@ frontend_build/
 compiled/
 node_modules/
 */static/**/*.css
+fec_eregs/static/fec_eregs/img/
+fec_eregs/static/fec_eregs/fonts/
