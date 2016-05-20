@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "fec-style": "^1.7.2"
+    "fec-style": "^2.1.0"
   },
   "devDependencies": {
     "gulp-sass": "^2.2.0",
