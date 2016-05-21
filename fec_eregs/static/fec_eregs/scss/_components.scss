@@ -27,6 +27,10 @@
 }
 
 //TODO when the breakpoints are fixed, this shouldn't be necessary
-.fec-main-head {
+.main-head {
   overflow: hidden;
+}
+
+.fec-disclaimer {
+  @extend .disclaimer;
 }

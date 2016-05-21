@@ -16,12 +16,12 @@ variables.less contains all theme variable / variable overrides
 // Primary colors
 @crimson: #631010;
 @orange: #f77b42;
-
 @federal-blue: #022c53;
 @aqua: #36bdbb;
 
-@ivory: #f5f0e4;
-@cream: #ffffff;
+@base: #212121;
+@neutral: #f1f1f1;
+@inverse: #fff;
 
 // Accent colors
 @bright-red: #dc3b00;
@@ -32,12 +32,11 @@ variables.less contains all theme variable / variable overrides
 @deep-aqua: #3e8a9a;
 @navy: #164f85;
 
-@beige: #ceb59c;
-@beige-light: #d8c4b1;
-@beige-dark: #c09c7c;
-@black: #000205;
-
-@sand: #e7dbbf;
+@gray-lightest: #f1f1f1; // U.S. Web Design Standards color gray-lightest //
+@gray-light: #e8e8e8;
+@gray-medium: #d6d7d9; // U.S. Web Design Standards color gray-mediumer //
+@gray: #aeb0b5; // U.S. Web Design Standards color gray-medium //
+@gray-dark: #5b616b; // U.S. Web Design Standards color gray //
 
 @disabled: #737373;
 
@@ -50,9 +49,10 @@ variables.less contains all theme variable / variable overrides
 @secondary-contrast: @orange;
 @secondary-focus: @deep-red;
 
-@neutral: @ivory;
-@neutral-contrast: @beige-dark;
+@neutral: @gray-lightest;
+@neutral-contrast: @gray-dark;
 @neutral-focus: @primary;
+
 
 /*
  eRegs
@@ -60,35 +60,16 @@ variables.less contains all theme variable / variable overrides
 */
 
 /*
- Color Variables
+ Color overrides
  ----------------
  */
 
-@green: #2CB34A;
-@green_midtone: @ivory;
-@green_light: @beige-light;
-@dark_field: #5C6065;
-@light_field: #D1D3D5;
-@grey: #E6E7E9;
-@red_orange: #D12124;
+@green_midtone: @neutral;
+@green_light: @gray-medium;
 @pacific: @primary-contrast;
-@link_blue: #348dc9; /* blue used for link borders and search results */
-@light_neutral: #D7D2CB;
-@dark_gray: #797D81
-; /* dark border */
-@bg_gray: #F7F8F9; /* background header */
-@medium_gray: #B8BABD; /* light border */
-@80_gray: #9A9DA1;
-@dark_text: #666666;
-@mid_text: #43484E;
-@orange: #FBCD92;
-@light_orange: #FFECD1;
 @pacific_hover: @primary-focus;
-@pacific_light: #CCE3F5;
-@red_orange_80: #D96A4F;
-@red_orange_50: #E9A193;
 
-@history_drawer_border_color: #d1d3d5;
+@history_drawer_border_color: @grey;
 
 /*
  Type Variables
@@ -97,5 +78,5 @@ variables.less contains all theme variable / variable overrides
 
 @body_font: @base-font-family;
 
-@mainhead_height: 195px;
+@mainhead_height: 190px;
 @subhead_height: 34px;
