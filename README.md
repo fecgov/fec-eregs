@@ -149,5 +149,5 @@ occasionally, manually using the instructions above.
 Environment | URL                              | Proxy | Description
 ----------- | ---                              | ----- | -----------
 `dev`       | https://fec-dev-eregs.18f.gov/   | https://fec-dev-proxy.18f.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `master`.
-`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-dev-proxy.18f.gov/regulations/ | Staging site, deployed manually.
+`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-stage-proxy.18f.gov/regulations/ | Staging site, deployed manually.
 `prod`      | https://fec-prod-eregs.18f.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed manually.
