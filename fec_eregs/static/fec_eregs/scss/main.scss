@@ -6,8 +6,24 @@
 @import 'lib/bourbon/bourbon';
 @import 'lib/neat/neat';
 @import 'fonts';
+
 @import 'variables';
 @import 'icon-variables';
+
+// Scale fec-style components appropriately
+$base-size-px: 10;
+$px-only: true;
+$em-base: 10;
+
+// Align FEC grid with eRegs
+// eRegs uses breakpoints 480, 600, 780, 1100
+// TODO The FEC header changes size based on breakpoints. We need to
+// adjust the fixed offsets for the eregs sidebars before enabling the
+// medium breakpoint. Effectively disable it for now.
+$medium-screen: 600px;
+$large-screen: 600px;
+$x-large-screen: 780px;
+
 
 @import 'functions';
 @import 'grid';
@@ -29,6 +45,3 @@
 @import 'headings';
 @import 'components';
 
-$medium-screen: px(640);
-$large-screen: px(860);
-$x-large-screen: px(1088);
