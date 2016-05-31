@@ -114,11 +114,20 @@ moment, we build all of the front-end code locally, shipping the compiled
 CSS/JS when deploying. This means we'll need to update our libraries, build
 the new front end, and push the result.
 
+
+### Prequisites
+
+In order to get zero-downtime deploys, install the
+[autopilot](https://github.com/concourse/autopilot#installation) CF plugin.
+
+
+### Build and deploy
+
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
 $ grunt # builds the fec-style css
 $ python manage.py compile_frontend   # builds the frontend
-$ cf push -f manifest.prod.yml
+$ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```
 
 Confusingly, although the front-end compilation step occurs locally, all other
@@ -137,8 +146,8 @@ instance. `dev` is continuously deployed from
 [travis-ci](https://travis-ci.org/), while `stage` and `prod` are deployed
 occasionally, manually using the instructions above.
 
-Environment | URL | Description
------------ | --- | -----------
-`dev`       | https://fec-dev-eregs.18f.gov/ | Ad-hoc testing, deploys the latest changes from `master`.
-`stage`     | https://fec-stage-eregs.18f.gov/ | Staging site, deployed manually.
-`prod`      | https://fec-prod-eregs.18f.gov/     | Production site, deployed manually.
+Environment | URL                              | Proxy | Description
+----------- | ---                              | ----- | -----------
+`dev`       | https://fec-dev-eregs.18f.gov/   | https://fec-dev-proxy.18f.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `master`.
+`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-stage-proxy.18f.gov/regulations/ | Staging site, deployed manually.
+`prod`      | https://fec-prod-eregs.18f.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed manually.

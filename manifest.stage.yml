@@ -1,0 +1,3 @@
+---
+inherit: manifest.base.yml
+host: fec-stage-eregs
