@@ -20,7 +20,7 @@ $ npm install -g grunt-cli bower
 Then initialize the database, build the front-end, and run the server:
 
 ```bash
-$ grunt
+$ npm run build
 $ python manage.py migrate --fake-initial
 $ python manage.py compile_frontend
 $ python manage.py runserver
