@@ -31,6 +31,8 @@ $x-large-screen: 1100px;
 @import 'mixins/utilities';
 @import 'mixins/icon-mixins';
 
+@import 'layout/slabs';
+
 // Base styling for html elements
 @import 'elements/links';
 @import 'elements/lists';
@@ -38,11 +40,13 @@ $x-large-screen: 1100px;
 @import 'elements/tables';
 @import 'elements/images';
 
+@import 'components/breadcrumbs';
+@import 'components/buttons';
 @import 'components/form-styles';
 @import 'components/list-styles';
 @import 'components/mega-menu';
+@import 'components/page-headers';
 @import 'components/search-bar';
-@import 'components/buttons';
 
 @import 'modules/site-header';
 @import 'modules/nav';

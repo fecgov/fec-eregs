@@ -93,7 +93,7 @@ a {
 @subhead-primary-border: 2px solid @primary;
 @subhead-secondary-border: 1px solid @primary;
 @subhead-tertiary-border: 1px solid @gray-medium;
-@subhead-background: @neutral;
+@subhead-background: @primary;
 @toc-border: 1px solid @neutral-contrast;
 @toc-background: @neutral;
 
@@ -110,19 +110,36 @@ a {
 
 .sub-head {
   background-color: @subhead-background;
-  border-bottom: @subhead-secondary-border;
-  color: @primary;
+  border-bottom: none;
+  color: @gray-lightest;
+  height: @subhead_height;
+  line-height: inherit;
 }
 
 
 // TOC header
+// TODO We're really pushing the limits here, our TOC is diverged
+// significantly from regulations-site and should probably be written
+// with completely fec-eregs specific styles.
 .toc-head {
   background-color: @toc-background;
-  border-bottom: @subhead-secondary-border;
+  border-bottom: none;
+  border-right: none;
+  position: fixed;
+  width: auto;
+  left: 188px;
+  top: @mainhead_height + @subhead_height;
+  height: auto;
+  z-index: 1;
 
   a.current,
   a:hover {
     background-color: @primary;
+  }
+
+  // Overrides for closed panel
+  .close & {
+    left: 0;
   }
 }
 
@@ -184,7 +201,7 @@ html, body, .landing-content, .search-panel {
   border-right: @subhead-primary-border;
 
   &.close {
-    top: @mainhead_height + @subhead_height + 2 * 34px + 1; // Header, subheader, 2 TOC list items + 1 drawer-toggles border
+    top: @mainhead_height + @subhead_height;
   }
 }
 
@@ -228,7 +245,7 @@ html, body, .landing-content, .search-panel {
   }
 }
 
-.drawer-header, .toc-head {
+.drawer-header {
   border-right: @subhead-primary-border;
 }
 
@@ -255,6 +272,16 @@ html, body, .landing-content, .search-panel {
 .regulation-nav .current {
   padding: 10px 5px;
   margin: 0 10px;
+}
+
+// Subhead
+#content-header {
+  padding-left: initial;
+
+  .header-label {
+    font-weight: inherit;
+    font-style: inherit;
+  }
 }
 
 

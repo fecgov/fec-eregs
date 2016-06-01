@@ -30,3 +30,8 @@
   @extend .disclaimer;
   width: calc(100% - 90px);
 }
+
+.breadcrumbs {
+  // Font-size from body
+  font-size: 14px;
+}
