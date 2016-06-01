@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "fec-style": "^2.1.0"
+    "fec-style": "^2.2.0"
   },
   "devDependencies": {
     "browserify": "^13.0.1",
