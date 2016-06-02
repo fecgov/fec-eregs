@@ -6,8 +6,8 @@ var SiteNav = require('fec-style/js/site-nav').SiteNav;
 
 var $ = window.$;
 $(function () {
-  console.log('ready');
   $('.js-site-nav').each(function () {
-    new SiteNav(this);
+    //TODO enable menus once the breakpoint overflow is fixed
+    //new SiteNav(this);
   });
 });
