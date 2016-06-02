@@ -21,11 +21,6 @@
   padding: 0 20px;
 }
 
-.site-nav .site-title {
-  // Manually convert rem to px
-  width: calc(100% - 150px);
-}
-
 //TODO when the breakpoints are fixed, this shouldn't be necessary
 .main-head {
   overflow: hidden;
@@ -33,4 +28,5 @@
 
 .fec-disclaimer {
   @extend .disclaimer;
+  width: calc(100% - 90px);
 }
