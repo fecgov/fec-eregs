@@ -35,6 +35,10 @@
 /*
  * Typography overrides
  */
+.reg-header {
+  font-family: @serif;
+}
+
 .version-search {
   h4 {
     font-size: 1em;
@@ -86,9 +90,10 @@ a {
 
 @subhead-primary-border: 2px solid @primary;
 @subhead-secondary-border: 1px solid @primary;
-@subhead-background: @cream;
-@toc-border: 1px solid @sand;
-@toc-background: @ivory;
+@subhead-tertiary-border: 1px solid @gray-medium;
+@subhead-background: @neutral;
+@toc-border: 1px solid @neutral-contrast;
+@toc-background: @neutral;
 
 
 // Header
@@ -102,7 +107,7 @@ a {
 }
 
 .sub-head {
-  background-color: @cream;
+  background-color: @subhead-background;
   border-bottom: @subhead-secondary-border;
   color: @primary;
 }
@@ -110,32 +115,31 @@ a {
 
 // TOC header
 .toc-head {
-  background-color: @cream;
+  background-color: @toc-background;
   border-bottom: @subhead-secondary-border;
 
+  a.current,
   a:hover {
     background-color: @primary;
   }
 }
 
 .drawer-toggles {
-  li { border-right: @subhead-secondary-border; }
+  li { border-right: @subhead-tertiary-border; }
 
   .close & {
     border-top: @subhead-secondary-border;
 
-    li { border-bottom: @subhead-secondary-border; }
+    li { border-bottom: @subhead-tertiary-border; }
   }
 }
 
 .toc-nav-link {
-  border-right: @subhead-secondary-border;
-
   .close &.current,
   .close &:hover,
   &:hover,
   &.current {
-    color: @cream;
+    color: @toc-background;
     background-color: @primary;
   }
 }
@@ -143,8 +147,12 @@ a {
 
 // TOC
 .panel {
-  background-color: @ivory;
+  background-color: @toc-background;
   border-right: @subhead-primary-border;
+
+  &.close {
+    top: @mainhead_height + @subhead_height + 2 * 34px + 1; // Header, subheader, 2 TOC list items + 1 drawer-toggles border
+  }
 }
 
 .panel-slide {
@@ -187,18 +195,18 @@ a {
   }
 }
 
-.drawer-header .toc-type, .toc-head {
+.drawer-header, .toc-head {
   border-right: @subhead-primary-border;
 }
 
 .drawer-header .toc-type,
 {
-  background-color: @ivory;
+  background-color: @toc-background;
   border-bottom: @toc-border;
 }
 
 .subpart-heading {
-  background-color: @ivory;
+  background-color: @toc-background;
   border-bottom: @toc-border;
   border-top: @toc-border;
 }
@@ -209,7 +217,9 @@ a {
 }
 
 // FEC is less boxy
-.regulation-nav a {
+.regulation-nav a,
+.regulation-nav a:hover,
+.regulation-nav .current {
   padding: 10px 5px;
   margin: 0 10px;
 }
@@ -222,11 +232,33 @@ a {
   border-left: @toc-border;
 
   .expandable {
-    background-color: @ivory;
+    background-color: @toc-background;
     border-bottom: @toc-border;
   }
 
   .expand-drawer {
     border-bottom: @toc-border;
+  }
+}
+
+// Masthead
+//
+//
+.hero {
+  width: 100%;
+}
+
+.main-head {
+  height: @mainhead_height;
+}
+
+.landing-content,
+.about-content {
+  margin-top: @mainhead_height;
+
+  .inner-wrap:before {
+    display: table;
+    height: auto;
+    margin-top: 0;
   }
 }

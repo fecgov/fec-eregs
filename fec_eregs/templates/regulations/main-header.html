@@ -1,20 +1,45 @@
+{% load static from staticfiles %}
 <div class="main-head">
-    <div class="title">
-        <div class="site-title"><a href="{% url 'universal_landing' %}"><span class="e">e</span>Regulations</a></div>
-        {% if meta.cfr_title_number %}
-        <h2 class="reg-title"><a href="{% url 'regulation_landing_view' reg_part %}">{{ meta.cfr_title_number }} CFR Part {{ reg_part }} {% if meta.reg_letter %}(Regulation {{ meta.reg_letter }}){% endif %}</a></h2>
-        {% endif %}
-    </div> <!-- /reg-title -->
-    <nav class="app-nav">
-        <a href="#" class="mobile-nav-trigger">
-             <span class="cf-icon cf-icon-menu"></span>
-             <span class="icon-text">Mobile navigation</span>
-        </a>
-        <ul class="app-nav-list">
-            <li class="app-nav-list-item"><a href="{% url 'universal_landing' %}">Regulations</a></li>
-            <li class="app-nav-list-item"><a href="{% url 'about' %}">About</a></li>
-            <li class="app-nav-list-item logo-list-item">{% include "regulations/logo.html" %}</li>
-            <li class="app-nav-list-item org-title">{% include "regulations/org-title.html" %}</li>
-        </ul>
-    </nav>
+  <div class="fec-disclaimer">
+    <span class="disclaimer__left">This site is in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>, visit <a href="http://www.fec.gov">FEC.gov</a></span>
+    <span class="disclaimer__right">
+      An official website of the United States Government
+      <img alt="US flag signifying that this is a United States Federal Government website" src="{% static "fec_eregs/img/us_flag_small.png" %}">
+    </span>
+  </div>
+  <div class="masthead">
+    <a href="{{ FEC_CMS_URL }}/" title="Home" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
+    <ul class="utility-nav list--flat">
+      <li class="utility-nav__item is-disabled">(About)</li>
+      <li class="utility-nav__item"><a href="{{ FEC_CMS_URL }}/contact-us/">Contact</a></li>
+      <li class="utility-nav__item"><a href="{{ FEC_CMS_URL }}/calendar/">Calendar</a></li>
+      <li class="utility-nav__item is-disabled"><span class="js-glossary-toggle glossary__toggle">Glossary</span></li>
+    </ul>
+  </div>
+  <nav class="site-nav js-site-nav">
+    <div id="site-menu" class="site-nav__container">
+      <ul class="site-nav__panel site-nav__panel--main">
+        <li class="site-nav__item site-nav__item--with-dropdown" data-submenu="data">
+          <a href="{{ FEC_WEB_URL }}/" class="site-nav__link">Campaign finance data</a>
+        </li>
+        <li class="site-nav__item">
+          <a href="{{ FEC_CMS_URL }}/registration-and-reporting/" class="site-nav__link">Registration and reporting</a>
+        </li>
+        <li class="site-nav__item">
+          <a href="{{ FEC_CMS_URL }}/legal-resources/" class="site-nav__link is-parent">Legal resources</a>
+        </li>
+        <li class="site-nav__item utility-nav__item is-disabled">
+          <a href="#" class="site-nav__link">(About)</a>
+        </li>
+        <li class="site-nav__item utility-nav__item">
+          <a href="{{ FEC_CMS_URL }}/contact-us/" class="site-nav__link">Contact</a>
+        </li>
+        <li class="site-nav__item utility-nav__item">
+          <a href="{{ FEC_CMS_URL }}/calendar/" class="site-nav__link">Calendar</a>
+        </li>
+      </ul>
+    </div>
+    <button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>
+    <a title="Home" href="{{ FEC_CMS_URL }}/" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
+  </nav>
 </div>

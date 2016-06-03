@@ -1,0 +1,50 @@
+/*
+ * These libraries and fonts come from fec-style
+ */
+
+// Libraries
+@import 'lib/bourbon/bourbon';
+@import 'lib/neat/neat';
+@import 'fonts';
+
+@import 'variables';
+@import 'icon-variables';
+
+// Scale fec-style components appropriately
+$base-size-px: 10;
+$px-only: true;
+$em-base: 10;
+
+// Align FEC grid with eRegs
+// eRegs uses breakpoints 480, 600, 780, 1100
+// TODO The FEC header changes size based on breakpoints. We need to
+// adjust the fixed offsets for the eregs sidebars before enabling the
+// medium breakpoint. Effectively disable it for now.
+$medium-screen: 720px;
+$large-screen: 720px;
+$x-large-screen: 1100px;
+
+
+@import 'functions';
+@import 'grid';
+
+@import 'mixins/utilities';
+@import 'mixins/icon-mixins';
+
+// Base styling for html elements
+@import 'elements/links';
+@import 'elements/lists';
+@import 'elements/forms';
+@import 'elements/tables';
+@import 'elements/images';
+
+@import 'components/list-styles';
+@import 'components/mega-menu';
+
+@import 'modules/site-header';
+@import 'modules/nav';
+@import 'modules/glossary';
+
+@import 'headings';
+@import 'components';
+

@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "fec-style": "^1.7.2"
+    "fec-style": "^2.2.0"
   },
   "devDependencies": {
-    "gulp-sass": "^2.2.0",
-    "load-grunt-tasks": "^3.4.1",
+    "browserify": "^13.0.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^1.1.0",
-    "grunt": "^0.4.5"
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.7.0",
+    "load-grunt-tasks": "^3.4.1"
   },
   "scripts": {
+    "build": "grunt build:css && npm run build-js",
+    "build-js": "browserify -g hbsfy --debug -o fec_eregs/static/fec_eregs/js/fec.bundle.js fec_eregs/static/fec_eregs/js/fec.js",
     "test": "echo \"Error: no test specified, use `python manage.py test` instead\" && exit 1"
   },
   "repository": {

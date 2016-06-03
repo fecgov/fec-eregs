@@ -20,7 +20,7 @@ $ npm install -g grunt-cli bower
 Then initialize the database, build the front-end, and run the server:
 
 ```bash
-$ grunt
+$ npm run build
 $ python manage.py migrate --fake-initial
 $ python manage.py compile_frontend
 $ python manage.py runserver
@@ -125,7 +125,7 @@ In order to get zero-downtime deploys, install the
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
-$ grunt # builds the fec-style css
+$ npm run build # builds the fec-style css
 $ python manage.py compile_frontend   # builds the frontend
 $ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```

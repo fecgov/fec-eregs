@@ -1,0 +1,32 @@
+/*
+ * FEC Components
+ *
+ **/
+
+.t-sans {
+  font-family: $sans-serif;
+  letter-spacing: -.3px;
+}
+
+.t-serif {
+  font-family: $serif;
+}
+
+.reg-header .utility-nav {
+  @extend .utility-nav;
+}
+
+.utility-nav__item {
+  margin-top: 0;
+  padding: 0 20px;
+}
+
+//TODO when the breakpoints are fixed, this shouldn't be necessary
+.main-head {
+  overflow: hidden;
+}
+
+.fec-disclaimer {
+  @extend .disclaimer;
+  width: calc(100% - 90px);
+}

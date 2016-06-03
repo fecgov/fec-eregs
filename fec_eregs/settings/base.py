@@ -1,6 +1,9 @@
 import json
 import os
 
+from cfenv import AppEnv
+env = AppEnv()
+
 from regcore.settings.base import *
 REGCORE_APPS = tuple(INSTALLED_APPS)
 REGCORE_DATABASES = dict(DATABASES)
@@ -17,6 +20,10 @@ NOSE_ARGS = [
     '--verbosity=3'
 ]
 
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
+    'fec_eregs.context_processors.app_urls',
+)
+
 TEST_RUNNER = 'django_nose.runner.NoseTestSuiteRunner'
 
 ROOT_URLCONF = 'fec_eregs.urls'
@@ -32,3 +39,10 @@ DATA_LAYERS = DATA_LAYERS or []
 
 DATA_LAYERS = DATA_LAYERS + (
     'regulations.generator.layers.external_citation.ExternalCitationLayer',)
+
+FEC_API_KEY = env.get_credential('FEC_API_KEY', '')
+FEC_API_VERSION = os.environ.get('FEC_API_VERSION', 'v1')
+
+FEC_API_URL = os.environ.get('FEC_API_URL', '')
+FEC_CMS_URL = os.environ.get('FEC_CMS_URL', '')
+FEC_WEB_URL = os.environ.get('FEC_WEB_URL', '')
