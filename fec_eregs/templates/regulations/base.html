@@ -4,10 +4,10 @@
 {% block preload %}
 <link rel="stylesheet" href="{% static "fec_eregs/css/main.css"%}">
 <script type="text/javascript">
-window.API_VERSION = "{{ settings.FEC_API_VERSION }}";
-window.API_KEY = "{{ settings.FEC_API_KEY }}";
-window.API_LOCATION = "{{ settings.FEC_API_URL }}";
-window.CMS_URL = "{{ settings.FEC_CMS_URL }}";
+window.API_VERSION = "{{ FEC_API_VERSION }}";
+window.API_KEY = "{{ FEC_API_KEY }}";
+window.API_LOCATION = "{{ FEC_API_URL }}";
+window.CMS_URL = "{{ FEC_CMS_URL }}";
 </script>
 <script type="text/javascript" src="{% static "fec_eregs/js/fec.bundle.js" %}"></script>
 {% endblock %}
