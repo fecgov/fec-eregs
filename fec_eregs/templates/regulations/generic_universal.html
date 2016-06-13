@@ -1,4 +1,5 @@
 {% overextends "regulations/generic_universal.html" %}
+{% load staticfiles %}
 
 {% block body %}
 <header id="site-header" class="reg-header">
@@ -10,10 +11,10 @@
   <div id="search" class="search-drawer toc-container hidden">
     <form action="/data/legal/regulations/" method="GET" role="search">
         <div class="search-box">
-            <div class="search-header">Search Regulations</div>
+            <div class="search-header">Search regulations</div>
             <label for="search-input">Terms</label>
             <input type="text" name="search" id="search-input" title="Search term"/>
-            <button type="submit"><span class="cf-icon cf-icon-search"></span>
+            <button type="submit"><img src="{% static "fec_eregs/img/i-search--primary.svg" %}"/>
               <strong class="icon-text">Search</strong></button>
             <input type="hidden" name="search_type" id="version-hidden" title="Search Type" value="regulations"/>
         </div><!--/.search-box-->
