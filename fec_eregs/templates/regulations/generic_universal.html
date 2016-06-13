@@ -1,3 +1,96 @@
 {% overextends "regulations/generic_universal.html" %}
 
-{% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
+{% block body %}
+<header id="site-header" class="reg-header">
+    {% include "regulations/main-header.html" %}
+</header>
+
+<div class="landing-content">
+<div class="usa-width-one-fourth search-panel">
+  <div id="search" class="search-drawer toc-container hidden">
+    <form action="/data/legal/regulations/" method="GET" role="search">
+        <div class="search-box">
+            <div class="search-header">Search Regulations</div>
+            <label for="search-input">Terms</label>
+            <input type="text" name="search" id="search-input" title="Search term"/>
+            <button type="submit"><span class="cf-icon cf-icon-search"></span>
+              <strong class="icon-text">Search</strong></button>
+            <input type="hidden" name="search_type" id="version-hidden" title="Search Type" value="regulations"/>
+        </div><!--/.search-box-->
+    </form>
+</div>
+</div>
+<div class="usa-width-three-fourths" role="main">
+  <div class="inner-wrap">
+
+    <div class="group">
+      <div class="content-primary column-l bump">
+        <div class="regulations-title">
+        <h2>Regulations</h2>
+        <h2 class="small-header">
+            {% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
+        </h2>
+      </div>
+        <ul class="reg-list">
+            {% for regulation in regulations %}
+                <li>
+                    <a href="{% url 'regulation_landing_view' regulation.part %}">
+                        <span class="title-num">{{regulation.part}}</span>
+                        <div class="reg-sub-title">
+                            {% if regulation.meta.reg_letter %}
+                                <span class="reg-major-text">Regulation {{regulation.meta.reg_letter}}</span>
+                                <span class="reg-title">{{regulation.meta.statutory_name|title}}</span>
+                            {% else %}
+                                <span class="reg-major-text">{{regulation.meta.statutory_name|title}}</span>
+                            {% endif %}
+                        </div>
+                        <span class="cf-icon cf-icon-right-round"></span>
+                    </a>
+
+                    {% for amendment in regulation.amendments %}
+                        <div class="mini-alert important">
+                            New amendment effective {{amendment.by_date|date:'n/j/Y'}}
+                            <a href="{% url 'chrome_section_view' regulation.reg_first_section amendment.version %}" class="go">View new amendment</a>
+                        </div>
+                    {% endfor %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% block moreregulations %}
+        {% endblock %}
+      </div> <!-- /.primary -->
+
+        {% block secondcolumn_notices %}
+        {% endblock %}
+    </div> <!-- /.group -->
+
+      <section class="about bump group">
+        <h2 class="light-header">About eRegulations</h2>
+        <div class="content-primary column-l">
+
+          <p>eRegulations is a web-based tool that makes regulations easier
+          to find, read and understand with features such as inline
+          official interpretations, highlighted defined terms, and a
+          revision comparison view.</p>
+
+          <p><a href="{% url 'about' %}" class="go">Learn more about eRegulations&#8217; features</a></p>
+        </div> <!-- /.primart -->
+
+        {% block orgcontact %}
+        {% endblock %}
+
+        {% block legal %}
+        {% endblock %}
+      </section> <!-- /.about -->
+  </div> <!-- /.inner-wrap -->
+</div> <!-- /.landing-main -->
+
+</div> <!-- /.landing-content -->
+
+{% include "regulations/full_footer.html" %}
+
+{% block endscripts %}
+{% endblock %}
+
+{% endblock %}
