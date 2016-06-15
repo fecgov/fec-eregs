@@ -7,6 +7,7 @@
 </header>
 
 <div class="landing-content">
+  {% block hero %} {% endblock %}
 <div class="usa-width-one-fourth search-panel">
   <div id="search" class="search-drawer toc-container hidden">
     <form action="/data/legal/regulations/" method="GET" role="search">
@@ -26,37 +27,18 @@
 
     <div class="group">
       <div class="content-primary column-l bump">
-        <div class="regulations-title">
-        <h2>Regulations</h2>
-        <h2 class="small-header">
-            {% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
-        </h2>
-      </div>
-        <ul class="reg-list">
-            {% for regulation in regulations %}
-                <li>
-                    <a href="{% url 'regulation_landing_view' regulation.part %}">
-                        <span class="title-num">{{regulation.part}}</span>
-                        <div class="reg-sub-title">
-                            {% if regulation.meta.reg_letter %}
-                                <span class="reg-major-text">Regulation {{regulation.meta.reg_letter}}</span>
-                                <span class="reg-title">{{regulation.meta.statutory_name|title}}</span>
-                            {% else %}
-                                <span class="reg-major-text">{{regulation.meta.statutory_name|title}}</span>
-                            {% endif %}
-                        </div>
-                        <span class="cf-icon cf-icon-right-round"></span>
-                    </a>
+        {% block regulations-title %}
+            <div class="regulations-title">
+            <h2>Regulations</h2>
+            <h2 class="small-header">
+                {% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
+            </h2>
+          </div>
+        {% endblock %}
 
-                    {% for amendment in regulation.amendments %}
-                        <div class="mini-alert important">
-                            New amendment effective {{amendment.by_date|date:'n/j/Y'}}
-                            <a href="{% url 'chrome_section_view' regulation.reg_first_section amendment.version %}" class="go">View new amendment</a>
-                        </div>
-                    {% endfor %}
-                </li>
-            {% endfor %}
-        </ul>
+        {% block reg-list %}
+        {{ block.super }}
+        {% endblock %}
 
         {% block moreregulations %}
         {% endblock %}
