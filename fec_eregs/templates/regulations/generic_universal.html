@@ -49,17 +49,9 @@
     </div> <!-- /.group -->
 
       <section class="about bump group">
-        <h2 class="light-header">About eRegulations</h2>
-        <div class="content-primary column-l">
-
-          <p>eRegulations is a web-based tool that makes regulations easier
-          to find, read and understand with features such as inline
-          official interpretations, highlighted defined terms, and a
-          revision comparison view.</p>
-
-          <p><a href="{% url 'about' %}" class="go">Learn more about eRegulations&#8217; features</a></p>
-        </div> <!-- /.primart -->
-
+        {% block about-eregs %}
+        {{ block.super }}
+        {% endblock %}
         {% block orgcontact %}
         {% endblock %}
 
