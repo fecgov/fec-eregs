@@ -12,6 +12,9 @@
   font-family: $serif;
 }
 
+// Override `ul`s in `.reg-header` styles
+// TODO remove element specific styles in regulations-site, replace
+// with class-based rules, e.g. `ul.eregs-list`.
 .reg-header .utility-nav {
   @extend .utility-nav;
 }
@@ -19,6 +22,10 @@
 .utility-nav__item {
   margin-top: 0;
   padding: 0 20px;
+}
+
+.reg-header .site-nav__panel {
+  @extend .site-nav__panel;
 }
 
 //TODO when the breakpoints are fixed, this shouldn't be necessary

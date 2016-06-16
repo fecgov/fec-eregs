@@ -105,7 +105,8 @@ a {
 }
 
 .main-head {
-  border-bottom: 3px solid @primary;
+  border-bottom: none;
+  height: @mainhead_height;
 }
 
 .sub-head {
@@ -137,8 +138,13 @@ a {
     background-color: @primary;
   }
 
+  #panel-link {
+    width: 38px;
+  }
+
   // Overrides for closed panel
   .close & {
+    height: auto;
     left: 0;
   }
 }
@@ -306,10 +312,6 @@ html, body, .landing-content, .search-panel {
 //
 .hero {
   width: 100%;
-}
-
-.main-head {
-  height: @mainhead_height;
 }
 
 .landing-content,
