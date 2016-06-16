@@ -5,11 +5,11 @@
 {% comment %}
 Empty the sub-head, we use the breadcrumbs in main-header.html
 {% endcomment %}
+{% block sub-head-skip-nav %}{% endblock %}
 {% block sub-head-drawer-icons %}{% endblock %}
 {% block sub-head-content %}{% endblock %}
 
 {% block drawer-toc %}
-<a href="#content-wrapper" class="hidden-text">Skip to main content</a> <!-- skip to content link for screen readers-->
 <div class="toc-head">
   <a href="#" id="panel-link" class="toc-toggle panel-slide">
     <img id="open-active" src="{%static "regulations/img/open-caret.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
