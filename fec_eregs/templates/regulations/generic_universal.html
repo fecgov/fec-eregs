@@ -1,3 +1,66 @@
 {% overextends "regulations/generic_universal.html" %}
+{% load staticfiles %}
 
-{% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
+{% block body %}
+<header id="site-header" class="reg-header">
+    {% include "regulations/main-header.html" %}
+</header>
+
+<div class="landing-content">
+  {% block hero %} {% endblock %}
+<div class="usa-width-one-fourth search-panel">
+    <div class="container">
+      <div class="u-padding-left u-padding--right">
+          <div class="search-header">Search regulations</div>
+        <form action="/data/legal/regulations/" method="GET" role="search">
+            <div class="combo--search--mini">
+              <label class="label t-left-aligned" for="search-regs">Terms</label>
+              <input id="search-regs" name="search" class="combo__input" type="text" title="Search term"/>
+              <input type="hidden" name="search_type" id="version-hidden" title="Search Type" value="regulations"/>
+              <button class="combo__button button--search button--standard" type="submit"/>
+                <span class="u-visually-hidden">Search</span></button>
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+<div class="usa-width-three-fourths" role="main">
+  <div class="inner-wrap">
+
+    <div class="group">
+      <div class="content-primary column-l bump">
+        {% block regulations-title %}
+            <div class="regulations-title">
+            <h2>Regulations</h2>
+            <h2 class="small-header">
+                {% block cfr_title %}Title {{cfr_titleno_arabic}} {{cfr_title_text}}{% endblock %}
+            </h2>
+          </div>
+        {% endblock %}
+
+        {% block reg-list %}
+        {{ block.super }}
+        {% endblock %}
+
+        {% block moreregulations %}
+        {% endblock %}
+      </div> <!-- /.primary -->
+
+        {% block secondcolumn_notices %}
+        {% endblock %}
+    </div> <!-- /.group -->
+
+        {% block about-eregs %}
+        {{ block.super }}
+        {% endblock %}
+  </div> <!-- /.inner-wrap -->
+</div> <!-- /.landing-main -->
+
+</div> <!-- /.landing-content -->
+
+{% include "regulations/full_footer.html" %}
+
+{% block endscripts %}
+{% endblock %}
+
+{% endblock %}

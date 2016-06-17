@@ -38,8 +38,11 @@ $x-large-screen: 1100px;
 @import 'elements/tables';
 @import 'elements/images';
 
+@import 'components/form-styles';
 @import 'components/list-styles';
 @import 'components/mega-menu';
+@import 'components/search-bar';
+@import 'components/buttons';
 
 @import 'modules/site-header';
 @import 'modules/nav';
@@ -48,3 +51,4 @@ $x-large-screen: 1100px;
 @import 'headings';
 @import 'components';
 
+@import 'layout/layout';
