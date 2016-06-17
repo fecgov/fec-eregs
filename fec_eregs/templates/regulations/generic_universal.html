@@ -9,7 +9,21 @@
 <div class="landing-content">
   {% block hero %} {% endblock %}
 <div class="usa-width-one-fourth search-panel">
-  <div id="search" class="search-drawer toc-container hidden">
+    <div class="container">
+      <div class="u-padding-left u-padding--right">
+          <div class="search-header">Search regulations</div>
+        <form action="/data/legal/regulations/" method="GET" role="search">
+            <div class="combo--search--mini">
+              <label class="label t-left-aligned" for="search-regs">Terms</label>
+              <input id="search-regs" name="search" class="combo__input" type="text" title="Search term"/>
+              <input type="hidden" name="search_type" id="version-hidden" title="Search Type" value="regulations"/>
+              <button class="combo__button button--search button--standard" type="submit"/>
+                <span class="u-visually-hidden">Search</span></button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <!--
     <form action="/data/legal/regulations/" method="GET" role="search">
         <div class="search-box">
             <div class="search-header">Search regulations</div>
@@ -18,9 +32,9 @@
             <button type="submit"><img src="{% static "fec_eregs/img/i-search--primary.svg" %}"/>
               <strong class="icon-text">Search</strong></button>
             <input type="hidden" name="search_type" id="version-hidden" title="Search Type" value="regulations"/>
-        </div><!--/.search-box-->
+        </div>
     </form>
-</div>
+    !-->
 </div>
 <div class="usa-width-three-fourths" role="main">
   <div class="inner-wrap">
