@@ -1,13 +1,25 @@
 {% overextends "regulations/chrome.html" %}
 {% load static from staticfiles %}
 
-{% block sidebar-drawer-icons %}
-<a href="#" id="panel-link" class="toc-toggle panel-slide">
-  <img id="open-active" src="{%static "regulations/img/open-caret.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
-  <img id="open" src="{%static "regulations/img/open-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
-  <img id="close" src="{%static "regulations/img/close-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
-  <img id="close-active" src="{%static "regulations/img/close-caret.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
-</a>
+
+{% comment %}
+Empty the sub-head, we use the breadcrumbs in main-header.html
+{% endcomment %}
+{% block sub-head-skip-nav %}{% endblock %}
+{% block sub-head-drawer-icons %}{% endblock %}
+{% block sub-head-content %}{% endblock %}
+
+{% block drawer-toc %}
+<div class="toc-head">
+  <a href="#" id="panel-link" class="toc-toggle panel-slide">
+    <img id="open-active" src="{%static "regulations/img/open-caret.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
+    <img id="open" src="{%static "regulations/img/open-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Open navigation drawer" />
+    <img id="close" src="{%static "regulations/img/close-caret-blue.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
+    <img id="close-active" src="{%static "regulations/img/close-caret.svg" %}" class="drawer-toggle-icon" alt="Close navigation drawer"/>
+  </a>
+</div> <!-- /toc-head-->
+
+{{ block.super }}
 {% endblock %}
 
 {% block sidebar-toc-link %}
@@ -17,9 +29,6 @@
 {% endblock %}
 
 {% block sidebar-search-link %}
-{% endblock %}
-
-{% block header-secondary %}
 {% endblock %}
 
 {% block drawer-search %}
