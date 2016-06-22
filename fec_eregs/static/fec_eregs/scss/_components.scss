@@ -19,18 +19,31 @@
   @extend .utility-nav;
 }
 
-.utility-nav__item {
-  margin-top: 0;
-  padding: 0 20px;
-}
-
 .reg-header .site-nav__panel {
   @extend .site-nav__panel;
 }
 
-//TODO when the breakpoints are fixed, this shouldn't be necessary
-.main-head {
-  overflow: hidden;
+.site-nav {
+  position: relative;
+}
+
+.site-nav__container {
+  @media(max-width: 720px) {
+    bottom: initial;
+    top: 40px;
+    z-index: initial;
+  }
+}
+
+.site-nav__panel {
+  position: static;
+  top: initial;
+  bottom: initial;
+}
+
+.utility-nav__item {
+  margin-top: 0;
+  padding: 0 20px;
 }
 
 .fec-disclaimer {

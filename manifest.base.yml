@@ -7,6 +7,7 @@ services:
   - fec-eregs-search-1.7.1
 env:
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
+  FEC_API_VERSION: v1
 domain: 18f.gov
 applications:
   - name: eregs
