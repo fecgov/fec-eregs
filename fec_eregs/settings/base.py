@@ -12,6 +12,7 @@ from regulations.settings.base import *
 REGSITE_APPS = tuple(INSTALLED_APPS)
 
 INSTALLED_APPS = ('overextends', 'fec_eregs',) + REGCORE_APPS + REGSITE_APPS
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 NOSE_ARGS = [
     '--with-coverage',
@@ -34,6 +35,7 @@ API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('VCAP_APP_PORT', '8000'))
 
 STATICFILES_DIRS = ['compiled']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DATA_LAYERS = DATA_LAYERS or []
 
