@@ -52,9 +52,12 @@
 
 .fec-disclaimer {
   @extend .disclaimer;
-  width: calc(100% - 90px);
   // We need to keep the header height fixed, don't wrap on small screens
-  @include u-truncate()
+  @include u-truncate();
+
+  @include media($med) {
+    width: calc(100% - 90px);
+  }
 }
 
 .breadcrumbs {
