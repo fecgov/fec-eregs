@@ -25,10 +25,14 @@
 
 .site-nav {
   position: relative;
+
+  .site-title {
+    width: calc(100% - 150px);
+  }
 }
 
 .site-nav__container {
-  @media(max-width: 720px) {
+  @include media(max-width ($large-screen - 1)) {
     bottom: initial;
     top: 40px;
     z-index: initial;
@@ -48,7 +52,12 @@
 
 .fec-disclaimer {
   @extend .disclaimer;
-  width: calc(100% - 90px);
+  // We need to keep the header height fixed, don't wrap on small screens
+  @include u-truncate();
+
+  @include media($med) {
+    width: calc(100% - 90px);
+  }
 }
 
 .breadcrumbs {
