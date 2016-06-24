@@ -348,4 +348,22 @@ html, body, .landing-content, .search-panel {
   .toc-head {
     top: @mainhead_small_height;
   }
+
+  // Offsets for making the url fragments line-up the section content correctly
+  // See layouts.less in regulations-site
+  .reg-section:before,
+  .appendix-section:before,
+  .supplement-section:before,
+  .supplement-section section:before,
+  .footnotes li:before {
+      height: @mainhead_small_height;
+      margin: -1 * @mainhead_small_height 0 0;
+  }
+
+  .reg-section .level-1 li,
+  .appendix-section .level-1 li,
+  .supplement-section .level-1 li {
+      border-top: @mainhead_small_height solid transparent;
+      margin-top: -1 * @mainhead_small_height;
+  }
 }
