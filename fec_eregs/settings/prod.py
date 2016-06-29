@@ -15,6 +15,9 @@ env = AppEnv()
 DEBUG = False
 TEMPLATE_DEBUG = False
 ANALYTICS = {
+    'GOOGLE': {
+        'GA_SITE_ID': 'UA-48605964-22',
+    },
     'DAP': {
         'AGENCY': 'FEC',
     },
