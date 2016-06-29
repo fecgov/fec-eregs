@@ -15,6 +15,9 @@ env = AppEnv()
 DEBUG = False
 TEMPLATE_DEBUG = False
 ANALYTICS = {
+    'DAP': {
+        'AGENCY': 'FEC',
+    },
 }
 
 DATABASES = {
