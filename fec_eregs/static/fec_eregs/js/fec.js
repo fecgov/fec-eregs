@@ -12,6 +12,9 @@ helpers.BREAKPOINTS.LARGE = 720;
 var $ = window.$;
 $(function () {
   $('.js-site-nav').each(function () {
-    new SiteNav(this);
+    new SiteNav(this, {
+      cmsUrl: window.CMS_URL,
+      webAppUrl: window.WEB_URL
+    });
   });
 });
