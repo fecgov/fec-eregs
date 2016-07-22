@@ -1,4 +1,9 @@
 /**
+ * Variables
+ */
+@mainhead_small_height: 83px; // main-head height on small devices
+
+/**
  * Font mixin overrides
  *
  * These are used within the regulations-site less.
@@ -93,7 +98,7 @@ a {
 @subhead-primary-border: 2px solid @primary;
 @subhead-secondary-border: 1px solid @primary;
 @subhead-tertiary-border: 1px solid @gray-medium;
-@subhead-background: @neutral;
+@subhead-background: @primary;
 @toc-border: 1px solid @neutral-contrast;
 @toc-background: @neutral;
 
@@ -105,24 +110,48 @@ a {
 }
 
 .main-head {
-  border-bottom: 3px solid @primary;
+  border-bottom: none;
+  height: @mainhead_height;
 }
 
 .sub-head {
   background-color: @subhead-background;
-  border-bottom: @subhead-secondary-border;
-  color: @primary;
+  border-bottom: none;
+  color: @gray-lightest;
+  height: @subhead_height;
+  line-height: inherit;
 }
 
 
 // TOC header
+// TODO We're really pushing the limits here, our TOC is diverged
+// significantly from regulations-site and should probably be written
+// with completely fec-eregs specific styles.
 .toc-head {
   background-color: @toc-background;
-  border-bottom: @subhead-secondary-border;
+  border-bottom: none;
+  border-right: none;
+  height: auto;
+  left: 188px;
+  position: fixed;
+  top: @mainhead_height + @subhead_height;
+  transition: none;
+  width: auto;
+  z-index: 1;
 
   a.current,
   a:hover {
     background-color: @primary;
+  }
+
+  .panel-slide {
+    width: 38px;
+  }
+
+  // Overrides for closed panel
+  .close & {
+    height: auto;
+    left: 0;
   }
 }
 
@@ -184,7 +213,7 @@ html, body, .landing-content, .search-panel {
   border-right: @subhead-primary-border;
 
   &.close {
-    top: @mainhead_height + @subhead_height + 2 * 34px + 1; // Header, subheader, 2 TOC list items + 1 drawer-toggles border
+    top: @mainhead_height + @subhead_height;
   }
 }
 
@@ -228,7 +257,7 @@ html, body, .landing-content, .search-panel {
   }
 }
 
-.drawer-header, .toc-head {
+.drawer-header {
   border-right: @subhead-primary-border;
 }
 
@@ -257,6 +286,16 @@ html, body, .landing-content, .search-panel {
   margin: 0 10px;
 }
 
+// Subhead
+#content-header {
+  padding-left: initial;
+
+  .header-label {
+    font-weight: inherit;
+    font-style: inherit;
+  }
+}
+
 
 // Sidebar, Secondary content
 //
@@ -281,10 +320,6 @@ html, body, .landing-content, .search-panel {
   width: 100%;
 }
 
-.main-head {
-  height: @mainhead_height;
-}
-
 .landing-content,
 .about-content {
   margin-top: @mainhead_height;
@@ -293,5 +328,42 @@ html, body, .landing-content, .search-panel {
     display: table;
     height: auto;
     margin-top: 0;
+  }
+}
+
+@media only screen and ( max-width: 719px ) {
+  .main-head,
+  .reg-header {
+    height: @mainhead_small_height;
+  }
+
+  .landing-content,
+  .main-content,
+  .about-content {
+    margin-top: @mainhead_small_height;
+  }
+
+  .panel,
+  .panel.close,
+  .toc-head {
+    top: @mainhead_small_height;
+  }
+
+  // Offsets for making the url fragments line-up the section content correctly
+  // See layouts.less in regulations-site
+  .reg-section:before,
+  .appendix-section:before,
+  .supplement-section:before,
+  .supplement-section section:before,
+  .footnotes li:before {
+      height: @mainhead_small_height;
+      margin: -1 * @mainhead_small_height 0 0;
+  }
+
+  .reg-section .level-1 li,
+  .appendix-section .level-1 li,
+  .supplement-section .level-1 li {
+      border-top: @mainhead_small_height solid transparent;
+      margin-top: -1 * @mainhead_small_height;
   }
 }

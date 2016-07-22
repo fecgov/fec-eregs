@@ -12,8 +12,37 @@
   font-family: $serif;
 }
 
+// Override `ul`s in `.reg-header` styles
+// TODO remove element specific styles in regulations-site, replace
+// with class-based rules, e.g. `ul.eregs-list`.
 .reg-header .utility-nav {
   @extend .utility-nav;
+}
+
+.reg-header .site-nav__panel {
+  @extend .site-nav__panel;
+}
+
+.site-nav {
+  position: relative;
+
+  .site-title {
+    width: calc(100% - 150px);
+  }
+}
+
+.site-nav__container {
+  @include media(max-width ($large-screen - 1)) {
+    bottom: initial;
+    top: 40px;
+    z-index: initial;
+  }
+}
+
+.site-nav__panel {
+  position: static;
+  top: initial;
+  bottom: initial;
 }
 
 .utility-nav__item {
@@ -21,12 +50,17 @@
   padding: 0 20px;
 }
 
-//TODO when the breakpoints are fixed, this shouldn't be necessary
-.main-head {
-  overflow: hidden;
-}
-
 .fec-disclaimer {
   @extend .disclaimer;
-  width: calc(100% - 90px);
+  // We need to keep the header height fixed, don't wrap on small screens
+  @include u-truncate();
+
+  @include media($med) {
+    width: calc(100% - 90px);
+  }
+}
+
+.breadcrumbs {
+  // Font-size from body
+  font-size: 14px;
 }

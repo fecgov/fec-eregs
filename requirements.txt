@@ -1,6 +1,6 @@
 # regulations-core
 anyjson==0.3.3
-django==1.8.7
+django==1.8.13
 django-haystack==2.4.1
 jsonschema==2.5.1
 -e git+https://github.com/18F/regulations-core.git#egg=regcore
@@ -9,7 +9,7 @@ jsonschema==2.5.1
 # django already covered
 lxml==3.5.0
 requests==2.8.1
--e git+https://github.com/18F/regulations-site.git@1f6ed14eee9a01ddfbf289ddef463f388bc58e59#egg=regulations
+-e git+https://github.com/eregs/regulations-site.git@854a6bda7ce0bb46f8ac2f1e0e4c53cf24cd9adb#egg=regulations
 
 # fec-specific/cloud.gov
 cfenv==0.5.2

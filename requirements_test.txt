@@ -10,4 +10,4 @@ coveralls
 pep8==1.5.7
 lxml
 nose-exclude
-
+httpretty

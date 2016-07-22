@@ -42,4 +42,28 @@
     <button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>
     <a title="Home" href="{{ FEC_CMS_URL }}/" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
   </nav>
+  <div class="page-header page-header--primary">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ FEC_CMS_URL }}/">Home</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <span class="breadcrumbs__separator">&gt;</span>
+        <a class="breadcrumbs__link" href="{{ FEC_CMS_URL }}/legal-resources/">Legal resources</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <span class="breadcrumbs__separator">&gt;</span>
+        <a class="breadcrumbs__link" href="{{ FEC_CMS_URL }}/regulations/">Regulations</a>
+      </li>
+      {% if reg_part %}
+      <li id="content-header" class="breadcrumbs__item breadcrumbs__item--current">
+        <span class="breadcrumbs__separator">&gt;</span>
+        <span class="wayfinding">
+          <span class="subpart"></span>
+          <span id="active-title">{% block active_title %}<em class="header-label"><span class="reg_part">§{{ reg_part }}</span></em>{% endblock %}</span>
+        </span>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
 </div>
