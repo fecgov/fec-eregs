@@ -10,6 +10,7 @@ jsonschema==2.5.1
 lxml==3.5.0
 requests==2.8.1
 -e git+https://github.com/eregs/regulations-site.git@854a6bda7ce0bb46f8ac2f1e0e4c53cf24cd9adb#egg=regulations
+# -e ../regulations-site
 
 # fec-specific/cloud.gov
 cfenv==0.5.2
