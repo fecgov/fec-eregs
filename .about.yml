@@ -52,7 +52,7 @@ licenses:
 # documented here:
 # https://github.com/18F/dashboard/blob/staging/_data/partners.yml)
 partners: Federal Election Commission
-- 
+
 
 # The main point of contact(s) and/or the issue reporting system for your
 # project, and either a `mailto:` link or URL for each contact.
@@ -83,6 +83,7 @@ team:
 - github: porta-antiporta
   role: product manager
 - github: tadhg-ohiggins
+  role: developer
 
 # What kind of content is contained in the project repository?
 # values: app, docs, policy
@@ -90,11 +91,12 @@ type: app
 
 # What are the key milestones you've achieved recently?
 milestones:
-- 
+ 
 
 # Name of the main project repo if this is a sub-repo; name of the grouplet
 # repo if this is a working group/guild subproject
 parent:
+- url: https://github.com/18F/fec
 
 # What are the links to key artifacts associated with your project? e.g. the
 # production site, documentation.
@@ -103,25 +105,12 @@ parent:
 #   text: Anchor text for the link
 #   category: Type of the link
 links:
-- 
+- url: https://beta.fec.gov
 
 # What tags does your organization's blog associate with your project? You can
 # find a list of 18F blog tags here: https://18f.gsa.gov/tags/
 blogTag:
-- 
-
-# What technologies are used in this project?
-stack:
-- 
-
-# What are the services used to supply project status information?
-# Items:
-# - name: Name of the service
-#   category: Type of the service
-#   url: URL for detailed information
-#   badge: URL for the status badge
-services:
-- 
+- FEC
 
 # Organizations or individuals who have adopted the project for their own use
 # Items:
