@@ -16,8 +16,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=regcore,regulations',
-    '--tests=regulations.tests,regcore.tests,fec_eregs/tests/',
+    '--cover-package=fec_eregs',
+    '--tests=fec_eregs/tests/',
     '--verbosity=3'
 ]
 
