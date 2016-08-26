@@ -16,8 +16,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=regcore,regulations',
-    '--tests=regulations.tests,regcore.tests,fec_eregs/tests/',
+    '--cover-package=fec_eregs',
+    '--tests=fec_eregs/tests/',
     '--verbosity=3'
 ]
 
@@ -48,3 +48,7 @@ FEC_API_VERSION = os.environ.get('FEC_API_VERSION', 'v1')
 FEC_API_URL = os.environ.get('FEC_API_URL', '')
 FEC_CMS_URL = os.environ.get('FEC_CMS_URL', '')
 FEC_WEB_URL = os.environ.get('FEC_WEB_URL', '')
+
+SIDEBARS = (
+    'regulations.generator.sidebar.help.Help',
+)
