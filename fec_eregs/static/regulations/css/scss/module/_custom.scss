@@ -1,7 +1,7 @@
 /**
  * Variables
  */
-@mainhead_small_height: 83px; // main-head height on small devices
+$mainhead_small_height: 83px; // main-head height on small devices
 
 /**
  * Font mixin overrides
@@ -9,20 +9,20 @@
  * These are used within the regulations-site less.
  */
 //TODO this change should be upstream in regulations-site
-.font-regular {
-    font-family: @sans-serif;
+.sans-font-regular {
+    font-family: $sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 
-.font-bold {
-    font-family: @sans-serif;
+.sans-font-bold {
+    font-family: $sans-serif;
     font-weight: 600;
     font-style: normal;
 }
 
-.font-italic {
-    font-family: @sans-serif;
+.sans-font-italic {
+    font-family: $sans-serif;
     font-weight: 600;
     font-style: italic;
 }
@@ -41,7 +41,7 @@
  * Typography overrides
  */
 .reg-header {
-  font-family: @serif;
+  font-family: $serif;
   top: 0px;
   left: 0px;
 }
@@ -95,30 +95,30 @@ a {
  * Chrome overrides
  */
 
-@subhead-primary-border: 2px solid @primary;
-@subhead-secondary-border: 1px solid @primary;
-@subhead-tertiary-border: 1px solid @gray-medium;
-@subhead-background: @primary;
-@toc-border: 1px solid @neutral-contrast;
-@toc-background: @neutral;
+$subhead-primary-border: 2px solid $primary;
+$subhead-secondary-border: 1px solid $primary;
+$subhead-tertiary-border: 1px solid $gray-medium;
+$subhead-background: $primary;
+$toc-border: 1px solid $neutral-contrast;
+$toc-background: $neutral;
 
 
 // Header
 .title a:link, .title a:visited,
 .app-nav a:link, .app-nav a:visited {
-  color: @primary;
+  color: $primary;
 }
 
 .main-head {
   border-bottom: none;
-  height: @mainhead_height;
+  height: $mainhead_height;
 }
 
 .sub-head {
-  background-color: @subhead-background;
+  background-color: $subhead-background;
   border-bottom: none;
-  color: @gray-lightest;
-  height: @subhead_height;
+  color: $gray-lightest;
+  height: $subhead_height;
   line-height: inherit;
 }
 
@@ -128,20 +128,20 @@ a {
 // significantly from regulations-site and should probably be written
 // with completely fec-eregs specific styles.
 .toc-head {
-  background-color: @toc-background;
+  background-color: $toc-background;
   border-bottom: none;
   border-right: none;
   height: auto;
   left: 188px;
   position: fixed;
-  top: @mainhead_height + @subhead_height;
+  top: $mainhead_height + $subhead_height;
   transition: none;
   width: auto;
   z-index: 1;
 
   a.current,
   a:hover {
-    background-color: @primary;
+    background-color: $primary;
   }
 
   .panel-slide {
@@ -156,12 +156,12 @@ a {
 }
 
 .drawer-toggles {
-  li { border-right: @subhead-tertiary-border; }
+  li { border-right: $subhead-tertiary-border; }
 
   .close & {
-    border-top: @subhead-secondary-border;
+    border-top: $subhead-secondary-border;
 
-    li { border-bottom: @subhead-tertiary-border; }
+    li { border-bottom: $subhead-tertiary-border; }
   }
 }
 
@@ -170,8 +170,8 @@ a {
   .close &:hover,
   &:hover,
   &.current {
-    color: @toc-background;
-    background-color: @primary;
+    color: $toc-background;
+    background-color: $primary;
   }
 }
 
@@ -182,11 +182,11 @@ html, body, .landing-content, .search-panel {
 }
 
 .search-panel {
-   background-color: @toc-background;
+   background-color: $toc-background;
 }
 
 .search-header {
-  border-bottom: 2px solid @gray;
+  border-bottom: 2px solid $gray;
   margin-bottom: 2rem;
   padding: .5rem;
   font-size: 1.5rem;
@@ -209,11 +209,11 @@ html, body, .landing-content, .search-panel {
 
 // TOC
 .panel {
-  background-color: @toc-background;
-  border-right: @subhead-primary-border;
+  background-color: $toc-background;
+  border-right: $subhead-primary-border;
 
   &.close {
-    top: @mainhead_height + @subhead_height;
+    top: $mainhead_height + $subhead_height;
   }
 }
 
@@ -231,7 +231,7 @@ html, body, .landing-content, .search-panel {
   }
 
   .close & {
-    border-bottom: @subhead-secondary-border;
+    border-bottom: $subhead-secondary-border;
     img#close { display:none; }
     img#open { display:inline-block; }
 
@@ -251,31 +251,31 @@ html, body, .landing-content, .search-panel {
   .closed &.current,
   &:hover,
   &.current {
-    background: @primary;
+    background: $primary;
     .drawer-toggle-icon { display:none; }
     .drawer-toggle-icon.active { display:inline-block; }
   }
 }
 
 .drawer-header {
-  border-right: @subhead-primary-border;
+  border-right: $subhead-primary-border;
 }
 
 .drawer-header .toc-type,
 {
-  background-color: @toc-background;
-  border-bottom: @toc-border;
+  background-color: $toc-background;
+  border-bottom: $toc-border;
 }
 
 .subpart-heading {
-  background-color: @toc-background;
-  border-bottom: @toc-border;
-  border-top: @toc-border;
+  background-color: $toc-background;
+  border-bottom: $toc-border;
+  border-top: $toc-border;
 }
 
 .regulation-nav a:link, .regulation-nav a:visited {
-  border-bottom: @toc-border;
-  color: @primary;
+  border-bottom: $toc-border;
+  color: $primary;
 }
 
 // FEC is less boxy
@@ -301,15 +301,15 @@ html, body, .landing-content, .search-panel {
 //
 // This component should match they styles of the toc.
 .secondary-content {
-  border-left: @toc-border;
+  border-left: $toc-border;
 
   .expandable {
-    background-color: @toc-background;
-    border-bottom: @toc-border;
+    background-color: $toc-background;
+    border-bottom: $toc-border;
   }
 
   .expand-drawer {
-    border-bottom: @toc-border;
+    border-bottom: $toc-border;
   }
 }
 
@@ -322,7 +322,7 @@ html, body, .landing-content, .search-panel {
 
 .landing-content,
 .about-content {
-  margin-top: @mainhead_height;
+  margin-top: $mainhead_height;
 
   .inner-wrap:before {
     display: table;
@@ -334,37 +334,37 @@ html, body, .landing-content, .search-panel {
 @media only screen and ( max-width: 719px ) {
   .main-head,
   .reg-header {
-    height: @mainhead_small_height;
+    height: $mainhead_small_height;
   }
 
   .landing-content,
   .main-content,
   .about-content {
-    margin-top: @mainhead_small_height;
+    margin-top: $mainhead_small_height;
   }
 
   .panel,
   .panel.close,
   .toc-head {
-    top: @mainhead_small_height;
+    top: $mainhead_small_height;
   }
 
   // Offsets for making the url fragments line-up the section content correctly
-  // See layouts.less in regulations-site
+  // See layouts.scss in regulations-site
   .reg-section:before,
   .appendix-section:before,
   .supplement-section:before,
   .supplement-section section:before,
   .footnotes li:before {
-      height: @mainhead_small_height;
-      margin: -1 * @mainhead_small_height 0 0;
+      height: $mainhead_small_height;
+      margin: -1 * $mainhead_small_height 0 0;
   }
 
   .reg-section .level-1 li,
   .appendix-section .level-1 li,
   .supplement-section .level-1 li {
-      border-top: @mainhead_small_height solid transparent;
-      margin-top: -1 * @mainhead_small_height;
+      border-top: $mainhead_small_height solid transparent;
+      margin-top: -1 * $mainhead_small_height;
   }
 }
 
