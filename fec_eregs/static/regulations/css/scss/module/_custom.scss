@@ -165,6 +165,11 @@ $toc-background: $neutral;
   }
 }
 
+.drawer-toggle-icon {
+  height: 15px;
+  margin-top: 8px;
+}
+
 .toc-nav-link {
   .close &.current,
   .close &:hover,
@@ -261,10 +266,12 @@ html, body, .landing-content, .search-panel {
   border-right: $subhead-primary-border;
 }
 
-.drawer-header .toc-type,
-{
+.drawer-header .toc-type {
+  @include serif-font-regular;
   background-color: $toc-background;
   border-bottom: $toc-border;
+  color: $primary;
+  font-weight: 700;
 }
 
 .subpart-heading {
