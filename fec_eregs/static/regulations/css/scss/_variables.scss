@@ -64,11 +64,10 @@ $neutral-focus: $primary;
  ----------------
  */
 
-$green_midtone: $neutral;
-$green_light: $gray-medium;
-$pacific: $primary-contrast;
-$pacific_hover: $primary-focus;
-
+$panel_highlight_color: $gray-medium; // Highlight color for table of contents
+$panel_background_color: $gray-light; // Table of contents background, subhead color, drawer color
+$panel_border_color: $primary; // Colors the borders for panel_color
+$panel_text_color: $primary; // Text color for table of contents
 $history_drawer_border_color: $gray;
 
 /*
@@ -77,6 +76,41 @@ $history_drawer_border_color: $gray;
 */
 
 $body_font: $base-font-family;
+
+@mixin sans-font-light {
+  font-family: $sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin sans-font-regular {
+  font-family: $sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin sans-font-bold {
+  font-family: $sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin serif-font-italic {
+  font-family: $serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin serif-font-regular {
+  font-family: $serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
+ Layout Variables
+ ----------------
+*/
 
 $mainhead_height: 173px;
 $subhead_height: 0px;
