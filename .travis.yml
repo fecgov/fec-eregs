@@ -47,4 +47,3 @@ deploy:
     script: ./bin/cf_deploy.sh eregs fec prod manifest.prod.yml
     on:
       tags: true
-      condition: $TRAVIS_BRANCH == master
