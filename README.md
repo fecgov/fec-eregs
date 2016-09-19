@@ -114,19 +114,26 @@ data.
 ## Deploying Code
 
 If the code within `fec-eregs`, `regulations-core`, or `regulations-site` has
-been updated, you will want to deploy the updated code to cloud.gov. At the
-moment, we build all of the front-end code locally, shipping the compiled
-CSS/JS when deploying. This means we'll need to update our libraries, build
-the new front end, and push the result.
+been updated, you will want to deploy the updated code to cloud.gov.
 
 
-### Prequisites
+### Environments
 
-In order to get zero-downtime deploys, install the
-[autopilot](https://github.com/concourse/autopilot#installation) CF plugin.
+We're currently deploying to multiple environments, a `dev`, `stage`, and a `prod`
+instance. All environments are deployed automatically based on [git
+flow](https://danielkummer.github.io/git-flow-cheatsheet/).
+
+Environment | URL                              | Proxy | Description
+----------- | ---                              | ----- | -----------
+`dev`       | https://fec-dev-eregs.18f.gov/   | https://fec-dev-proxy.18f.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `develop`.
+`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-stage-proxy.18f.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
+`prod`      | https://fec-prod-eregs.18f.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed from any tagged commit.
 
 
-### Build and deploy
+### Travis
+
+These are the basic steps of what get runs on travis. To be sure, check the
+[.travis.yml](https://github.com/18F/fec-eregs/blob/develop/.travis.yml) file.
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
@@ -134,25 +141,3 @@ $ npm run build # builds the fec-style css
 $ python manage.py compile_frontend   # builds the frontend
 $ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```
-
-Confusingly, although the front-end compilation step occurs locally, all other
-library linking (in particular to `regulations-site` and `regulations-core`)
-takes place within cloud.gov. In other words, the setup process for cloud.gov
-will pull in the latest from `regulations-site` and `regulations-core`,
-regardless of what you have locally and regardless of what you've built the
-front-end against. Be sure to always update your local libraries (via `pip`)
-before building and pushing.
-
-
-### Environments
-
-We're currently deploying to multiple environments, a `dev`, `stage`, and a `prod`
-instance. `dev` is continuously deployed from
-[travis-ci](https://travis-ci.org/), while `stage` and `prod` are deployed
-occasionally, manually using the instructions above.
-
-Environment | URL                              | Proxy | Description
------------ | ---                              | ----- | -----------
-`dev`       | https://fec-dev-eregs.18f.gov/   | https://fec-dev-proxy.18f.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `master`.
-`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-stage-proxy.18f.gov/regulations/ | Staging site, deployed manually.
-`prod`      | https://fec-prod-eregs.18f.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed manually.
