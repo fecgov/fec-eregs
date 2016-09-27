@@ -1,7 +1,7 @@
 /*
 Typograhy styles
  ==========================================================================
-typography.less contains both global and application specific typography */
+typography.scss contains both global and application specific typography */
 
 
 /*
@@ -14,8 +14,8 @@ typography.less contains both global and application specific typography */
 */
 
 body {
-    color: @primary;
-    font-family: @body_font;
+    color: $primary;
+    font-family: $body_font;
     font-size: 1em;
     /*line-height: 1.625;*/ /* 26px */
     /*line-height: 1.375;*/ /*22px*/
@@ -23,7 +23,7 @@ body {
 }
 
 strong {
-    .font-bold;
+    @include sans-font-bold;
 }
 
 
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-    .font-bold;
+    @include sans-font-bold;
     margin-bottom: 0;
 }
 
@@ -82,7 +82,7 @@ h6 {
 */
 
 .sub-text {
-    .font-regular;
+    @include sans-font-regular;
 }
 
 .small-header {
@@ -94,7 +94,7 @@ h6 {
 }
 
 .light-header {
-    .font-regular;
+    @include sans-font-regular;
 }
 
 .upper-header {
@@ -145,15 +145,15 @@ ol[type="no-marker"] {
  ========================================================================== */
 
 a {
-  border-bottom: 1px dotted @primary;
-  color: @primary;
+  border-bottom: 1px dotted $primary;
+  color: $primary;
   cursor: pointer;
   text-decoration: none;
   transition: color 0.1s linear;
 
   &:active,
   &:hover {
-    border-bottom-color: @primary-contrast;
+    border-bottom-color: $primary-contrast;
   }
 
   img {
@@ -170,9 +170,9 @@ a {
 .internal,
 .internal:link,
 .internal:visited {
-    color: @primary;
+    color: $primary;
     text-decoration: none;
-    border-bottom: 1px solid @link_blue;
+    border-bottom: 1px solid $action_color;
 }
 
 .internal:hover,
@@ -187,7 +187,7 @@ a {
 */
 
 .external:after{
-    .cf-icon;
+    @extend .cf-icon;
     content: "\e610";
     padding: 0 0 0 5px;
     font-size: 16px;
@@ -195,23 +195,23 @@ a {
 
 .phone:link,
 .phone:visited {
-    color: @pacific;
+    color: $primary-contrast;
 }
 
 .phone:before {
-    .cf-icon;
+    @extend .cf-icon;
     content: "\e306";
     margin-right: 6px;
 }
 
 .mail:before {
-    .cf-icon;
+    @extend .cf-icon;
     content: "\e302";
     margin-right: 6px;
 }
 
 .go:after {
-   .cf-icon;
+   @extend .cf-icon;
     content: "\e002";
     font-size: 0.75em;
     margin-left: 6px;
@@ -219,7 +219,7 @@ a {
 }
 
 .pdf:after {
-   .cf-icon;
+   @extend .cf-icon;
     content: "\e402";
     margin-left: 6px;
 }
@@ -255,32 +255,32 @@ a {
 .definition,
 .definition:link,
 .definition:visited {
-    color: @primary;
+    color: $primary;
     text-decoration: none;
-    border-bottom: 1px solid @light_field;
+    border-bottom: 1px solid $gray_light;
 }
 
 .definition:hover,
 .definition:active {
-    border-bottom: 1px solid @medium_gray;
-    background-color: @grey;
+    border-bottom: 1px solid $gray_light;
+    background-color: $gray_lighter;
 }
 
 .definition.active {
-    background-color: @grey;
+    background-color: $gray_lighter;
 }
 
 .inline-interpretation {
     .definition:link,
     .definition:visited {
-         border-bottom: 1px solid @medium_gray;
+         border-bottom: 1px solid $gray_light;
     }
 }
 
 /* button styles */
 
 .btn {
-    .font-regular;
+    @include sans-font-regular;
     display: inline-block;
     box-sizing: border-box;
     padding: .57142857em 1em;
@@ -324,7 +324,7 @@ a {
 .appendix-heading,
 .supplement-section h3 {
     font-size: 1.8125em; /* 29px / 16 */
-    .font-bold;
+    @include sans-font-bold;
     line-height: 1.25;
     letter-spacing: 1px;
 }
@@ -346,7 +346,7 @@ a {
 
 .appendix-subheading,
 .interp-subheading {
-    .reset;
+    @include reset;
     font-size: 1.375em; /* 22 / 16 */
     line-height: 1.25;
     margin-top: 1em;
@@ -402,7 +402,7 @@ The `<ol>` tag needs to have the appropriate list type applied
 */
 
 .main-content ol, dfn, .stripped-marker {
-  .font-bold;
+  @include sans-font-bold;
 }
 
 .appendix-section ol {
@@ -410,7 +410,7 @@ The `<ol>` tag needs to have the appropriate list type applied
 }
 
 .main-content p {
-  font-family: @body_font;
+  font-family: $body_font;
   font-weight: 400;
 }
 
@@ -482,7 +482,7 @@ All key-terms are displayed as block elements to force a line-break.
 .supplement-section .level-1 .key-term {
     text-transform: uppercase;
     font-size: 1em;
-    .font-bold;
+    @include sans-font-bold;
 }
 
 /*  Level-3 key-terms
@@ -500,7 +500,7 @@ All key-terms are displayed as block elements to force a line-break.
 */
 
 .level-3 .key-term {
-    .font-bold;
+    @include sans-font-bold;
     text-transform: none;
 }
 
@@ -553,7 +553,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
             width: 1000px;
             position: absolute;
             top: 1.2em;
-            border-top: 1px solid @black;
+            border-top: 1px solid $black;
         }
 
         &:after {
@@ -578,7 +578,7 @@ th,
 td {
     padding: 15px;
     line-height: 20px;
-    border: 1px solid @80_gray;
+    border: 1px solid $gray;
 }
 
 th {
@@ -603,23 +603,19 @@ thead {
     Datatables-specific css
 */
 
-.dataTable {
-    table& {
-        margin-top:0;
-        thead {
-            height:0;
-        }
-        tr:first-child td {
-            border-top: none;
-        }
+table.dataTable {
+    margin-top:0;
+    thead {
+        height:0;
+    }
+    tr:first-child td {
+        border-top: none;
     }
 }
 
-.dataTables_scrollHeadInner {
-    div& {
-        table {
-            margin-bottom: 0px;
-        }
+div.dataTables_scrollHeadInner {
+    table {
+        margin-bottom: 0px;
     }
 }
 table.dataTable, table.dataTable th, table.dataTable td {
@@ -638,7 +634,7 @@ pre {
     margin: 0 auto;
     max-width: 600px;
     padding: 10px;
-    background-color: @bg_gray;
+    background-color: $gray_lightest;
     overflow-x: scroll;
     word-wrap: normal;
     white-space: pre;
