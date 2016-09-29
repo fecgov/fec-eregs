@@ -1,6 +1,6 @@
 ---
 buildpack: python_buildpack
-command: python manage.py migrate --fake-initial && waitress-serve --url-prefix /regulations --port=$VCAP_APP_PORT fec_eregs.wsgi:application
+command: python manage.py migrate --fake-initial && gunicorn fec_eregs.wsgi:application
 services:
   - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
   - fec-eregs-db
@@ -8,6 +8,7 @@ services:
 env:
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
+  SCRIPT_NAME: /regulations
 domain: 18f.gov
 applications:
   - name: eregs
