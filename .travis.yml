@@ -6,6 +6,10 @@ env:
   global:
     - CF_DEPLOY_USER=fec_deployer
     - secure: "VnsiuyLMCUJbPCZsOKLMzFDj5T4KIokimyZ0ckhRaI4xgzP4nM/oeuy0zRbhx4mn6tRvJCAkUC8VIJJLO5adKTHSU2lK2iuTw1FmCWb9NsoIXt/8dksKFJdjJWoaIJeZGcpTo/JpPbG+LdV02/sndh6AJEQ2RAyZNIVOwFI5u5VhBZpIKURaliPrY1+LV4a0ooNIC1DLGHx1bpy8OXwz/584q0z8dkAAckNStEOgl7DIaWbpODYUnvSFlLTOqtdalf2Nfmi/Oxuk+/wyL8Xd9b5PT9zMCsDUnSIMZvZhosWlsGGIqtmhEtrwz/F2EXAEFQg1uf8oMpwhU8zViQxBxwdzWsQOlczLo7J88edUwOY2fCf5hD6JKsPtjnsOF6HH8FL63xO9b9dbfRuGOMVZ4nOvdHwAbWfBTqBDljBtifZw//Cy8x4SCHLgAl1QMC3d4bY9/UDUu3Y86l4mQ8xceRb/gf67qiHewyRpfQB7zOGx2OxmXsLKkeFgj0hMzfa8+YksF1j8BFZcukDT7g3qOQg4iOkyZ0L6BUxdBlulLbzPszsOQ0wo0qxOFaw4UfRC2FOxIEV+c5f2L7vGTK4R8ovK9TmWant1aE5ThKaJ6l8+Pv7Aa2SGlnfa55RsB4R8FddlG9O3OYQqxBWl31sRPsesQjWR/c3c/533VWBcmVA=" # CF_DEPLOY_PASSWORD
+
+before_install:
+  - gem install sass
+
 install:
     - pip install -r requirements.txt
     - pip install -r requirements_test.txt
@@ -47,4 +51,3 @@ deploy:
     script: ./bin/cf_deploy.sh eregs fec prod manifest.prod.yml
     on:
       tags: true
-      condition: $TRAVIS_BRANCH == master
