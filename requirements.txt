@@ -9,7 +9,7 @@ jsonschema==2.5.1
 # django already covered
 lxml==3.5.0
 requests==2.8.1
--e git+https://github.com/18F/regulations-site.git@6.0.3#egg=regulations
+-e git+https://github.com/18F/regulations-site.git@6.1.0#egg=regulations
 
 # fec-specific/cloud.gov
 cfenv==0.5.2
