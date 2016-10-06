@@ -15,9 +15,9 @@ requests==2.8.1
 cfenv==0.5.2
 dj-database-url==0.3.0
 django-overextends==0.4.0
+gunicorn==19.6.0
 pyelasticsearch==1.4
 psycopg2==2.6.1
-waitress==0.8.10
 whitenoise==3.0
 
 -e eregs_extensions/
