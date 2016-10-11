@@ -30,8 +30,8 @@ before_deploy:
 
 # Simple smoke tests
 after_deploy:
-  - curl --silent --fail --head https://fec-dev-eregs.18f.gov || travis_terminate $?
-  - curl --silent --fail --get https://fec-dev-eregs.18f.gov/api/regulation/2 > /dev/null || travis_terminate $?
+  - curl --silent --fail --head https://fec-dev-eregs.18f.gov/regulations || travis_terminate $?
+  - curl --silent --fail --get https://fec-dev-eregs.18f.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
 
 deploy:
   - provider: script
