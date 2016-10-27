@@ -62,7 +62,7 @@ you need to run on a different port, either export an environmental variable
 or create a local_settings.py as follows:
 
 ```bash
-$ export VCAP_APP_PORT=1234
+$ export PORT=1234
 ```
 
 OR
