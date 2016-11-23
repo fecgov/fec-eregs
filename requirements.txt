@@ -1,6 +1,6 @@
 # regulations-core
 anyjson==0.3.3
-django==1.8.15
+django==1.8.16
 django-haystack==2.4.1
 jsonschema==2.5.1
 -e git+https://github.com/18F/regulations-core.git@2.0.0#egg=regcore
