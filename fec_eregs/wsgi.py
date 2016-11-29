@@ -1,4 +1,4 @@
-from notice_and_comment import newrelic
+from fec_eregs import newrelic
 newrelic.initialize()
 
 import os  # noqa
