@@ -19,6 +19,6 @@ gunicorn==19.6.0
 pyelasticsearch==1.4
 psycopg2==2.6.1
 whitenoise==3.0
-newrelic==2.74.0
+newrelic==2.74.0.54
 
 -e eregs_extensions/
