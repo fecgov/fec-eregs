@@ -1,11 +1,14 @@
-import os
-from django.core.wsgi import get_wsgi_application
+from notice_and_comment import newrelic
+newrelic.initialize()
+
+import os  # noqa
+from django.core.wsgi import get_wsgi_application  # noqa
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fec_eregs.settings.prod")
 
 # important that the whitenoise import is after the line above
-from whitenoise import WhiteNoise
-from django.conf import settings
+from whitenoise import WhiteNoise  # noqa
+from django.conf import settings  # noqa
 
 # This is a work-around because whitenoise does not support SCRIPT_NAME.
 # https://github.com/evansd/whitenoise/issues/88
