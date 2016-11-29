@@ -48,7 +48,7 @@ If you aren't working on the parser, you may want to just configure the
 application to run against the live API:
 
 ```bash
-$ echo "API_BASE = 'https://fec-prod-eregs.18f.gov/api/'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-prod-eregs.18f.gov/regulations/api/'" >> local_settings.py
 ```
 
 ### Ports
