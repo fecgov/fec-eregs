@@ -204,7 +204,7 @@ html, body, .landing-content, .search-panel {
 }
 
 .regulations-title {
-  border-bottom: 2px solid #112e51;
+  border-bottom: 2px solid $primary;
   padding-bottom: 10px;
 }
 
@@ -219,7 +219,7 @@ html, body, .landing-content, .search-panel {
 // TOC
 .panel {
   background-color: $toc-background;
-  border-right: $subhead-primary-border;
+  border-right: 1px solid $primary;
 
   &.close {
     top: $mainhead_height + $subhead_height;
@@ -267,14 +267,14 @@ html, body, .landing-content, .search-panel {
 }
 
 .drawer-header {
-  border-right: $subhead-primary-border;
+  border-right: 1px solid $primary;
 }
 
 .drawer-header .toc-type {
-  @include serif-font-regular;
+  @include sans-font-regular;
   background-color: $toc-background;
-  border-bottom: $toc-border;
-  color: $primary;
+  border-right-width: 0;
+  color: $base;
   font-weight: 700;
 }
 
@@ -286,7 +286,6 @@ html, body, .landing-content, .search-panel {
 
 .regulation-nav a:link, .regulation-nav a:visited {
   border-bottom: $toc-border;
-  color: $primary;
 }
 
 // FEC is less boxy
