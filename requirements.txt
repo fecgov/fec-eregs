@@ -22,3 +22,5 @@ whitenoise==3.0
 newrelic==2.74.0.54
 
 -e eregs_extensions/
+
+functools32==3.2.3-2
