@@ -3,6 +3,14 @@
  */
 $mainhead_small_height: 83px; // main-head height on small devices
 
+// Clearfixing the section nav at the bottom
+.section-nav {
+  &::after {
+    content: '';
+    display: table;
+  }
+}
+
 /**
  * Font mixin overrides
  *
