@@ -6,3 +6,5 @@ env:
   FEC_CMS_URL: https://fec-stage-proxy.18f.gov
   FEC_WEB_URL: https://fec-stage-proxy.18f.gov/data
   NEW_RELIC_APP_NAME: fec-stage-eregs
+services:
+    - fec-creds-stage

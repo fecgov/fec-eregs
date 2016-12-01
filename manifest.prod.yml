@@ -7,3 +7,5 @@ env:
   FEC_CMS_URL: https://beta.fec.gov
   FEC_WEB_URL: https://beta.fec.gov/data
   NEW_RELIC_APP_NAME: fec-prod-eregs
+services:
+    - fec-creds-prod
