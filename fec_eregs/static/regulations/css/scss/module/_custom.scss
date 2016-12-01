@@ -267,13 +267,12 @@ html, body, .landing-content, .search-panel {
 }
 
 .drawer-header {
-  border-right: 1px solid $primary;
+  border-right: none !important;
 }
 
 .drawer-header .toc-type {
   @include sans-font-regular;
   background-color: $toc-background;
-  border-right-width: 0;
   color: $base;
   font-weight: 700;
 }
