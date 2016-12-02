@@ -5,10 +5,20 @@ $mainhead_small_height: 83px; // main-head height on small devices
 
 // Clearfixing the section nav at the bottom
 .section-nav {
-  &::after {
+  &::before {
     content: '';
     display: table;
   }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.footer-nav {
+  margin-bottom: 20px;
 }
 
 /**
@@ -378,6 +388,8 @@ html, body, .landing-content, .search-panel {
 }
 
 div.footer-disclaimer {
+  border: 1px solid $gray-medium;
+  font-family: $sans-serif;
   margin-left: -15px;
   padding: 14px 30px 14px 30px;
 }
