@@ -389,7 +389,10 @@ html, body, .landing-content, .search-panel {
 
 div.footer-disclaimer {
   border: 1px solid $gray-medium;
-  font-family: $sans-serif;
   margin-left: -15px;
   padding: 14px 30px 14px 30px;
+
+  p {
+    font-family: $sans-serif;
+  }
 }
