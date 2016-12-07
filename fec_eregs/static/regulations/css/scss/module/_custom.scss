@@ -3,6 +3,24 @@
  */
 $mainhead_small_height: 83px; // main-head height on small devices
 
+// Clearfixing the section nav at the bottom
+.section-nav {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.footer-nav {
+  margin-bottom: 20px;
+}
+
 /**
  * Font mixin overrides
  *
@@ -193,14 +211,10 @@ html, body, .landing-content, .search-panel {
 .search-header {
   border-bottom: 2px solid $gray;
   margin-bottom: 2rem;
-  padding: .5rem;
-  font-size: 1.5rem;
-  font-family: ghandi, serif;
-  text-align: center;
 }
 
 .regulations-title {
-  border-bottom: 2px solid #112e51;
+  border-bottom: 2px solid $primary;
   padding-bottom: 10px;
 }
 
@@ -215,7 +229,7 @@ html, body, .landing-content, .search-panel {
 // TOC
 .panel {
   background-color: $toc-background;
-  border-right: $subhead-primary-border;
+  border-right: 1px solid $primary;
 
   &.close {
     top: $mainhead_height + $subhead_height;
@@ -263,14 +277,13 @@ html, body, .landing-content, .search-panel {
 }
 
 .drawer-header {
-  border-right: $subhead-primary-border;
+  border-right: none !important;
 }
 
 .drawer-header .toc-type {
-  @include serif-font-regular;
+  @include sans-font-regular;
   background-color: $toc-background;
-  border-bottom: $toc-border;
-  color: $primary;
+  color: $base;
   font-weight: 700;
 }
 
@@ -282,7 +295,6 @@ html, body, .landing-content, .search-panel {
 
 .regulation-nav a:link, .regulation-nav a:visited {
   border-bottom: $toc-border;
-  color: $primary;
 }
 
 // FEC is less boxy
@@ -376,6 +388,11 @@ html, body, .landing-content, .search-panel {
 }
 
 div.footer-disclaimer {
+  border: 1px solid $gray-medium;
   margin-left: -15px;
   padding: 14px 30px 14px 30px;
+
+  p {
+    font-family: $sans-serif;
+  }
 }
