@@ -3,7 +3,6 @@ import os
 
 from cfenv import AppEnv
 env = AppEnv()
-
 from regcore.settings.base import *
 REGCORE_APPS = tuple(INSTALLED_APPS)
 REGCORE_DATABASES = dict(DATABASES)

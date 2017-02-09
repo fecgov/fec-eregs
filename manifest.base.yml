@@ -1,15 +1,14 @@
 ---
-buildpack: python_buildpack
-command: python manage.py migrate --fake-initial && gunicorn --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
+buildpack: https://github.com/heroku/heroku-buildpack-python.git
 services:
   - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
   - fec-eregs-db
-  - fec-eregs-search-1.7.1
+  - fec-eregs-search
 env:
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
   SCRIPT_NAME: /regulations
-domain: 18f.gov
+  WEB_CONCURRENCY: 4
 applications:
   - name: eregs
     memory: 512M
