@@ -4,7 +4,7 @@ set -o errexit
 set -o pipefail
 set -x
 
-cloud_gov=https://api.cloud.gov
+cloud_gov=https://api.fr.cloud.gov
 
 app=${1}
 org=${2}
