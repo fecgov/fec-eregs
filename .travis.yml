@@ -36,18 +36,18 @@ after_deploy:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec dev manifest.dev.yml
+    script: ./bin/cf_deploy.sh eregs fec-beta-fec dev manifest.dev.yml
     on:
       branch: feature/migrate-to-govcloud
 
   - provider: script
     skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec stage manifest.stage.yml
+    script: ./bin/cf_deploy.sh eregs fec-beta-fec stage manifest.stage.yml
     on:
       branch: release/*
 
   - provider: script
     skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec prod manifest.prod.yml
+    script: ./bin/cf_deploy.sh eregs fec-beta-fec prod manifest.prod.yml
     on:
       tags: true
