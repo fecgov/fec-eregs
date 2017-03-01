@@ -4,8 +4,8 @@ python:
     - "2.7"
 env:
   global:
-    - secure: "lvp7q5QU4lewL4jOaTUU+0ddzh7b9bcJAAK4GdOu6lNvFC0t90FtrUI9fkqI9SMZAh0B3DJVfnLl4ZAS+/ZkG31BwJNz642orzkHi5v2vrQzwQyCnIszK1+L/2+oFv0Ov1w7gtwo8/Sfo9Dyn/ulDUQjCoypXau0ULDh3ysjjYBy8jSmv9xrsvJ/I7z4i2Ji9N8Rs25HS2IM+Z5J4fLM+mUuVCGXEhUVlJctFPsp8TTdxgqhOKrx9r7+BTENL5Bipeq9t/vzXUvJFXeFQGY15sMcE0FqcSm4aluC56z1ykGMRYtGRAtoSkEgQm6b8uq+1kjXoeUqZb22M05LgOJxomIUZti0mnGVUD36Yry2+h5YNcYdKotAj0/fwOJYsqCGOJZ2CTjolxdCIjkaO4ZBQUvPAD+KBWAYz3ecNrpFj/xBsdHSM8nl3vQpy60IJVQHiMfTv8IGemKL7xg5KJc0zvdc+iA++gNZ5Oi95LHbeE2UhO06baTKa3vOENA3EVRinLOFvQqYyPTIIoZtAmOV5WWaG4DJp5xmlLVSfFlnFazjKTFMe2OHS+mU43VU7y1PUMQ8yXU6wvG8zBW0gcXz6J70j82rT7SWP6XPh4dWvwz+TpWmaIcgpIzW8k5J12YtulaOiLpN/FlwviNwlkyZRXNEjU4OFHG3vzQof2VoYHQ=" # FEC_CF_USERNAME
-    - secure: "b+RQBRNu6tF6dVYKYSj84FVT7k0Q19Zw0Y1owgIiQ1x7zyVLoN3YYfqbihd6ZJDyGsT8Tdi1d+66TK8zd3zUKuUzKHuUd29bpGKdQRTgAj3KWfV5kTxbEofgeyMj08S2P9B44ntX8g0VglFPGKuCk+dfH6hI4lPQF2ZJAtOTYqrDnvuOkXK8+Lm3Jzwe10nIs+p6brHSakuXPLmi8Oaf06SFslK6OLDRwisW5A0xZF356xAf3mq96rjHevZUoL6nFyS489KQDDw9mS2MWDP4aJNmcCmZdvMFwm3Vg7+aljh9NPze+y00xV5z3FSnpDT9Mgl0lhAb/FAfZFaLcqfUUU3Nq060ArWSt5u6U4a9ho1sNN0nIfgu2Ap23Uzzr5r58zFL2FvP+L6irKKDr6GA2HW6tXtGfW3MbUn7AY7pd7tQTXqqkPhaGuYD+3uIb09Hpjb7OaKMVLZCQswXw2WHKyUCrQhfYgfB8yL+a2iRwVnE7thwHy9TylUnHFKuw9YMg3lTKE2Q5AnjOGM0uvgTHcZjcknNuuULADW/CdmI3Ru+6yKu2157Z4upc1XRQu2+mz34aZ0g8pYrbXm2THrTECDKj/7UH+Qe/PZuWbm0GC1SpPvCXmYNe/n9rBNgMUCN8aK4SUlCBT1WahAlOr9COrVJ38CxMRebPxiMIluqVE8=" # FEC_CF_PASSWORD
+    - secure: "bWqvrpIh4IBlVvckjX+7Cwg/Fh7C0NU02MgsFsgZ8Ur6kt8oHKNv0ax2rRVGopFTVZVUXlFbo+mFm5ha5x9K4uVHo4awq9pWuVR9X7TySsLiBKVDPEP0ziZ54hs0Wb/t7MdLBFaowLun63gheLtmSZZmHHHSHIRTnauEDcKBxaI=" # FEC_CF_USERNAME
+    - secure: "UQnMw00cgmpZcO1ky3YG8uZ4vweaXr+iVyzXaRceZDz1n5SegTy9bQHermrsLUlac/bAKmyHBsWgpt/Nym7JIw35E3OVEl6ttdeqAsAtyZKE+thNQsAXn81+sD31dOPdoLZbQT8MjixsxQyjGdlPJdfqFz1hd1RaOyQ2dnXTR/c=" # FEC_CF_PASSWORD
 
 before_install:
   - gem install sass
@@ -38,7 +38,7 @@ deploy:
     skip_cleanup: true
     script: ./bin/cf_deploy.sh eregs fec dev manifest.dev.yml
     on:
-      branch: develop
+      branch: feature/migrate-to-govcloud
 
   - provider: script
     skip_cleanup: true
