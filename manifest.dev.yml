@@ -2,6 +2,6 @@
 inherit: manifest.base.yml
 host: fec-dev-eregs
 env:
-  FEC_API_URL: https://fec-dev-api.18f.gov
+  FEC_API_URL: https://fec-dev-api.app.cloud.gov
   FEC_CMS_URL: https://fec-dev-proxy.app.cloud.gov
   FEC_WEB_URL: https://fec-dev-proxy.app.cloud.gov/data
