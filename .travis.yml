@@ -25,7 +25,7 @@ script:
 before_deploy:
   - mkdir $HOME/bin
   - export PATH=$HOME/bin:$PATH
-  - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.15.0" | tar xzv -C $HOME/bin
+  - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
   - travis_retry cf install-plugin autopilot -f -r CF-Community
 
 # Simple smoke tests
