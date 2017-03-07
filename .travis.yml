@@ -1,53 +1,35 @@
 language: python
 sudo: false
 python:
-    - "2.7"
+- '2.7'
 env:
   global:
-    - secure: "hY0dvm0MneBKDrYrkQhpjIeLCM0khI9CbgcwaSworBf0ATw94e74Hy6kNJhH/x4BsxDiN307X6dtqBh6npdkATy4mwcDevPLaEC9HrXzTSOPWzMRDoTBtxuiQdICSvEbwr0TfaCOp//1dSaMZNg4c3sMRBDfkFJcJYQNrsS2HmvND6xlcyT4o5WlgPKoTWcgptbNhZHCw+M7p/p3shyfaaktg11F00Y3vjMnHaY3OPAU/ugkFHrxvMrZ3sRefyFRVS2VlCoOhljlU4dEvCBnS3lpaS/sGEnZ8NVLSfTtfqgKDf5suaT46MRAJPOS05zyUyUhdTa4BWaD+oVrpnH7h5UHCvVq2LQKHCBPwC/7nWUiTHjn1hLn0N7mfmtn6FZiyvO6vvFr1qJfHDw8bRHDcxokMHwTI6KCg9wrxU2r3i9wloROSn3Yl5cEzmJr8MDRPDk1zmAif/Hi+SX4zwJ1vy/1X02ZRbmm1ZGrrz41BFS/QhjY38lNLTyxghAIqqE2wd/KOruTsiShXFAq0dnCVaH+dXRL8GOdIBygylxAveMy+t/3L7SlGR8kz3F0phPghCEWbRhp3DNVbLirFdHgIirfsHXP4wUEcyjiDHskS9UmPE0Mh5AvFJGnSAhMXWXViydY4hsjsCTFGjtnpDuqxCGUbuAfnw3MeSyVXzt87SE=" # FEC_CF_USERNAME
-    - secure: "itpmzeRUeXaHoqS8NAWmUaa5PkOR+nH5pqRBSYjc8eR4f3e3vmsXRf6qngZ/RBgvmAdUAXh3w0eJbHcbl7tMQvx7fYp7EIKsjyZi+xLWTTdyu9BRmx71hER+w69TJqQSdGiT8X8m6CtzrC90HJdrSQJ1ieWQUP5mRAbb2JAZa/hjChe+cWLfmXzaSZX9tlV4BM2pIJGvFwVsbMSF95feCgglZCdhgsj/LSkMnRUG+cu1TAPXsV3CFrcDqPF4yFROH6ks2MgBtUv/DrIozn5B0hn1rbf989aEm+26CBufUSwKQebilyKM2xlmLEX2jxGcnxff+GDKkMm/S1dtcsMIXOaqdzIwwIGkzoQ+/pf1H+qhxeDhy7PZgvB6CpYbSyIqRoe8kCAaFInZ2Dz4h3UJVMmfqUpQbQ/pQiPD0iyNjF1SmxVmV4JOT3bEMJ8Xt7/SapHzDk7qDc7caVZgz9JnKxwy9yMgBxymXWikQQG04GgPILFdzkNiVVCjmUGaTUSdkHpEBdMM5UqjojghOPge4ntUABPRti5UjrRxMOrwmHeKbu7tjKY4cFIT1K7B8DIfSGi/yInKBZ+b+oM6J90GErqgMI0PQUdJQhv5Hd1WfiwTvgDgoiNGQivO0ar0PpE0ij3d+URYP5g3qhPahgiAo/WzE+6o1XZiehM2+gtgRfk=" # FEC_CF_PASSWORD
-
+  - secure: pHeGCExOTKb3DCoIvysMpFGFzZHneHh2W/4fanEfZlnRd2Nz/WdGVpCXiod2Il0CGU5gZBP2UWufoZgJvfr4QNJMkzDZV/BgVs79vg99c1uhEl2jEGVNn8mLe0Qdz0J3/DX0Sp2cHJpZuhR83OAWPkVSoLwf/jDtm7KwkHgvjO8CBKpF2otQn0nR/QhaWBRSGacfToPNC0eATby5Rq6hmWSI4rO0qBTwGfS9M9BHrk3H2Rj9TsMUh5kej0iI+J0MaicaZ9D4Gd449jhsr9TmNhOfoKs5U2ixZtNCXDlAZI8UGqDL9+XRu+GPuCAQt2dL66F1ll3lh+nGTQF5n8zTLKkvUKQVPwd90Yku0vGpWLPoHpsbFvpPWfBd+EeFSGH09B8LQbYm3o4Hru8sFCrSuSx8sEYE+vL5s3WkLCCEq5dIViWzlEPOb6WMNCboOlAyVlhwCYunFVhR1CcbP6GTXgRsFbwHW+zrfFYjt2KuZl3+hYuXVwe2qbs+xvOszfhV60uC1l7zh+amPcRagerq6V1gGxQCEK3DhzVvzCpD0qnl228fpNpqw+t+BwizKMcs0EATB37MqsKAYk6IJEdXFbwq58bTXjifRgHJUAbrZuZ+XE40/LWybCnj7AbzjNq6zToY7lxJbNoFjYfAmQGSK8UChKVWu6+iCWRbwcMEIwM=
+  - secure: Dq4GZ5XmrQGaUeforGQFz0UJVGYNC2y9HO/JwLaArbDCjSxzMzbys5op9fty5ilO7/ZV5RxVEwgGvzZ63b+INHK1ImIMfKG9GwmDyOC98IWhh009QbEF4U24MEx7/P0DHpCLPWLsv5SNOCsYLZNkuvL3pcASH78krOA1rbXg1uUJ21ggoZBaKsbh12oxR0iDZG0qUcl1nDcMNwFPg6X+tHKqU1HCD0dQvD54BTk07Te7nzuPmfEZTfnGj9WFpUqw/6FYTf8FxdJFL7mRzMYlegWOqVStgLD9T6hgtG4QDtiTuD9wtE4tBfMgvSnVFOsIxFBrrlYBg6+hRwXiEqupky3NxZWgqeNvhwZATCzblLhM5+T2QLCbt5J0nCbCTvFhbIi0HrFe4lY5MzIuCOsYwdl9d+XfEXrCxWMieG1sdrCsytl9wZNTnx4GmEVKB0e7ZvTMIdLjLyulYsST4CUHJwkoas74PIedA0fnt26nbQ8wwU6ejsz/eoRFB3Q7q6QX7uHLqzsz8fdiGQT0+w+j7v8xMLFyBPg/DeKt0sfHmAYqe2bFWj0koMzU4XKG2QhYJvLluYydUb7aWmQhI4+8ZHtTjyRU5Js7k16sSomql4DodnCg5Zw9nNXG8LnLjCx1hoVSWX23SUXb6IsooKEBcnJmoxzi4vEQbSp7SUggAXA=
 before_install:
-  - gem install sass
-
+- gem install sass
 install:
-    - pip install -r requirements.txt
-    - pip install -r requirements_test.txt
-    - pip install -r requirements_dev.txt
-    - npm install -g grunt-cli bower
-    - npm install
+- pip install -r requirements.txt
+- pip install -r requirements_test.txt
+- pip install -r requirements_dev.txt
+- npm install -g grunt-cli bower
+- npm install
 script:
-    - npm run build
-    - python manage.py migrate --fake-initial
-    - python manage.py compile_frontend
-    - python manage.py test
-
+- npm run build
+- python manage.py migrate --fake-initial
+- python manage.py compile_frontend
+- python manage.py test
 before_deploy:
-  - mkdir $HOME/bin
-  - export PATH=$HOME/bin:$PATH
-  - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
-  - travis_retry cf install-plugin autopilot -f -r CF-Community
-
-# Simple smoke tests
+- mkdir $HOME/bin
+- export PATH=$HOME/bin:$PATH
+- travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
+- travis_retry cf install-plugin autopilot -f -r CF-Community
 after_deploy:
-  - curl --silent --fail --head https://fec-dev-eregs.18f.gov/regulations || travis_terminate $?
-  - curl --silent --fail --get https://fec-dev-eregs.18f.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
-
+- curl --silent --fail --head https://fec-dev-eregs.18f.gov/regulations || travis_terminate $?
+- curl --silent --fail --get https://fec-dev-eregs.18f.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec-beta-fec dev manifest.dev.yml
-    on:
-      branch: feature/migrate-to-govcloud
-
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec-beta-fec stage manifest.stage.yml
-    on:
-      branch: release/*
-
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec-beta-fec prod manifest.prod.yml
-    on:
-      tags: true
+  provider: script
+  skip_cleanup: true
+  script: invoke deploy --branch $TRAVIS_BRANCH --login True --yes
+  on:
+    all_branches: true

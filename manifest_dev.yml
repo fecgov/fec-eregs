@@ -1,5 +1,5 @@
 ---
-inherit: manifest.base.yml
+inherit: manifest_base.yml
 host: fec-dev-eregs
 env:
   FEC_API_URL: https://fec-dev-api.app.cloud.gov
