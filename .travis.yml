@@ -29,8 +29,8 @@ before_deploy:
 - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
 - travis_retry cf install-plugin autopilot -f -r CF-Community
 after_deploy:
-- curl --silent --fail --head https://fec-dev-eregs.18f.gov/regulations || travis_terminate $?
-- curl --silent --fail --get https://fec-dev-eregs.18f.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
+- curl --silent --fail --head https://fec-dev-eregs.app.cloud.gov/regulations || travis_terminate $?
+- curl --silent --fail --get https://fec-dev-eregs.app.cloud.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
 deploy:
   provider: script
   skip_cleanup: true

@@ -6,6 +6,7 @@ services:
   - fec-eregs-db
   - fec-eregs-search
 env:
+  NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
   SCRIPT_NAME: /regulations
