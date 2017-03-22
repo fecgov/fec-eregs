@@ -1,5 +1,5 @@
 ---
-inherit: manifest.base.yml
+inherit: manifest_base.yml
 host: fec-prod-eregs
 instances: 2
 env:

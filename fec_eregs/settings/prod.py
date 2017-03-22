@@ -32,7 +32,7 @@ vcap_app = json.loads(os.environ.get('VCAP_APPLICATION', '{}'))
 ALLOWED_HOSTS = ['localhost'] + vcap_app.get('application_uris', [])
 
 vcap_services = json.loads(os.environ.get('VCAP_SERVICES', '{}'))
-es_config = vcap_services.get('elasticsearch-swarm-1.7.1', [])
+es_config = vcap_services.get('elasticsearch24')
 if es_config:
     HAYSTACK_CONNECTIONS['default'] = {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',

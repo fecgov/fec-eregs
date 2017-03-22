@@ -20,5 +20,7 @@ pyelasticsearch==1.4
 psycopg2==2.6.1
 whitenoise==3.0
 newrelic==2.74.0.54
+invoke==0.13.0
+GitPython==2.1.1
 
 -e eregs_extensions/
