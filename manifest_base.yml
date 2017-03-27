@@ -1,11 +1,12 @@
 ---
-buildpack: https://github.com/cloudfoundry/python-buildpack#develop
+buildpack: https://github.com/cloudfoundry/python-buildpack
 command: python manage.py migrate --fake-initial && gunicorn --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
 services:
   - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
   - fec-eregs-db
   - fec-eregs-search
 env:
+  NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
   SCRIPT_NAME: /regulations
