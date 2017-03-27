@@ -24,6 +24,10 @@ script:
 - python manage.py compile_frontend
 - python manage.py test
 before_deploy:
+- travis_retry pip install bandit
+- cd ..
+- bandit -r fec-eregs
+- cd fec-eregs
 - mkdir $HOME/bin
 - export PATH=$HOME/bin:$PATH
 - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
