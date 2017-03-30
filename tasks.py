@@ -50,7 +50,7 @@ def _detect_space(repo, branch=None, yes=False):
         return None
     print('Detected space {space}'.format(**locals()))
     if not yes:
-        run = input(
+        run = input(  # nosec
             'Deploy to space {space} (enter "yes" to deploy)? > '.format(**locals())
         )
         if run.lower() not in ['y', 'yes']:
