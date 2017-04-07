@@ -1,53 +1,43 @@
 language: python
 sudo: false
 python:
-    - "2.7"
+- '2.7'
 env:
   global:
-    - secure: "lvp7q5QU4lewL4jOaTUU+0ddzh7b9bcJAAK4GdOu6lNvFC0t90FtrUI9fkqI9SMZAh0B3DJVfnLl4ZAS+/ZkG31BwJNz642orzkHi5v2vrQzwQyCnIszK1+L/2+oFv0Ov1w7gtwo8/Sfo9Dyn/ulDUQjCoypXau0ULDh3ysjjYBy8jSmv9xrsvJ/I7z4i2Ji9N8Rs25HS2IM+Z5J4fLM+mUuVCGXEhUVlJctFPsp8TTdxgqhOKrx9r7+BTENL5Bipeq9t/vzXUvJFXeFQGY15sMcE0FqcSm4aluC56z1ykGMRYtGRAtoSkEgQm6b8uq+1kjXoeUqZb22M05LgOJxomIUZti0mnGVUD36Yry2+h5YNcYdKotAj0/fwOJYsqCGOJZ2CTjolxdCIjkaO4ZBQUvPAD+KBWAYz3ecNrpFj/xBsdHSM8nl3vQpy60IJVQHiMfTv8IGemKL7xg5KJc0zvdc+iA++gNZ5Oi95LHbeE2UhO06baTKa3vOENA3EVRinLOFvQqYyPTIIoZtAmOV5WWaG4DJp5xmlLVSfFlnFazjKTFMe2OHS+mU43VU7y1PUMQ8yXU6wvG8zBW0gcXz6J70j82rT7SWP6XPh4dWvwz+TpWmaIcgpIzW8k5J12YtulaOiLpN/FlwviNwlkyZRXNEjU4OFHG3vzQof2VoYHQ=" # FEC_CF_USERNAME
-    - secure: "b+RQBRNu6tF6dVYKYSj84FVT7k0Q19Zw0Y1owgIiQ1x7zyVLoN3YYfqbihd6ZJDyGsT8Tdi1d+66TK8zd3zUKuUzKHuUd29bpGKdQRTgAj3KWfV5kTxbEofgeyMj08S2P9B44ntX8g0VglFPGKuCk+dfH6hI4lPQF2ZJAtOTYqrDnvuOkXK8+Lm3Jzwe10nIs+p6brHSakuXPLmi8Oaf06SFslK6OLDRwisW5A0xZF356xAf3mq96rjHevZUoL6nFyS489KQDDw9mS2MWDP4aJNmcCmZdvMFwm3Vg7+aljh9NPze+y00xV5z3FSnpDT9Mgl0lhAb/FAfZFaLcqfUUU3Nq060ArWSt5u6U4a9ho1sNN0nIfgu2Ap23Uzzr5r58zFL2FvP+L6irKKDr6GA2HW6tXtGfW3MbUn7AY7pd7tQTXqqkPhaGuYD+3uIb09Hpjb7OaKMVLZCQswXw2WHKyUCrQhfYgfB8yL+a2iRwVnE7thwHy9TylUnHFKuw9YMg3lTKE2Q5AnjOGM0uvgTHcZjcknNuuULADW/CdmI3Ru+6yKu2157Z4upc1XRQu2+mz34aZ0g8pYrbXm2THrTECDKj/7UH+Qe/PZuWbm0GC1SpPvCXmYNe/n9rBNgMUCN8aK4SUlCBT1WahAlOr9COrVJ38CxMRebPxiMIluqVE8=" # FEC_CF_PASSWORD
-
+  - secure: pHeGCExOTKb3DCoIvysMpFGFzZHneHh2W/4fanEfZlnRd2Nz/WdGVpCXiod2Il0CGU5gZBP2UWufoZgJvfr4QNJMkzDZV/BgVs79vg99c1uhEl2jEGVNn8mLe0Qdz0J3/DX0Sp2cHJpZuhR83OAWPkVSoLwf/jDtm7KwkHgvjO8CBKpF2otQn0nR/QhaWBRSGacfToPNC0eATby5Rq6hmWSI4rO0qBTwGfS9M9BHrk3H2Rj9TsMUh5kej0iI+J0MaicaZ9D4Gd449jhsr9TmNhOfoKs5U2ixZtNCXDlAZI8UGqDL9+XRu+GPuCAQt2dL66F1ll3lh+nGTQF5n8zTLKkvUKQVPwd90Yku0vGpWLPoHpsbFvpPWfBd+EeFSGH09B8LQbYm3o4Hru8sFCrSuSx8sEYE+vL5s3WkLCCEq5dIViWzlEPOb6WMNCboOlAyVlhwCYunFVhR1CcbP6GTXgRsFbwHW+zrfFYjt2KuZl3+hYuXVwe2qbs+xvOszfhV60uC1l7zh+amPcRagerq6V1gGxQCEK3DhzVvzCpD0qnl228fpNpqw+t+BwizKMcs0EATB37MqsKAYk6IJEdXFbwq58bTXjifRgHJUAbrZuZ+XE40/LWybCnj7AbzjNq6zToY7lxJbNoFjYfAmQGSK8UChKVWu6+iCWRbwcMEIwM=
+  - secure: Dq4GZ5XmrQGaUeforGQFz0UJVGYNC2y9HO/JwLaArbDCjSxzMzbys5op9fty5ilO7/ZV5RxVEwgGvzZ63b+INHK1ImIMfKG9GwmDyOC98IWhh009QbEF4U24MEx7/P0DHpCLPWLsv5SNOCsYLZNkuvL3pcASH78krOA1rbXg1uUJ21ggoZBaKsbh12oxR0iDZG0qUcl1nDcMNwFPg6X+tHKqU1HCD0dQvD54BTk07Te7nzuPmfEZTfnGj9WFpUqw/6FYTf8FxdJFL7mRzMYlegWOqVStgLD9T6hgtG4QDtiTuD9wtE4tBfMgvSnVFOsIxFBrrlYBg6+hRwXiEqupky3NxZWgqeNvhwZATCzblLhM5+T2QLCbt5J0nCbCTvFhbIi0HrFe4lY5MzIuCOsYwdl9d+XfEXrCxWMieG1sdrCsytl9wZNTnx4GmEVKB0e7ZvTMIdLjLyulYsST4CUHJwkoas74PIedA0fnt26nbQ8wwU6ejsz/eoRFB3Q7q6QX7uHLqzsz8fdiGQT0+w+j7v8xMLFyBPg/DeKt0sfHmAYqe2bFWj0koMzU4XKG2QhYJvLluYydUb7aWmQhI4+8ZHtTjyRU5Js7k16sSomql4DodnCg5Zw9nNXG8LnLjCx1hoVSWX23SUXb6IsooKEBcnJmoxzi4vEQbSp7SUggAXA=
+  - secure: BUm/CFQjB8gJxE4BJ3QVFfJ7NF7PG+REajGCikruo/SwreQWx5lQNL6qN7/bj0FzlU5gyg79oph3BHPFKKgZwXQlQYqsPGyY5NSj9VLZUX9yb/D4oBJcCYLAp3Fa6QvyYAMJUkBPfIawLZ+LHncCiJRID+jhfNMviH0X2R3ZYHHwsE8FFWTvsosYiho47inMZye2SdMxBCli0lqJeUInFFNS2QWmoF4fdWJ4TwNoWHw12LmeO6WoQMy6e/LHqEwD2BaAmokn+aXjqfC+p74nJv5t8dQGbQGc75MjP8i/4GvoJ6Ig9yTtEuYeeDH9vbKpzPHYoJqNVuSJFM2PWQOF764+6yTsTSSyEYkDqngbSC/s+oDAN8lyDpNOjm01EWkkkV9sXsCZV2FvvqSdxNpK5cbDpl5yS+pEWXoFGLsCBGRSSR9OMC2YiCrrz2wTSiziYuGNtPxNn0kJI/JYfMLEZiTGGpT8rRzP/DR2XxP3gy8DKBOOT2xSycAq7jEcMfbxPzIjoXt77nZUeSLu4YiRhsSZOtV/LjpM6J7QqRXch0WUpRxdQO3tFhR5OqxfzSSbvxHSIVjFgM1P0kj8NSMWt2gd3RlyUS0PK5rYs5UsEqPJW1ghyipOMtrAC+7xmDqRsgdBrOb3bFAUq5qeM2XQtZ98MtnQ9jBP0I+9NMF0Tis= # user name stage
+  - secure: Kry+ITgVQKOisV8is2zIp6zjNMwwGf1g2cB0nlo37kBTh2TXFcvSbd0lS37IWoOucnaQW4/u3Ylaq7c5hiGgE+8CfjGeMVtfNQW88v+3Y3Fuj44auPRBFuEHn7jRmqjyhJjPACHk2zNI6tKP1CTdQFGUITbMwz9qv22ijckADlNUpk0c796vuhAybfqQXsoeFQ4kiYGCFwxpgrMI8HDyLFDv2Pl4XNwEe/G25VLHzUcUyxpPtYNA2/jXkZfHKgg52CfLrbPeYEzv77tJoQm1Cto3QbeEyM0um1HsovNuOC9Og3yKpRq+Y3dsU8Wf84jiDmR0f4vsNoo0VVRMzKlPVp6INtfgRRDkymNcglQ+6Aj42gMNnoZkLrbL6ixZxY0tCHfo+tKFltuaA8cgPJmjwEjLPtlOC1sNHPZeaarAuuJugRrZ91WWVbiQkIr3ZSCUMF+MNGALiB14aZ5kqmTgb+cCzfbLTmR55UzCtgosa6qgdKSZ31RLGg3UpZab37omWE1VaZt4uwWh5vqCkgGADBK022TqxdobDN1wwDZsHAgpbFyhah3MebkOI9vv2fNL2Pa06viunJZ1Cw140OrloXhXP/9uEIx7ozOaRb2gkSUK4G4vkPwQa/iHlHn0DZzw/AhRxiv5wHn3MJLtKYeneZUKYZ8WC2bsI19aUmNobaI= # password stage
+  - secure: BIqLQBY+4yIGHq6Qmp9LAzQr5jDCVBMaiatlzxUvfcHShpRWqWZ0BN6IkMesqafjLyu5SzNxNGXmVz6IGKDMxLCtI350fwrjSgOJzJW4llaSeHT12XklE7KjtFO2zZzhFknzRcjhjTFk/dy8C65NKNfc0OK2xTnLAFs1On62Q8u9L2gpofCicpQ7yenIAFpw9gxaSU6WrzMdNR8lcQI/9F1ao5trY4MIt5GscBibDe+2FXaFautS4Y2eIxqSHjV+Eb2PldaiENnnorDS0kj8xN4icnrgU9X4wf16L3x48F5O4Vdpmr0Iv3R/oMXF/pV+yoi00ouCboWrUcgdPg7qeqNp/vZo/Ew43ifN3RD+mdZ/3L12ItDLksE6DB1ElWbFopz+wSbU7g1i+592hViXyx+Fb6lUvXceqjwOzQsBQn/1auhhlOSpJ1VQ47vvWsV/N8eJyjW0LqB/LeVtxgF3G7QrYYGl0wa3rQnAio2rg3c08cBeSTe0XI5EYOk2v1YkisCI/z3gRGCtK6RSh86CJGv4mgv2xYWjwfoZM/kIDn1I3xvFuZ0jGDhPu7P0o/t5oZb7End4k9expu3zSDbu02zu+Mq7uE6vH6N0YZY8nC0yJIFt5ge0Z0ojEMo0YKrHvnIiLWU9oYTaeo0Md+ZYAivWnRAiDBY1i8JzFLnEhuw= # dev username
+  - secure: RMZnD7ktcxq0TSOanEr9Q6yTlCj+f38EgPgxxYL6+tSP5PxupaacvTOxLfe0ktn8MuGAA/+WRvSFy5tGeUiJ5Y2UoT6JEGuhlCI1ax9xxTE+r26GLQJml0xvebGh3jqXIkLmRELyY/u9jS6EmjFoWCk9YGkWrBj20qhf+lK0HQWoWCn/o/hJC2CdaY0e3ImzVmQAkgOlynVdii8souTRSusB3tdKcyQCMsl2lYw2kNZ2kaxdYCCYXNh/osiSUGVgXWplfXepO//l6j0IxGYSKEJWz9igWpxfYpdIMI6RLZVmwxtHCBZ/V65i6CPhc5FbmIVfbQIDUItFDGYhcxUL+JPyYAgKtrhu2xMvxdKZ95tz5Nogh83qy3iogO8JTaqRw2eCK5MbTAJ7/hLjR6fWU/aJTcLq6fbm+eeUNGW8KN4VYkc7yI2DuAtXsHLTGd12pYsnPCDpb+myLapPKJhlbcm0Qg2K2XN7sKYGX/MUPSgHlyK19W+kxGoa4+1kCoHqkfy7aLMwBTy+YqsWaq6v+ZmmqwJYo03VCW6dPvS9+/Qi++pRDi97WLhyUwHVKH8KCJRDPPSezmPBtCK2+cC8531NffXGAbOUH7dD5q0OMF1yolYrLeaKUqGR2urqjAOKhmCmfHVB8AdRs5veEsjgDN0cJ9w9qI15akIKpwAyEtc= # dev password
 before_install:
-  - gem install sass
-
+- gem install sass
 install:
-    - pip install -r requirements.txt
-    - pip install -r requirements_test.txt
-    - pip install -r requirements_dev.txt
-    - npm install -g grunt-cli bower
-    - npm install
+- pip install -r requirements.txt
+- pip install -r requirements_test.txt
+- pip install -r requirements_dev.txt
+- npm install -g grunt-cli bower
+- npm install
 script:
-    - npm run build
-    - python manage.py migrate --fake-initial
-    - python manage.py compile_frontend
-    - python manage.py test
-
+- npm run build
+- python manage.py migrate --fake-initial
+- python manage.py compile_frontend
+- python manage.py test
 before_deploy:
-  - mkdir $HOME/bin
-  - export PATH=$HOME/bin:$PATH
-  - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.15.0" | tar xzv -C $HOME/bin
-  - travis_retry cf install-plugin autopilot -f -r CF-Community
-
-# Simple smoke tests
+- travis_retry pip install bandit
+- cd ..
+- bandit -r fec-eregs/fec_eregs "fec_eregs/*.py"
+- cd fec-eregs
+- mkdir $HOME/bin
+- export PATH=$HOME/bin:$PATH
+- travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.25.0" | tar xzv -C $HOME/bin
+- travis_retry cf install-plugin autopilot -f -r CF-Community
 after_deploy:
-  - curl --silent --fail --head https://fec-dev-eregs.18f.gov/regulations || travis_terminate $?
-  - curl --silent --fail --get https://fec-dev-eregs.18f.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
-
+- curl --silent --fail --head https://fec-dev-eregs.app.cloud.gov/regulations || travis_terminate $?
+- curl --silent --fail --get https://fec-dev-eregs.app.cloud.gov/regulations/api/regulation/2 > /dev/null || travis_terminate $?
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec dev manifest.dev.yml
-    on:
-      branch: develop
-
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec stage manifest.stage.yml
-    on:
-      branch: release/*
-
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/cf_deploy.sh eregs fec prod manifest.prod.yml
-    on:
-      tags: true
+  provider: script
+  skip_cleanup: true
+  script: invoke deploy --branch $TRAVIS_BRANCH --login True --yes
+  on:
+    all_branches: true

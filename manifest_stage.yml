@@ -1,7 +1,10 @@
 ---
-inherit: manifest.base.yml
+inherit: manifest_base.yml
 host: fec-stage-eregs
 env:
   FEC_API_URL: https://fec-stage-api.18f.gov
   FEC_CMS_URL: https://fec-stage-proxy.18f.gov
   FEC_WEB_URL: https://fec-stage-proxy.18f.gov/data
+  NEW_RELIC_APP_NAME: fec-stage-eregs
+services:
+    - fec-creds-stage
