@@ -10,7 +10,6 @@
   <div class="masthead">
     <a href="{{ FEC_CMS_URL }}/" title="Home" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
     <ul class="utility-nav list--flat">
-      <li class="utility-nav__item"><a href="{{ FEC_CMS_URL }}/about/">About</a></li>
       <li class="utility-nav__item"><a href="{{ FEC_CMS_URL }}/calendar/">Calendar</a></li>
       <li class="utility-nav__item is-disabled"><span class="js-glossary-toggle glossary__toggle">Glossary</span></li>
     </ul>
@@ -20,12 +19,12 @@
       <ul class="site-nav__panel site-nav__panel--main">
         <li><h2 class="site-nav__title u-under-lg-only">Menu</h2></li>
         <li class="site-nav__item u-under-lg-only">
-          <a class="site-nav__link" href="{{ cms_url }}" rel="home">
+          <a class="site-nav__link" href="{{ FEC_CMS_URL }}" rel="home">
             <span class="site-nav__link__title">Home</span>
           </a>
         </li>
         <li class="site-nav__item" data-submenu="data">
-          <a href="{{ FEC_WEB_URL }}" class="site-nav__link {% if parent == 'data' %}is-parent{% endif %}">
+          <a href="{{ FEC_WEB_URL }}" class="site-nav__link">
             <span class="site-nav__link__title">Campaign finance data</span>
           </a>
         </li>
@@ -35,7 +34,7 @@
           </a>
         </li>
         <li class="site-nav__item" data-submenu="legal">
-          <a href="{{ FEC_CMS_URL }}/legal-resources" class="site-nav__link {% if parent == 'legal' %}is-parent{% endif %}">
+          <a href="{{ FEC_CMS_URL }}/legal-resources" class="site-nav__link is-parent">
             <span class="site-nav__link__title">Legal resources</span>
           </a>
         </li>
@@ -44,7 +43,7 @@
         </li>
       </ul>
     </div>
-    <button for="nav-toggle" class="js-nav-toggle site-nav__button" aria-controls="nav-main">Menu</button>
+    <button for="nav-toggle" class="js-nav-toggle site-nav__button" aria-controls="site-menu">Menu</button>
     <a title="Home" href="{{ FEC_CMS_URL }}" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
   </nav>
   <div class="page-header page-header--primary">
