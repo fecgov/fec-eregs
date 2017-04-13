@@ -45,7 +45,6 @@ $x-large-screen: 1100px;
 @import 'components/form-styles';
 @import 'components/icon-headings';
 @import 'components/list-styles';
-@import 'components/mega-menu';
 @import 'components/page-headers';
 @import 'components/search-bar';
 
@@ -54,6 +53,7 @@ $x-large-screen: 1100px;
 @import 'modules/glossary';
 
 @import 'headings';
+@import 'mega-menu';
 @import 'components';
 
 @import 'layout/layout';
