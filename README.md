@@ -1,3 +1,5 @@
+[![Dependency Status](https://gemnasium.com/badges/github.com/18F/fec-eregs.svg)](https://gemnasium.com/github.com/18F/fec-eregs)
+
 [![Build
 Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-ci.org/18F/fec-eregs)
 
