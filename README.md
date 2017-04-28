@@ -22,7 +22,7 @@ Use pip and npm to download the required libraries:
 ```bash
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
-$ npm install 
+$ npm install
 $ npm install -g grunt-cli bower
 ```
 
