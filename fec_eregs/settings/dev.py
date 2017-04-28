@@ -4,6 +4,10 @@ import os
 DEBUG = True
 INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
 
+MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
 # Analytics settings
 
 CACHES['default']['BACKEND'] = 'django.core.cache.backends.dummy.DummyCache'
