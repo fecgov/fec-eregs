@@ -25,3 +25,5 @@ GitPython==2.1.1
 bandit==1.4.0
 
 -e eregs_extensions/
+
+functools32==3.2.3-2
