@@ -2,4 +2,6 @@ django-debug-toolbar==1.9.1
 
 # regulations-parser (for loading regs)
 requests[security]
+ipdb==0.10.3
+ipython>=6.0,<7.0
 -e git+https://github.com/18F/regulations-parser.git@4.3.0#egg=regulations_parser
