@@ -45,7 +45,7 @@ It's also important to keep in mind that the `compile_frontend` management comma
 ### Loading FEC's regulations
 
 You will need access to FEC's org in cloud.gov for this.
-Make sure you have run `pip install -r requirements_dev.txt`.
+Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
 
 In the environment you with to update regulations, first run:
 ```bash
@@ -65,17 +65,21 @@ load_regs/fec_reg_parts.txt.
 If you are loading regs for a new year, you will need to reset the database. To do that, run:
 ```bash
 $ cf unbind-service eregs fec-eregs-db
+$ cf service-keys fec-eregs-db
+$ cf delete-service-key fec-eregs-db [name of service key from previous]
 $ cf delete-service fec-eregs-db
 $ cf create-service aws-rds shared-psql fec-eregs-db
+$ cf bind-service eregs fec-eregs-db
 $ cf restage eregs
 ```
 
 Now you can load the regs with:
 
 ```bash
-$ python load_regs/load_fec_regs.py dev $HTTP_AUTH_USER $HTTP_AUTH_PASSWORD
+$ python load_regs/load_fec_regs.py [env] $HTTP_AUTH_USER $HTTP_AUTH_PASSWORD
 ```
-This process is pretty verbose in terms of console output, and takes about 10 minutes.
+Where [env] is dev, stage or prod, depending on your current target environment in cloud foundry.
+This process is pretty verbose in terms of console output, and takes about 10-20 minutes.
 Once completed, you will need to reindex the new regulations in elasticsearch so that they
 are available through the search engine. Do that with:
 

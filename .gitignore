@@ -66,3 +66,5 @@ compiled/
 node_modules/
 */static/**/*.css
 fec_eregs/static/fec_eregs/js/*.bundle.js
+fec_eregs/static/fec_eregs/fonts/
+.eregs_index
