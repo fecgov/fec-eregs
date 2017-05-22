@@ -22,7 +22,7 @@ Use pip and npm to download the required libraries:
 ```bash
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
-$ npm install 
+$ npm install
 $ npm install -g grunt-cli bower
 ```
 
@@ -50,7 +50,7 @@ If you aren't working on the parser, you may want to just configure the
 application to run against the live API:
 
 ```bash
-$ echo "API_BASE = 'https://fec-prod-eregs.18f.gov/regulations/api/'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api'" >> local_settings.py
 ```
 
 ### Ports
