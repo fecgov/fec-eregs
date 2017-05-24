@@ -50,7 +50,7 @@ If you aren't working on the parser, you may want to just configure the
 application to run against the live API:
 
 ```bash
-$ echo "API_BASE = 'https://fec-prod-eregs.18f.gov/regulations/api/'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api/'" >> local_settings.py
 ```
 
 ### Ports
@@ -129,9 +129,9 @@ flow](https://danielkummer.github.io/git-flow-cheatsheet/).
 
 Environment | URL                              | Proxy | Description
 ----------- | ---                              | ----- | -----------
-`dev`       | https://fec-dev-eregs.18f.gov/   | https://fec-dev-proxy.18f.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `develop`.
-`stage`     | https://fec-stage-eregs.18f.gov/ | https://fec-stage-proxy.18f.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
-`prod`      | https://fec-prod-eregs.18f.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed from any tagged commit.
+`dev`       | https://fec-dev-eregs.app.cloud.gov/   | https://fec-dev-proxy.app.cloud.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `develop`.
+`stage`     | https://fec-stage-eregs.app.cloud.gov/ | https://fec-stage-proxy.app.cloud.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
+`prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed from any tagged commit.
 
 
 ### Travis
