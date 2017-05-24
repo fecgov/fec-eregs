@@ -15,7 +15,7 @@ requests==2.8.1
 cfenv==0.5.2
 dj-database-url==0.3.0
 django-overextends==0.4.0
-gunicorn==19.6.0
+gunicorn==19.7.1
 pyelasticsearch==1.4
 psycopg2==2.6.1
 whitenoise==3.0
@@ -23,5 +23,6 @@ newrelic==2.74.0.54
 invoke==0.13.0
 GitPython==2.1.1
 bandit==1.4.0
+gevent==1.2.1
 
 -e eregs_extensions/
