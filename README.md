@@ -6,7 +6,7 @@ Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-c
 # FEC's eRegs
 
 ## Site Location
-https://beta.fec.gov/regulations
+https://www.fec.gov/regulations
 
 ## Code Status:
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Dependency Status](https://gemnasium.com/badges/github.com/18F/fec-eregs.svg)](https://gemnasium.com/github.com/18F/fec-eregs)
@@ -131,7 +131,7 @@ Environment | URL                              | Proxy | Description
 ----------- | ---                              | ----- | -----------
 `dev`       | https://fec-dev-eregs.app.cloud.gov/   | https://fec-dev-proxy.app.cloud.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `develop`.
 `stage`     | https://fec-stage-eregs.app.cloud.gov/ | https://fec-stage-proxy.app.cloud.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
-`prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed from any tagged commit.
+`prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://www.fec.gov/regulations/ | Production site, deployed from any tagged commit.
 
 
 ### Travis
