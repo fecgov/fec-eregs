@@ -9,3 +9,6 @@ env:
   NEW_RELIC_APP_NAME: fec-prod-eregs
 services:
     - fec-creds-prod
+applications:
+  - name: eregs
+    memory: 1GB
