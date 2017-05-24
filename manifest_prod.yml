@@ -4,8 +4,8 @@ host: fec-prod-eregs
 instances: 4
 env:
   FEC_API_URL: https://fec-prod-api.18f.gov
-  FEC_CMS_URL: https://beta.fec.gov
-  FEC_WEB_URL: https://beta.fec.gov/data
+  FEC_CMS_URL: ""
+  FEC_WEB_URL: "/data"
   NEW_RELIC_APP_NAME: fec-prod-eregs
 services:
     - fec-creds-prod
