@@ -35,6 +35,14 @@ $ python manage.py compile_frontend
 $ python manage.py runserver
 ```
 
+### Front End Development
+The static files are located at: `fec_eregs/static/fec_eregs/`.<br>
+Base SCSS files are copied from fec-cms (previously fec-style), but be mindful of custom stylesheets to make it work with this eregs instance.<br>
+Running `npm run build` will compile both the JS and SCSS files (generating `/static/fec_eregs/css/main.css`).<br>
+
+It's also important to keep in mind that the `compile_frontend` management command will compile the base regulations styles located at `fec_eregs/static/regulations/*`.
+
+
 ### Data
 
 If you are also working on the parser, it'd be a good idea to test your
@@ -141,7 +149,7 @@ These are the basic steps of what get runs on travis. To be sure, check the
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
-$ npm run build # builds the fec-style css
+$ npm run build
 $ python manage.py compile_frontend   # builds the frontend
 $ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```

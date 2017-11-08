@@ -1,10 +1,7 @@
-/*
- * These libraries and fonts come from fec-style
- */
 
 // Libraries
-@import 'lib/bourbon/bourbon';
-@import 'lib/neat/neat';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
 @import 'fonts';
 
 @import 'variables';
@@ -31,6 +28,7 @@ $x-large-screen: 1100px;
 @import 'mixins/utilities';
 @import 'mixins/icon-mixins';
 
+@import 'layout/layout';
 @import 'layout/slabs';
 
 // Base styling for html elements
@@ -42,18 +40,16 @@ $x-large-screen: 1100px;
 
 @import 'components/breadcrumbs';
 @import 'components/buttons';
+@import 'components/cards';
 @import 'components/form-styles';
+@import 'components/glossary';
 @import 'components/icon-headings';
 @import 'components/list-styles';
+@import 'components/nav';
 @import 'components/page-headers';
 @import 'components/search-bar';
+@import 'components/site-header';
 
-@import 'modules/site-header';
-@import 'modules/nav';
-@import 'modules/glossary';
-
-@import 'headings';
-@import 'mega-menu';
-@import 'components';
-
-@import 'layout/layout';
+@import 'custom-headings';
+@import 'custom-mega-menu';
+@import 'custom-components';
