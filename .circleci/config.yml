@@ -1,0 +1,87 @@
+# Python CircleCI 2.0 configuration file
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+      # CircleCI maintains a library of pre-built images documented at
+      # https://circleci.com/docs/2.0/circleci-images/
+      # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
+
+      # Python
+      - image: 2.7.13
+      environment:
+          TZ: America/New_York
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - fec-eregs-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "requirements-ci.txt" }}-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - fec-eregs-dependencies-
+
+      - run:
+          name: Install node dependencies
+          command: |
+            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+            echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+            nvm install 8.9.1
+            nvm use 8.9.1
+            nvm alias default 8.9.1
+            npm install
+            npm run build
+
+      - run:
+          name: Install Python dependencies
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - save_cache:
+          paths:
+            - ./venv
+            - ./node_modules
+          key: fec-eregs-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}-{{ checksum "requirements-ci.txt" }}-{{ checksum "package.json" }}
+
+      - run:
+          name: Run tests
+          command: |
+            . venv/bin/activate
+            py.test
+
+      - run:
+          name: Perform post-test checks
+          command: |
+            . venv/bin/activate
+            codecov
+
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
+
+      - run:
+          name: Install cf cli
+          command: |
+            mkdir -p $HOME/bin
+            export PATH=$HOME/bin:$PATH
+            curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.32.0" | tar xzv -C $HOME/bin
+            cf install-plugin autopilot -f -r CF-Community
+
+      - deploy:
+          name: Deploy eregs
+          command: |
+            export PATH=$HOME/bin:$PATH
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+            . venv/bin/activate
+            nvm use default
+            python manage.py compile_frontend   # builds the frontend
+            cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
