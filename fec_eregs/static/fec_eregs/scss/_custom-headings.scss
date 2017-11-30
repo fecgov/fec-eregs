@@ -59,3 +59,11 @@ h6 {
   line-height: 1.63;
   text-transform: uppercase;
 }
+
+p {
+  color: inherit;
+  font-size: u(1.6rem);
+  margin: u(0 0 2.4rem 0);
+  max-width: u(80rem);
+  width: 100%;
+}

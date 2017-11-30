@@ -4,29 +4,10 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    copy: {
-      'fec-style': {
-        files: [
-          {
-            expand: true,
-            cwd: 'node_modules/fec-style',
-            src: 'img/**',
-            dest: 'fec_eregs/static/fec_eregs/'
-          },
-          {
-            expand: true,
-            cwd: 'node_modules/fec-style',
-            src: 'fonts/**',
-            dest: 'fec_eregs/static/fec_eregs/'
-          }
-        ]
-      }
-    },
     sass: {
       options: {
         includePaths: [
-          'fec_eregs/static/fec_eregs/scss',
-          'node_modules/fec-style/scss'
+          'fec_eregs/static/fec_eregs/scss'
         ]
       },
       dist: {
@@ -37,7 +18,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build:css', ['copy:fec-style', 'sass']);
+  grunt.registerTask('build:css', ['sass']);
   grunt.registerTask('build', ['build:css']);
 
   grunt.registerTask('default', ['build']);
