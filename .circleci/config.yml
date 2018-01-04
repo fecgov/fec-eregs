@@ -63,7 +63,10 @@ jobs:
           name: Run tests
           command: |
             source venv/bin/activate
-            py.test
+            npm run build
+            python manage.py migrate --fake-initial
+            python manage.py compile_frontend
+            python manage.py test
 
       - run:
           name: Perform post-test checks
