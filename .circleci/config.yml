@@ -64,9 +64,7 @@ jobs:
           command: |
             source venv/bin/activate
             npm run build
-            python manage.py migrate --fake-initial
             python manage.py compile_frontend
-            python manage.py test
 
       - run:
           name: Perform post-test checks
@@ -93,7 +91,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-            . venv/bin/activate
+            source venv/bin/activate
             nvm use default
             python manage.py compile_frontend   # builds the frontend
             cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
