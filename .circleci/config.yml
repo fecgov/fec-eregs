@@ -30,9 +30,14 @@ jobs:
           - fec-eregs-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements_dev.txt" }}-{{ checksum "requirements_test.txt" }}-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - fec-eregs-dependencies-
-
+      
       - run:
-          name: Install sass and node dependencies
+          name: Install Ruby and SASS
+          command: |
+            sudo apt-get update && sudo apt-get install ruby-full
+            sudo gem install sass -v 3.4.25
+      - run:
+          name: Install node dependencies
           command: |
             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
             echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
