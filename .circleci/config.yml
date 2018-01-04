@@ -47,8 +47,8 @@ jobs:
           name: Install Python dependencies
           command: |
             pip install virtualenv
-            virtualenv .venv
-            . venv/bin/activate
+            virtualenv venv
+            source venv/bin/activate
             pip install -r requirements.txt
             pip install -r requirements_test.txt
             pip install -r requirements_dev.txt
@@ -62,13 +62,13 @@ jobs:
       - run:
           name: Run tests
           command: |
-            . venv/bin/activate
+            source venv/bin/activate
             py.test
 
       - run:
           name: Perform post-test checks
           command: |
-            . venv/bin/activate
+            source venv/bin/activate
             codecov
 
       - store_artifacts:
