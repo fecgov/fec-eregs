@@ -17,7 +17,8 @@ jobs:
 
     dependencies:
       pre:
-        - sudo apt-get update; sudo apt-get install ruby-sass
+        - sudo apt-get update; sudo apt-get install ruby
+        - sudo gem install sass -v 3.4.25
 
     steps:
       - checkout
