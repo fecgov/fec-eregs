@@ -15,12 +15,12 @@ jobs:
 
     working_directory: ~/repo
 
-    steps:
-      - checkout
-
-      - dependencies:
+    dependencies:
       pre:
         - sudo apt-get update; sudo apt-get install ruby-sass
+
+    steps:
+      - checkout
 
       - restore_cache:
           keys:
