@@ -17,7 +17,7 @@ jobs:
 
     dependencies:
       pre:
-        - sudo apt-get update; sudo apt-get install ruby
+        - sudo apt-get update; sudo apt-get install ruby-full rubygems
         - sudo gem install sass -v 3.4.25
 
     steps:
@@ -33,7 +33,7 @@ jobs:
           name: Install sass and node dependencies
           command: |
             mkdir -p $HOME/bin
-            export PATH=$HOME/.gem/ruby/2.4.2/bin/sass:$PATH
+            export PATH=$HOME/bin:$PATH
             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
             echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
             export NVM_DIR="$HOME/.nvm"
