@@ -92,4 +92,4 @@ jobs:
             source venv/bin/activate
             nvm use default
             python manage.py compile_frontend   # builds the frontend
-            cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
+            invoke deploy --login True --yes
