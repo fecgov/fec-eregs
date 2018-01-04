@@ -17,9 +17,9 @@ jobs:
 
     dependencies:
       pre:
-        # sudo apt-get install ruby-full rubygems installs Ruby 2.3.1
+        # sudo apt-get install ruby-full installs Ruby 2.3.1
         # Ruby 2.3.1 is an old stable release
-        - sudo apt-get update; sudo apt-get install ruby-full rubygems
+        - sudo apt-get update; sudo apt-get install ruby-full
         - sudo gem install sass -v 3.4.25
 
     steps:
@@ -34,9 +34,6 @@ jobs:
       - run:
           name: Install sass and node dependencies
           command: |
-            mkdir -p $HOME/bin
-            export PATH=$HOME/bin:$PATH
-            export PATH=$HOME/.gem/ruby/2.3.1/bin/sass:$PATH
             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
             echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
             export NVM_DIR="$HOME/.nvm"
