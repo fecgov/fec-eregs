@@ -70,12 +70,6 @@ jobs:
             npm run build
             python manage.py compile_frontend
 
-      - run:
-          name: Perform post-test checks
-          command: |
-            source venv/bin/activate
-            codecov
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
