@@ -25,7 +25,15 @@ jobs:
           - fec-eregs-dependencies-
 
       - run:
-          name: Install sass and node dependencies
+          name: Install Ruby and SASS
+          command: |
+            sudo apt-get update && sudo apt-get install ruby-full
+            sudo gem install sass -v 3.4.25
+            export PATH="/usr/bin/ruby:$PATH"
+            export PATH="/usr/local/bin/sass:$PATH"
+
+      - run:
+          name: Install node dependencies
           command: |
             npm install -g grunt-cli bower
             npm install
@@ -53,12 +61,6 @@ jobs:
             npm run build
             python manage.py compile_frontend
 
-      - run:
-          name: Perform post-test checks
-          command: |
-            source venv/bin/activate
-            codecov
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
@@ -78,4 +80,4 @@ jobs:
             source venv/bin/activate
             npm run build
             python manage.py compile_frontend   # builds the frontend
-            cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
+            invoke deploy --login True --yes
