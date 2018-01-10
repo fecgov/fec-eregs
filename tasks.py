@@ -60,9 +60,7 @@ def _detect_space(repo, branch=None, yes=False):
 DEPLOY_RULES = (
     ('prod', _detect_prod),
     ('stage', lambda _, branch: branch.startswith('release')),
-    # Don't merge
-    # ('dev', lambda _, branch: branch == 'develop'),
-    ('dev', lambda _, branch: branch == 'feature/deploy-eregs'),
+    ('dev', lambda _, branch: branch == 'develop'),
 )
 
 
