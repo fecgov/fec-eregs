@@ -1,0 +1,83 @@
+# Python CircleCI 2.0 configuration file
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+      # CircleCI maintains a library of pre-built images documented at
+      # https://circleci.com/docs/2.0/circleci-images/
+      # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
+
+      # Python with node
+      - image: circleci/python:2.7.14-jessie-node
+        environment:
+          TZ: America/New_York
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - fec-eregs-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements_dev.txt" }}-{{ checksum "requirements_test.txt" }}-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - fec-eregs-dependencies-
+
+      - run:
+          name: Install Ruby and SASS
+          command: |
+            sudo apt-get update && sudo apt-get install ruby-full
+            sudo gem install sass -v 3.4.25
+            export PATH="/usr/bin/ruby:$PATH"
+            export PATH="/usr/local/bin/sass:$PATH"
+
+      - run:
+          name: Install node dependencies
+          command: |
+            sudo npm install -g grunt-cli bower
+            sudo npm install
+
+      - run:
+          name: Install Python dependencies
+          command: |
+            pip install virtualenv
+            virtualenv venv
+            source venv/bin/activate
+            pip install -r requirements.txt
+            pip install -r requirements_test.txt
+            pip install -r requirements_dev.txt
+
+      - save_cache:
+          paths:
+            - ./venv
+            - ./node_modules
+          key: fec-eregs-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements_dev.txt" }}-{{ checksum "requirements_test.txt" }}-{{ checksum "package.json" }}
+
+      - run:
+          name: Run tests
+          command: |
+            source venv/bin/activate
+            npm run build
+            python manage.py compile_frontend
+
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
+
+      - run:
+          name: Install cf cli
+          command: |
+            mkdir -p $HOME/bin
+            export PATH=$HOME/bin:$PATH
+            curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.34.0" | tar xzv -C $HOME/bin
+            cf install-plugin autopilot -f -r CF-Community
+
+      - deploy:
+          name: Deploy eregs
+          command: |
+            export PATH=$HOME/bin:$PATH
+            source venv/bin/activate
+            npm run build
+            python manage.py compile_frontend   # builds the frontend
+            invoke deploy --login True --yes
