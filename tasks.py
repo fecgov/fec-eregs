@@ -2,7 +2,6 @@ import os
 import json
 
 import git
-from invoke import run
 from invoke import task
 
 import cfenv
@@ -61,15 +60,15 @@ def _detect_space(repo, branch=None, yes=False):
 DEPLOY_RULES = (
     ('prod', _detect_prod),
     ('stage', lambda _, branch: branch.startswith('release')),
-    # Don't merge
-    # ('dev', lambda _, branch: branch == 'develop'),
-    ('dev', lambda _, branch: branch == 'feature/deploy-eregs'),
+    ('dev', lambda _, branch: branch == 'develop'),
 )
 
 
 @task
 def deploy(ctx, space=None, branch=None, login=None, yes=False):
-    """Deploy app to Cloud Foundry. Log in using credentials stored in
+    """Deploy app to Cloud Foundry.
+
+    Log in using credentials stored in
     `FEC_CF_USERNAME` and `FEC_CF_PASSWORD`; push to either `space` or the space
     detected from the name and tags of the current branch. Note: Must pass `space`
     or `branch` if repo is in detached HEAD mode, e.g. when running on Travis.
@@ -101,4 +100,3 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
     deployed = ctx.run('cf app eregs', echo=True, warn=True)
     cmd = 'zero-downtime-push' if deployed.ok else 'push'
     ctx.run('cf {0} eregs -f manifest_{1}.yml'.format(cmd, space), echo=True)
-

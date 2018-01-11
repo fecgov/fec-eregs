@@ -8,17 +8,12 @@ jobs:
       # https://circleci.com/docs/2.0/circleci-images/
       # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
 
-      # Python
-      - image: circleci/python:2.7.13
+      # Python with node
+      - image: circleci/python:2.7.14-jessie-node
         environment:
           TZ: America/New_York
 
     working_directory: ~/repo
-
-    dependencies:
-      pre:
-        - sudo apt-get update; sudo apt-get install ruby
-        - sudo gem install sass -v 3.4.25
 
     steps:
       - checkout
@@ -30,20 +25,18 @@ jobs:
           - fec-eregs-dependencies-
 
       - run:
-          name: Install sass and node dependencies
+          name: Install Ruby and SASS
           command: |
-            export PATH=$HOME/.gem/ruby/2.4.2/bin/sass:$PATH
-            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-            echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-            nvm install 8.9.1
-            nvm use 8.9.1
-            nvm alias default 8.9.1
-            npm install
-            npm install -g grunt-cli bower
-            npm run build
+            sudo apt-get update && sudo apt-get install ruby-full
+            sudo gem install sass -v 3.4.25
+            export PATH="/usr/bin/ruby:$PATH"
+            export PATH="/usr/local/bin/sass:$PATH"
+
+      - run:
+          name: Install node dependencies
+          command: |
+            sudo npm install -g grunt-cli bower
+            sudo npm install
 
       - run:
           name: Install Python dependencies
@@ -68,12 +61,6 @@ jobs:
             npm run build
             python manage.py compile_frontend
 
-      - run:
-          name: Perform post-test checks
-          command: |
-            source venv/bin/activate
-            codecov
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
@@ -83,17 +70,14 @@ jobs:
           command: |
             mkdir -p $HOME/bin
             export PATH=$HOME/bin:$PATH
-            curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.32.0" | tar xzv -C $HOME/bin
+            curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.34.0" | tar xzv -C $HOME/bin
             cf install-plugin autopilot -f -r CF-Community
 
       - deploy:
           name: Deploy eregs
           command: |
             export PATH=$HOME/bin:$PATH
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
             source venv/bin/activate
-            nvm use default
+            npm run build
             python manage.py compile_frontend   # builds the frontend
-            cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
+            invoke deploy --login True --yes
