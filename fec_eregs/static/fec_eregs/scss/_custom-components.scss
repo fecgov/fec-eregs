@@ -69,3 +69,11 @@ input[type="text"].combo__input {
   border: 2px solid $gray;
   text-align: left;
 }
+
+.search-panel {
+  height: 200px;
+
+  @include media($med) {
+    height: 100%;
+  }
+}

@@ -35,6 +35,14 @@ $ python manage.py compile_frontend
 $ python manage.py runserver
 ```
 
+### Front End Development
+The static files are located at: `fec_eregs/static/fec_eregs/`.<br>
+Base SCSS files are copied from fec-cms (previously fec-style), but be mindful of custom stylesheets to make it work with this eregs instance.<br>
+Running `npm run build` will compile both the JS and SCSS files (generating `/static/fec_eregs/css/main.css`).<br>
+
+It's also important to keep in mind that the `compile_frontend` management command will compile the base regulations styles located at `fec_eregs/static/regulations/*`.
+
+
 ### Data
 
 If you are also working on the parser, it'd be a good idea to test your
@@ -51,6 +59,23 @@ application to run against the live API:
 
 ```bash
 $ echo "API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api/'" >> local_settings.py
+```
+
+By default, the application uses a SQLite database named `eregs.db` as its database backend. To use a different database, configure a `default` database using https://docs.djangoproject.com/en/1.8/ref/settings/#databases in `local_settings.py` .
+
+E.g., add the following lines to `local_settings.py`:
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 ```
 
 ### Ports
@@ -105,7 +130,7 @@ and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 Currently, sending data looks something like this (from `regulations-parser`)
 
 ```bash
-$ eregs pipeline 27 646 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
+$ eregs pipeline 11 4 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
 ```
 
 This updates the data, but does not update the search index and will not clear
@@ -141,7 +166,7 @@ These are the basic steps of what get runs on travis. To be sure, check the
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
-$ npm run build # builds the fec-style css
+$ npm run build
 $ python manage.py compile_frontend   # builds the frontend
 $ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```

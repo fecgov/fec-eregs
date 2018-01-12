@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "grunt-dist": "0.0.6"
+    "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "browserify": "^15.1.0",

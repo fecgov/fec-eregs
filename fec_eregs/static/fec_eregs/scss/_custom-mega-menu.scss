@@ -40,7 +40,6 @@
 .mega__page-link {
   font-family: $serif;
   font-size: 18px;
-  font-weight: bold;
   line-height: 1.14;
   border-bottom: 1px solid $inverse;
   display: block;
@@ -76,6 +75,19 @@
 
   &:first-of-type {
     margin-top: u(1rem);
+  }
+}
+
+.mega__card {
+  border: 1px solid $inverse;
+  margin-bottom: u(1.5rem);
+
+  .card__image {
+    margin-right: 0;
+  }
+
+  .card__content {
+    padding-top: u(.5rem);
   }
 }
 
