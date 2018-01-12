@@ -10,8 +10,10 @@ REGCORE_DATABASES = dict(DATABASES)
 from regulations.settings.base import *
 REGSITE_APPS = tuple(INSTALLED_APPS)
 
-INSTALLED_APPS = ('overextends', 'fec_eregs',) + REGCORE_APPS + REGSITE_APPS
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# dedupe apps:
+INSTALLED_APPS = ['overextends', 'fec_eregs']
+INSTALLED_APPS.extend(a for a in REGCORE_APPS if a not in INSTALLED_APPS)
+INSTALLED_APPS.extend(a for a in REGSITE_APPS if a not in INSTALLED_APPS)
 
 NOSE_ARGS = [
     '--with-coverage',
