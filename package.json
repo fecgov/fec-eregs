@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "fec-style": "11.2.0",
     "grunt-dist": "0.0.6"
   },
   "devDependencies": {
