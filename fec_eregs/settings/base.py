@@ -36,6 +36,7 @@ API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('PORT', '8000'))
 
 STATICFILES_DIRS = ['compiled']
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DATA_LAYERS = DATA_LAYERS or []
