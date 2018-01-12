@@ -61,6 +61,23 @@ application to run against the live API:
 $ echo "API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api/'" >> local_settings.py
 ```
 
+By default, the application uses a SQLite database named `eregs.db` as its database backend. To use a different database, configure a `default` database using https://docs.djangoproject.com/en/1.8/ref/settings/#databases in `local_settings.py` .
+
+E.g., add the following lines to `local_settings.py`:
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+```
+
 ### Ports
 
 For the time being, this application, which cobbles together
@@ -113,7 +130,7 @@ and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 Currently, sending data looks something like this (from `regulations-parser`)
 
 ```bash
-$ eregs pipeline 27 646 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
+$ eregs pipeline 11 4 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
 ```
 
 This updates the data, but does not update the search index and will not clear
