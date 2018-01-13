@@ -48,14 +48,6 @@ The most common workflow is:
 * Travis CI runs the test suite and a PEP8 linter on GitHub PRs. PRs should only
   be merged when Travis is green.
 
-## Forking vs Branching
-
-This team prefers forking.
-
-The rationale for preferring forking is that all contributors work the same way,
-regardless of whether or not they may commit directly to the canonical
-repository.
-
 ## Squashing / rebasing commits
 
 Individual contributors may choose to rebase and [squash
@@ -69,7 +61,7 @@ This team opens PRs for all commits, even typos.
 
 ## When reviewing a PR, should the change be tested locally?
 
-This team does not have a standard QA process.
+Yes
 
 ## Team processes
 
