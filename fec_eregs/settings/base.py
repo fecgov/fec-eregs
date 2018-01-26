@@ -26,6 +26,8 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'fec_eregs.context_processors.app_urls',
 )
 
+TEMPLATES[0]['OPTIONS']['builtins'] = ['overextends.templatetags.overextends_tags']
+
 TEST_RUNNER = 'django_nose.runner.NoseTestSuiteRunner'
 
 ROOT_URLCONF = 'fec_eregs.urls'
@@ -37,7 +39,7 @@ API_BASE = 'http://localhost:{}/api/'.format(
 
 STATICFILES_DIRS = ['compiled']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'frontend_build')
 
 DATA_LAYERS = DATA_LAYERS or []
 
