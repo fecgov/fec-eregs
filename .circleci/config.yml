@@ -34,6 +34,7 @@ jobs:
           name: Install Python dependencies
           command: |
             python3 -m venv .env
+            cd /home/circleci/repo/
             . .env/bin/activate
             which python3
             source venv/bin/activate
