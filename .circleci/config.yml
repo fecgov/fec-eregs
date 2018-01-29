@@ -33,9 +33,9 @@ jobs:
       - run:
           name: Install Python dependencies
           command: |
-            pip install virtualenv
-            virtualenv venv
-            sudo chmod -R o+rwx /usr/local/lib/python3.6/site-packages
+            python3 -m venv .env
+            . .env/bin/activate
+            python -V
             source venv/bin/activate
             pip install -r requirements.txt
             pip install -r requirements_test.txt
