@@ -9,7 +9,7 @@ jobs:
       # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
 
       # Python with node
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6.3
         environment:
           TZ: America/New_York
 
