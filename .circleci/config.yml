@@ -78,7 +78,7 @@ jobs:
           name: Deploy eregs
           command: |
             export PATH=$HOME/bin:$PATH
-            source venv/bin/activate
+            . .env/bin/activate
             npm run build
             python manage.py compile_frontend   # builds the frontend
             invoke deploy --login True --yes
