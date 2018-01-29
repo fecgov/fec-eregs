@@ -28,7 +28,7 @@ jobs:
           name: Install node dependencies
           command: |
             npm --version
-            sudo npm install
+            npm install
 
       - run:
           name: Install Python dependencies
