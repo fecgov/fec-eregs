@@ -36,8 +36,8 @@ jobs:
             nvm use 6.9.2
             nvm alias default 6.9.2
             npm --version
-            sudo npm install
-            sudo npm install -g grunt-cli
+            npm install
+            npm install -g grunt-cli
             npm run build
 
       - run:
