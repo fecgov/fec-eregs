@@ -59,6 +59,7 @@ jobs:
           name: Run tests
           command: |
             . .env/bin/activate
+            nvm use 6.9.2
             npm run build
             python manage.py compile_frontend
 
