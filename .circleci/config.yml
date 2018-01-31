@@ -36,8 +36,8 @@ jobs:
             nvm use 6.9.2
             nvm alias default 6.9.2
             npm --version
-            npm install
-            npm install -g grunt-cli
+            sudo npm install -g grunt-cli
+            sudo npm install
             npm run build
 
       - run:
@@ -59,11 +59,6 @@ jobs:
           name: Run tests
           command: |
             . .env/bin/activate
-            echo ". ~/.nvm/nvm.sh" >> $BASH_ENV
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-            nvm use 6.9.2
             npm run build
             python manage.py compile_frontend
 
