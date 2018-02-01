@@ -63,7 +63,6 @@ DEPLOY_RULES = (
     ('dev', lambda _, branch: branch == 'develop'),
 )
 
-
 @task
 def deploy(ctx, space=None, branch=None, login=None, yes=False):
     """Deploy app to Cloud Foundry.

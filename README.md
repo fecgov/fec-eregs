@@ -15,7 +15,7 @@ Glue project which combines regulations-site, regulations-core and
 styles/templates specific to FEC. Packaged as a cloud.gov app.
 
 ## Local Development
-Like regulations-site and regulations-core, this application requires Python 2.7.
+Like regulations-site and regulations-core, this application requires Python 3.6
 
 Use pip and npm to download the required libraries:
 
@@ -23,7 +23,6 @@ Use pip and npm to download the required libraries:
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
 $ npm install
-$ npm install -g grunt-cli bower
 ```
 
 Then initialize the database, build the front-end, and run the server:
