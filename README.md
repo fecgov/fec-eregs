@@ -42,7 +42,57 @@ Running `npm run build` will compile both the JS and SCSS files (generating `/st
 It's also important to keep in mind that the `compile_frontend` management command will compile the base regulations styles located at `fec_eregs/static/regulations/*`.
 
 
-### Data
+### Loading FEC's regulations
+
+You will need access to FEC's org in cloud.gov for this.
+Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
+
+In the environment you with to update regulations, first run:
+```bash
+$ cf env eregs
+```
+It will print to console the environment variables for the current running instance of eregs.
+Use that console output to copy / paste the appropriate parameters here:
+
+```bash
+$ export HTTP_AUTH_USER=[pasted from cf env output]
+$ export HTTP_AUTH_PASSWORD=[pasted from cf env output]
+```
+
+If any new regulation parts have been added, add those parts to the list located in
+load_regs/fec_reg_parts.txt.
+
+If you are loading regs for a new year, you will need to reset the database. To do that, run:
+```bash
+$ cf unbind-service eregs fec-eregs-db
+$ cf service-keys fec-eregs-db
+$ cf delete-service-key fec-eregs-db [name of service key from previous]
+$ cf delete-service fec-eregs-db
+$ cf create-service aws-rds shared-psql fec-eregs-db
+$ cf bind-service eregs fec-eregs-db
+$ cf restage eregs
+```
+
+Now you can load the regs with:
+
+```bash
+$ python load_regs/load_fec_regs.py [env] $HTTP_AUTH_USER $HTTP_AUTH_PASSWORD
+```
+Where [env] is dev, stage or prod, depending on your current target environment in cloud foundry.
+This process is pretty verbose in terms of console output, and takes about 10-20 minutes.
+Once completed, you will need to reindex the new regulations in elasticsearch so that they
+are available through the search engine. Do that with:
+
+```bash
+$ cf run-task api  "python manage.py index_regulations" -m 1G --name load-regs
+```
+
+And monitor progress with
+```bash
+cf logs api | grep load-regs
+```
+
+### Working with Parser
 
 If you are also working on the parser, it'd be a good idea to test your
 changes locally:
