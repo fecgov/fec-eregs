@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
-    "fec-style": "11.2.0"
+    "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "browserify": "^13.0.1",
+    "browserify": "^13.0.0",
     "grunt": "^0.4.5",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-sass": "^1.1.0",
-    "handlebars": "^4.0.5",
-    "hbsfy": "^2.7.0",
+    "grunt-sass": "^2.0.0",
+    "handlebars": "^4.0.11",
+    "hbsfy": "^2.8.1",
     "load-grunt-tasks": "^3.4.1"
   },
   "scripts": {

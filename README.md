@@ -6,7 +6,7 @@ Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-c
 # FEC's eRegs
 
 ## Site Location
-https://beta.fec.gov/regulations
+https://www.fec.gov/regulations
 
 ## Code Status:
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Dependency Status](https://gemnasium.com/badges/github.com/18F/fec-eregs.svg)](https://gemnasium.com/github.com/18F/fec-eregs)
@@ -15,7 +15,7 @@ Glue project which combines regulations-site, regulations-core and
 styles/templates specific to FEC. Packaged as a cloud.gov app.
 
 ## Local Development
-Like regulations-site and regulations-core, this application requires Python 2.7.
+Like regulations-site and regulations-core, this application requires Python 3.6
 
 Use pip and npm to download the required libraries:
 
@@ -23,7 +23,6 @@ Use pip and npm to download the required libraries:
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
 $ npm install
-$ npm install -g grunt-cli bower
 ```
 
 Then initialize the database, build the front-end, and run the server:
@@ -34,6 +33,14 @@ $ python manage.py migrate --fake-initial
 $ python manage.py compile_frontend
 $ python manage.py runserver
 ```
+
+### Front End Development
+The static files are located at: `fec_eregs/static/fec_eregs/`.<br>
+Base SCSS files are copied from fec-cms (previously fec-style), but be mindful of custom stylesheets to make it work with this eregs instance.<br>
+Running `npm run build` will compile both the JS and SCSS files (generating `/static/fec_eregs/css/main.css`).<br>
+
+It's also important to keep in mind that the `compile_frontend` management command will compile the base regulations styles located at `fec_eregs/static/regulations/*`.
+
 
 ### Data
 
@@ -51,6 +58,23 @@ application to run against the live API:
 
 ```bash
 $ echo "API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api/'" >> local_settings.py
+```
+
+By default, the application uses a SQLite database named `eregs.db` as its database backend. To use a different database, configure a `default` database using https://docs.djangoproject.com/en/1.8/ref/settings/#databases in `local_settings.py` .
+
+E.g., add the following lines to `local_settings.py`:
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 ```
 
 ### Ports
@@ -105,7 +129,7 @@ and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 Currently, sending data looks something like this (from `regulations-parser`)
 
 ```bash
-$ eregs pipeline 27 646 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
+$ eregs pipeline 11 4 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
 ```
 
 This updates the data, but does not update the search index and will not clear
@@ -131,7 +155,7 @@ Environment | URL                              | Proxy | Description
 ----------- | ---                              | ----- | -----------
 `dev`       | https://fec-dev-eregs.app.cloud.gov/   | https://fec-dev-proxy.app.cloud.gov/regulations/ | Ad-hoc testing, deploys the latest changes from `develop`.
 `stage`     | https://fec-stage-eregs.app.cloud.gov/ | https://fec-stage-proxy.app.cloud.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
-`prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://beta.fec.gov/regulations/ | Production site, deployed from any tagged commit.
+`prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://www.fec.gov/regulations/ | Production site, deployed from any tagged commit.
 
 
 ### Travis
@@ -141,7 +165,7 @@ These are the basic steps of what get runs on travis. To be sure, check the
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
-$ npm run build # builds the fec-style css
+$ npm run build
 $ python manage.py compile_frontend   # builds the frontend
 $ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
 ```

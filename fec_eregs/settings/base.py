@@ -10,8 +10,10 @@ REGCORE_DATABASES = dict(DATABASES)
 from regulations.settings.base import *
 REGSITE_APPS = tuple(INSTALLED_APPS)
 
-INSTALLED_APPS = ('overextends', 'fec_eregs',) + REGCORE_APPS + REGSITE_APPS
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# dedupe apps:
+INSTALLED_APPS = ['overextends', 'fec_eregs']
+INSTALLED_APPS.extend(a for a in REGCORE_APPS if a not in INSTALLED_APPS)
+INSTALLED_APPS.extend(a for a in REGSITE_APPS if a not in INSTALLED_APPS)
 
 NOSE_ARGS = [
     '--with-coverage',
@@ -24,6 +26,8 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'fec_eregs.context_processors.app_urls',
 )
 
+TEMPLATES[0]['OPTIONS']['builtins'] = ['overextends.templatetags.overextends_tags']
+
 TEST_RUNNER = 'django_nose.runner.NoseTestSuiteRunner'
 
 ROOT_URLCONF = 'fec_eregs.urls'
@@ -34,7 +38,8 @@ API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('PORT', '8000'))
 
 STATICFILES_DIRS = ['compiled']
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'frontend_build')
 
 DATA_LAYERS = DATA_LAYERS or []
 

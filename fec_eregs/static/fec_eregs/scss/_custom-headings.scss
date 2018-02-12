@@ -1,0 +1,69 @@
+/*
+ * FEC Headings
+ *
+ * The fec-style headings don't translate well without the bourbon neat media
+ * break points. They also include some custom margins which doesn't work well
+ * with the regulations-site laouts. Therefore, we're including a version of
+ * them here.
+ */
+
+@import 'variables';
+
+h1,h2,h3,h4,h5,h6 {
+  color: $base;
+}
+
+h1 {
+  border-bottom: 1px solid $primary;
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: $serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.14;
+}
+
+h4 {
+  font-family: $sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.14;
+  margin: 20px 0 5px 0;
+  line-height: 1.14;
+}
+
+h5 {
+  font-family: $serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.33;
+}
+
+h6 {
+  border-bottom: 1px solid $primary;
+  font-family: $sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.63;
+  text-transform: uppercase;
+}
+
+p {
+  color: inherit;
+  font-size: u(1.6rem);
+  margin: u(0 0 2.4rem 0);
+  max-width: u(80rem);
+  width: 100%;
+}
