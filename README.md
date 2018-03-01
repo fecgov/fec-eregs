@@ -1,7 +1,6 @@
-[![Dependency Status](https://gemnasium.com/badges/github.com/18F/fec-eregs.svg)](https://gemnasium.com/github.com/18F/fec-eregs)
+[![Dependency Status](https://gemnasium.com/badges/github.com/fecgov/fec-eregs.svg)](https://gemnasium.com/github.com/fecgov/fec-eregs)
 
-[![Build
-Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-ci.org/18F/fec-eregs)
+[![CircleCI](https://circleci.com/gh/fecgov/fec-eregs.svg?style=svg)](https://circleci.com/gh/fecgov/fec-eregs)
 
 # FEC's eRegs
 
@@ -9,7 +8,7 @@ Status](https://travis-ci.org/18F/fec-eregs.svg?branch=master)](https://travis-c
 https://www.fec.gov/regulations
 
 ## Code Status:
-[![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Dependency Status](https://gemnasium.com/badges/github.com/18F/fec-eregs.svg)](https://gemnasium.com/github.com/18F/fec-eregs)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Dependency Status](https://gemnasium.com/badges/github.com/fecgov/fec-eregs.svg)](https://gemnasium.com/github.com/fecgov/fec-eregs)
 
 Glue project which combines regulations-site, regulations-core and
 styles/templates specific to FEC. Packaged as a cloud.gov app.
@@ -130,8 +129,8 @@ DATABASES = {
 ### Ports
 
 For the time being, this application, which cobbles together
-[regulations-core](https://github.com/18F/regulations-core) and
-[regulations-site](https://github.com/18F/regulations-site), makes HTTP calls
+[regulations-core](https://github.com/eregs/regulations-core) and
+[regulations-site](https://github.com/eregs/regulations-site), makes HTTP calls
 to itself. The server therefore needs to know which port it is set up to
 listen on.
 
@@ -207,11 +206,6 @@ Environment | URL                              | Proxy | Description
 `stage`     | https://fec-stage-eregs.app.cloud.gov/ | https://fec-stage-proxy.app.cloud.gov/regulations/ | Staging site, deployed from branches matching `release/*`.
 `prod`      | https://fec-prod-eregs.app.cloud.gov/  | https://www.fec.gov/regulations/ | Production site, deployed from any tagged commit.
 
-
-### Travis
-
-These are the basic steps of what get runs on travis. To be sure, check the
-[.travis.yml](https://github.com/18F/fec-eregs/blob/develop/.travis.yml) file.
 
 ```bash
 $ pip install -r requirements.txt   # updates the -core/-site repositories
