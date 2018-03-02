@@ -1,11 +1,23 @@
 ---
-inherit: manifest_base.yml
-host: fec-dev-eregs
-env:
-  FEC_API_URL: https://fec-dev-api.app.cloud.gov
-  FEC_CMS_URL: "https://fec-dev-proxy.app.cloud.gov"
-  FEC_WEB_URL: "/data"
-  NEW_RELIC_APP_NAME: fec | dev | eregs
-services:
-    - fec-creds-dev
-
+applications:
+  - name: eregs
+    memory: 512M
+    buildpack: https://github.com/cloudfoundry/python-buildpack
+    command: python manage.py migrate --fake-initial && gunicorn -k gevent -w 2 --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
+    services:
+      - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
+      - fec-eregs-db
+      - fec-eregs-search
+      - fec-creds-dev
+    routes:
+      - route: fec-dev-eregs
+    env:
+      NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
+      DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
+      FEC_API_VERSION: v1
+      SCRIPT_NAME: /regulations
+      WEB_CONCURRENCY: 4
+      FEC_API_URL: https://fec-dev-api.app.cloud.gov
+      FEC_CMS_URL: "https://fec-dev-proxy.app.cloud.gov"
+      FEC_WEB_URL: "/data"
+      NEW_RELIC_APP_NAME: fec | dev | eregs
