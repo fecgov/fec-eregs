@@ -20,4 +20,4 @@ applications:
   - name: eregs
     memory: 512M
     routes:
-    - route: fec-dev-eregs
+    - route: fec-dev-eregs.app.cloud.gov

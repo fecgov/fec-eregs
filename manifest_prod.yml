@@ -20,4 +20,4 @@ applications:
   - name: eregs
     memory: 1GB
     routes:
-    - route: fec-prod-eregs
+    - route: fec-prod-eregs.app.cloud.gov
