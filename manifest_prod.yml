@@ -1,23 +1,23 @@
 ---
+buildpack: https://github.com/cloudfoundry/python-buildpack
+command: python manage.py migrate --fake-initial && gunicorn -k gevent -w 2 --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
+services:
+  - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
+  - fec-eregs-db
+  - fec-eregs-search
+  - fec-creds-prod
+env:
+  NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
+  DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
+  FEC_API_VERSION: v1
+  SCRIPT_NAME: /regulations
+  WEB_CONCURRENCY: 4
+  FEC_API_URL: https://api.open.fec.gov
+  FEC_CMS_URL: "https://www.fec.gov"
+  FEC_WEB_URL: "/data"
+  NEW_RELIC_APP_NAME: fec-prod-eregs
 applications:
   - name: eregs
     memory: 1GB
-    buildpack: https://github.com/cloudfoundry/python-buildpack
-    command: python manage.py migrate --fake-initial && gunicorn -k gevent -w 2 --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
-    services:
-      - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
-      - fec-eregs-db
-      - fec-eregs-search
-      - fec-creds-prod
     routes:
-      - route: fec-prod-eregs
-    env:
-      NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
-      DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
-      FEC_API_VERSION: v1
-      SCRIPT_NAME: /regulations
-      WEB_CONCURRENCY: 4
-      FEC_API_URL: https://api.open.fec.gov
-      FEC_CMS_URL: "https://www.fec.gov"
-      FEC_WEB_URL: "/data"
-      NEW_RELIC_APP_NAME: fec-prod-eregs
+    - route: fec-prod-eregs
