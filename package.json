@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/18F/fec-eregs.git"
+    "url": "git+https://github.com/fecgov/fec-eregs.git"
   },
   "keywords": [
     "eregs",
@@ -31,17 +31,17 @@
     "viewer"
   ],
   "author": {
-    "name": "18F",
-    "url": "https://18f.gsa.gov/"
+    "name": "FEC",
+    "url": "https://fec.gov/"
   },
   "licenses": [
     {
       "type": "CC0",
-      "url": "http://github.com/18F/fec-eregs/blob/master/LICENSE.md"
+      "url": "http://github.com/fecgov/fec-eregs/blob/master/LICENSE.md"
     }
   ],
   "bugs": {
-    "url": "https://github.com/18F/fec-eregs/issues"
+    "url": "https://github.com/fecgov/fec-eregs/issues"
   },
-  "homepage": "https://github.com/18F/fec-eregs#readme"
+  "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
