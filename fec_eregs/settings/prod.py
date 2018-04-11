@@ -46,5 +46,3 @@ HTTP_AUTH_PASSWORD = env.get_credential('HTTP_AUTH_PASSWORD')
 STATIC_URL = '/regulations/static/'
 API_BASE = 'http://localhost:{}/regulations/api/'.format(
     os.environ.get('PORT', '8000'))
-
-API_BASE = 'https://fec-prod-eregs.app.cloud.gov/regulations/api/'
