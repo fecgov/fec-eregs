@@ -6,13 +6,11 @@ import manage
 manage.main(['manage.py', 'migrate', '--fake-initial'])
 
 with open('load_regs/fec_reg_parts.txt')as parts:
-    if sys.argv[1] == 'local':
+    env = sys.argv[1].strip()
+    if env == 'local':
         url = 'http://localhost:8000/api'
     else:
-        env, http_auth_user, http_auth_password = sys.argv[1:]
-        url = "https://{0}:{1}@fec-{2}-eregs.app.cloud.gov/regulations/api" \
-                 .format(http_auth_user.strip(), http_auth_password.strip(), env.strip())
-        print(url)
+        url = "https://fec-{0}-eregs.app.cloud.gov/regulations/api".format(env)
 
     for part in parts:
         args = ['manage.py', 'eregs', 'pipeline', '11', part,
