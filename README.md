@@ -51,7 +51,7 @@ Currently, this is implemented via HTTP Basic Auth and a very long user name
 and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 `HTTP_AUTH_PASSWORD` environment variables in cloud.gov for more.
 
-_Note: It is usually possible to specify the credentials for HTTP Basic Auth in the URL itself using the format https://<username>:<password>@rest-of-the-url. Unfortunately, this method is deprecated and moreover, it does not work in `Python3` with long  usernames and passwords. Consequently, we have to use the workaround of specifying the credentials using [`.netrc`](http://docs.python-requests.org/en/master/user/authentication/#netrc-authentication)_.
+_Note: It is usually possible to specify the credentials for HTTP Basic Auth in the URL itself using the format `https://<username>:<password>@rest-of-the-url`. Unfortunately, this method is deprecated and moreover, it does not work in `Python3` with long  usernames and passwords. Consequently, we have to use the workaround of specifying the credentials using [`.netrc`](http://docs.python-requests.org/en/master/user/authentication/#netrc-authentication)_.
 
 You will need access to FEC's org in cloud.gov for this.
 Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
