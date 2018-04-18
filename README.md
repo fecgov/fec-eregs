@@ -43,6 +43,16 @@ It's also important to keep in mind that the `compile_frontend` management comma
 
 ### Loading FEC's regulations
 
+When there is new data available (e.g. due to modifications in the parser, new
+Federal Register notices, etc.), that data must be sent to the `/api` endpoint
+before it will be visible to users. However, we don't want to allow the
+general public to modify the regulatory data, so we need to authenticate.
+Currently, this is implemented via HTTP Basic Auth and a very long user name
+and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
+`HTTP_AUTH_PASSWORD` environment variables in cloud.gov for more.
+
+_Note: It is usually possible to specify the credentials for HTTP Basic Auth in the URL itself using the format `https://<username>:<password>@rest-of-the-url`. Unfortunately, this method is deprecated and moreover, it does not work in `Python3` with long  usernames and passwords. Consequently, we have to use the workaround of specifying the credentials using [`.netrc`](http://docs.python-requests.org/en/master/user/authentication/#netrc-authentication)_.
+
 You will need access to FEC's org in cloud.gov for this.
 Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
 
@@ -51,11 +61,12 @@ In the environment you with to update regulations, first run:
 $ cf env eregs
 ```
 It will print to console the environment variables for the current running instance of eregs.
-Use that console output to copy / paste the appropriate parameters here:
+Use that console output to edit the file `~/.netrc` on your local machine.
 
-```bash
-$ export HTTP_AUTH_USER=[pasted from cf env output]
-$ export HTTP_AUTH_PASSWORD=[pasted from cf env output]
+```
+machine fec-dev-eregs.app.cloud.gov # This should match the hostname from FEC_EREGS_API in the cf env output
+login [copy and paste the value of HTTP_AUTH_USER from cf env output]
+password [copy and paste the value of HTTP_AUTH_PASSWORD from cf env output]
 ```
 
 If any new regulation parts have been added, add those parts to the list located in
@@ -75,9 +86,11 @@ $ cf restage eregs
 Now you can load the regs with:
 
 ```bash
-$ python load_regs/load_fec_regs.py [env] $HTTP_AUTH_USER $HTTP_AUTH_PASSWORD
+$ python load_regs/load_fec_regs.py [env]
 ```
-Where [env] is dev, stage or prod, depending on your current target environment in cloud foundry.
+where [env] is local, dev, stage or prod, depending on your target environment (local
+is your local machine, while the other 3 refer to cloud.gov spaces).
+
 This process is pretty verbose in terms of console output, and takes about 10-20 minutes.
 Once completed, you will need to reindex the new regulations in elasticsearch so that they
 are available through the search engine. Do that with:
@@ -90,6 +103,8 @@ And monitor progress with
 ```bash
 cf logs api | grep load-regs
 ```
+
+Once this is successful, *delete the file `~/.netrc` from your local machine.*
 
 ### Working with Parser
 
@@ -165,28 +180,7 @@ API; this means that `fec-eregs` makes HTTP calls to itself to retrieve data
 
 ## Updating Data
 
-![Deploying New Data Schematic (described below)](docs/updating-data.png)
-
-When there is new data available (e.g. due to modifications in the parser, new
-Federal Register notices, etc.), that data must be sent to the `/api` endpoint
-before it will be visible to users. However, we don't want to allow the
-general public to modify the regulatory data, so we need to authenticate.
-Currently, this is implemented via HTTP Basic Auth and a very long user name
-and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
-`HTTP_AUTH_PASSWORD` environment variables in cloud.gov for more.
-
-Currently, sending data looks something like this (from `regulations-parser`)
-
-```bash
-$ eregs pipeline 11 4 https://{HTTP_AUTH_USER}:{HTTP_AUTH_PASSWORD}@{LIVE_OR_DEMO_HOSTNAME}/api
-```
-
-This updates the data, but does not update the search index and will not clear
-various caches. It's generally best to `cf restage` the application at this
-point, which clears the caches and rebuilds the search index. Note that this
-will also pull down the latest versions of the libraries (see the next
-section); as a result it's generally best to do a full deploy after updating
-data.
+See [Loading FEC's regulations](#loading-fecs-regulations).
 
 ## Deploying Code
 
