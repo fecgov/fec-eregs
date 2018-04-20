@@ -1,4 +1,4 @@
-[![Dependency Status](https://gemnasium.com/badges/github.com/fecgov/fec-eregs.svg)](https://gemnasium.com/github.com/fecgov/fec-eregs)
+[![Dependency Status](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs)
 
 [![CircleCI](https://circleci.com/gh/fecgov/fec-eregs.svg?style=svg)](https://circleci.com/gh/fecgov/fec-eregs)
 
