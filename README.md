@@ -1,4 +1,3 @@
-[![Dependency Status](https://gemnasium.com/badges/github.com/fecgov/fec-eregs.svg)](https://gemnasium.com/github.com/fecgov/fec-eregs)
 [![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs)
 
 [![CircleCI](https://circleci.com/gh/fecgov/fec-eregs.svg?style=svg)](https://circleci.com/gh/fecgov/fec-eregs)
@@ -9,7 +8,7 @@
 https://www.fec.gov/regulations
 
 ## Code Status:
-[![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Dependency Status](https://gemnasium.com/badges/github.com/fecgov/fec-eregs.svg)](https://gemnasium.com/github.com/fecgov/fec-eregs)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/816ef1e6041a46748fa984e6780cc913/badge.svg)](https://www.quantifiedcode.com/app/project/816ef1e6041a46748fa984e6780cc913)  [![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs)
 
 Glue project which combines regulations-site, regulations-core and
 styles/templates specific to FEC. Packaged as a cloud.gov app.
