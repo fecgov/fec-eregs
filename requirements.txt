@@ -9,7 +9,7 @@ webargs==1.8.1
 pyelasticsearch==1.4
 django-haystack==2.4.1
 psycopg2==2.7.3.2
--e git+https://github.com/18F/regulations-core.git@4.2.0#egg=regcore
+regcore==4.2.0
 
 # regulations-site
 # django, cached-property, six already covered
@@ -19,7 +19,7 @@ requests==2.18.4
 boto3==1.5.13
 celery==4.1.0
 requests-toolbelt==0.8.0
--e git+https://github.com/18F/regulations-site.git@8.4.1#egg=regulations
+regulations==8.4.2
 
 # fec-specific/cloud.gov
 cfenv==0.5.3
