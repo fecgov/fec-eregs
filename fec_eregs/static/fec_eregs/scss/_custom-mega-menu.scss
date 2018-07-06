@@ -23,10 +23,25 @@
 
 .mega__inner {
   padding: u(1rem);
+  margin: u(1rem 0 0 0);
+
+  ul.u-padding--top{
+    margin-top: u(2rem);
+  }
 }
 
+
 .mega-heading__title {
-  display: none;
+
+  a {
+    border-bottom: 1px dotted $inverse !important;
+    color: $inverse;
+  }
+  &::before {
+    margin-bottom: u(3rem);
+    height: u(5rem) !important;
+    width: u(5rem) !important;
+  }
 }
 
 .mega-heading {
@@ -34,7 +49,7 @@
 }
 
 .mega__intro {
-  padding: u(1rem 1rem 0 1rem);
+  padding: u(0rem 1rem 0 1rem);
 }
 
 .mega__page-link {
@@ -72,9 +87,10 @@
 .mega__item {
   margin-bottom: u(1.5rem);
   padding-left: u(2rem);
+  line-height: 1.2;
 
   &:first-of-type {
-    margin-top: u(1rem);
+    margin-top: 0;
   }
 }
 
@@ -162,6 +178,19 @@
       .mega__page-link {
         border-bottom: none;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 720px){
+  .mega-heading__title{
+    margin-left: u(1rem);
+    margin-top: u(1rem);
+    margin-bottom: u(3rem);
+
+    &::before {
+      margin-top: u(-.5rem);
+      margin-bottom: u(0rem);
     }
   }
 }

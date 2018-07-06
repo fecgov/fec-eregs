@@ -32,10 +32,22 @@
 
   h2 {
     color: $inverse;
+    margin: 0 0 1em 0;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
 
   .label {
     color: $inverse;
+  }
+
+  input{
+  height: 29px;
+  padding:1px;
+  }
+
+  .accordion__button{
+    height:auto;
   }
 }
 
