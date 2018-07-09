@@ -46,3 +46,5 @@ HTTP_AUTH_PASSWORD = env.get_credential('HTTP_AUTH_PASSWORD')
 STATIC_URL = '/regulations/static/'
 API_BASE = 'http://localhost:{}/regulations/api/'.format(
     os.environ.get('PORT', '8000'))
+
+CACHES['eregs_longterm_cache']['TIMEOUT'] = 60 * 60
