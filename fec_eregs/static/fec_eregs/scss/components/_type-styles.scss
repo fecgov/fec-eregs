@@ -1,0 +1,48 @@
+// Glossary
+//
+
+.t-note {
+  display: inline-block;
+  font-family: $serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: u(1.4rem);
+}
+
+.t-block {
+  display: block;
+}
+
+.t-inline-block {
+  display: inline-block;
+}
+
+.t-sans {
+  font-family: $sans-serif;
+  letter-spacing: -.3px;
+}
+
+.t-serif {
+  font-family: $serif;
+}
+
+.t-italic {
+  font-style: italic;
+}
+
+.t-bold {
+  font-weight: bold;
+}
+
+.t-underline {
+  text-decoration: underline;
+}
+
+.t-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
