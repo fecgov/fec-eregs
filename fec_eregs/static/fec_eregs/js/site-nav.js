@@ -10,6 +10,7 @@ var TEMPLATES = {
   data: require('./templates/nav-data.hbs'),
   legal: require('./templates/nav-legal.hbs'),
   help: require('./templates/nav-help.hbs'),
+  about: require('./templates/nav-about.hbs')
 };
 
 /** SiteNav module

@@ -125,6 +125,7 @@
 // Panel titles on mobile
 .site-nav__title {
   border-bottom: 1px solid $inverse;
+  color: $inverse;
   padding: u(1rem 1rem);
   margin: 0;
 }
@@ -143,6 +144,7 @@
     $top: u(11.6rem);
     height: calc(100vh - #{$top});
     top: $top;
+
   }
 
   .site-nav__button {
@@ -168,6 +170,7 @@
     position: relative;
     top: 0;
     width: 100%;
+    background:$inverse;
   }
 
   .site-nav__panel {
