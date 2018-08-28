@@ -30,7 +30,6 @@ whitenoise==3.3.1
 newrelic==2.100.0.84
 invoke==0.22.0
 GitPython==2.1.8
-bandit==1.4.0
 gevent==1.2.2
 
 -e eregs_extensions/
