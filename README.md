@@ -10,8 +10,11 @@ styles/templates specific to FEC. Packaged as a cloud.gov app.
 ## Site Location
 https://www.fec.gov/regulations
 
-## Code Status:
-[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs)
+## Snyk Vulnerabilities
+**package.json**
+[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=package.json)
+**requirements.txt**
+[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=requirements.txt)
 
 ## Local Development
 Like regulations-site and regulations-core, this application requires Python 3.6
