@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/fecgov/fec-eregs.svg?style=svg)](https://circleci.com/gh/fecgov/fec-eregs)
 
-# FEC's eRegs
+## FEC's eRegs
 
 The Federal Election Commission's web-based application that makes regulations easier to find, read and understand.
 
@@ -10,8 +10,10 @@ styles/templates specific to FEC. Packaged as a cloud.gov app.
 ## Site Location
 https://www.fec.gov/regulations
 
-## Code Status:
-[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs)
+**package.json**
+[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=package.json)
+**requirements.txt**
+[![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=requirements.txt)
 
 ## Local Development
 Like regulations-site and regulations-core, this application requires Python 3.6
