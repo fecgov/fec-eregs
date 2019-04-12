@@ -4,7 +4,7 @@
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
-    "jquery": "^3.2.1"
+    "jquery": "^3.4.0"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
