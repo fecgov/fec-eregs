@@ -7,7 +7,6 @@ services:
   - fec-eregs-db
   - fec-creds-stage
 env:
-  NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
   SCRIPT_NAME: /regulations
@@ -15,7 +14,7 @@ env:
   FEC_API_URL: https://api-stage.open.fec.gov
   FEC_CMS_URL: "https://fec-stage-proxy.app.cloud.gov"
   FEC_WEB_URL: "/data"
-  NEW_RELIC_APP_NAME: fec-stage-eregs
+  APP_NAME: fec-stage-eregs
 applications:
   - name: eregs
     memory: 512M

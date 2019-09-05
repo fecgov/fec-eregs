@@ -27,7 +27,6 @@ dj-database-url==0.4.2
 django-overextends==0.4.3
 gunicorn==19.7.1
 whitenoise==3.3.1
-newrelic==2.100.0.84
 invoke==0.22.0
 GitPython==2.1.8
 gevent==1.2.2
