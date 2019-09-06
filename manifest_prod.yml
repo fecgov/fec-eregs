@@ -7,7 +7,6 @@ services:
   - fec-eregs-db
   - fec-creds-prod
 env:
-  NEW_RELIC_CONFIG_FILE: /home/vcap/app/newrelic.ini
   DJANGO_SETTINGS_MODULE: fec_eregs.settings.prod
   FEC_API_VERSION: v1
   SCRIPT_NAME: /regulations
@@ -15,7 +14,7 @@ env:
   FEC_API_URL: https://api.open.fec.gov
   FEC_CMS_URL: "https://www.fec.gov"
   FEC_WEB_URL: "/data"
-  NEW_RELIC_APP_NAME: fec-prod-eregs
+  APP_NAME: fec-prod-eregs
 applications:
   - name: eregs
     memory: 1GB
