@@ -1,6 +1,3 @@
-from fec_eregs import newrelic
-newrelic.initialize()
-
 import os  # noqa
 from django.core.wsgi import get_wsgi_application  # noqa
 
