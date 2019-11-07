@@ -68,3 +68,4 @@ node_modules/
 fec_eregs/static/fec_eregs/js/*.bundle.js
 fec_eregs/static/fec_eregs/fonts/
 .eregs_index
+.DS_Store
