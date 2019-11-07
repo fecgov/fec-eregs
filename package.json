@@ -33,11 +33,11 @@
   ],
   "author": {
     "name": "FEC",
-    "url": "https://fec.gov/"
+    "url": "https://www.fec.gov/"
   },
   "licenses": [
     {
-      "type": "CC0",
+      "type": "CC0-1.0",
       "url": "http://github.com/fecgov/fec-eregs/blob/master/LICENSE.md"
     }
   ],
