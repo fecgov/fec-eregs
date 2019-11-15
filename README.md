@@ -58,7 +58,7 @@ _Note: It is usually possible to specify the credentials for HTTP Basic Auth in 
 You will need access to FEC's org in cloud.gov for this.
 Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
 
-In the environment you with to update regulations, first run:
+In the environment you wish to update regulations, first run:
 ```bash
 $ cf env eregs
 ```
