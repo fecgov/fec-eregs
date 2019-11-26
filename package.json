@@ -4,15 +4,15 @@
   "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
-    "jquery": "^3.2.1"
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
     "glossary-panel": "1.0.0",
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.4",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^2.0.0",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.3.0",
     "hbsfy": "^2.8.1",
     "load-grunt-tasks": "^3.4.1"
   },
@@ -33,11 +33,11 @@
   ],
   "author": {
     "name": "FEC",
-    "url": "https://fec.gov/"
+    "url": "https://www.fec.gov/"
   },
   "licenses": [
     {
-      "type": "CC0",
+      "type": "CC0-1.0",
       "url": "http://github.com/fecgov/fec-eregs/blob/master/LICENSE.md"
     }
   ],
