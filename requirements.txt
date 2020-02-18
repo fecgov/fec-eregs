@@ -25,7 +25,7 @@ regulations==8.4.2
 cfenv==0.5.3
 dj-database-url==0.4.2
 django-overextends==0.4.3
-gunicorn==19.7.1
+gunicorn==19.10.0
 whitenoise==3.3.1
 invoke==0.22.0
 GitPython==2.1.8
