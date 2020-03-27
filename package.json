@@ -9,7 +9,8 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "glossary-panel": "1.0.0",
-    "grunt": "^1.0.4",
+    "grunt": "^1.1.0",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "handlebars": "^4.3.0",
