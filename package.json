@@ -16,6 +16,7 @@
     "grunt-sass": "^2.0.0",
     "handlebars": "^4.3.0",
     "hbsfy": "^2.8.1",
+    "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1"
   },
   "scripts": {
