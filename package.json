@@ -45,5 +45,9 @@
   "bugs": {
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.14.3"
+  },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
