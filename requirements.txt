@@ -19,7 +19,7 @@ requests==2.23.0
 boto3==1.5.13
 celery==4.1.0
 requests-toolbelt==0.8.0
-regulations==8.4.2
+
 
 # fec-specific/cloud.gov
 cfenv==0.5.3
