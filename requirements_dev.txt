@@ -4,4 +4,15 @@ django-debug-toolbar==1.9.1
 requests[security]
 ipdb==0.10.3
 ipython>=6.0,<7.0
-regparser==4.3.1
+
+# regparser
+-e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+
+# regsite
+-e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+
+# regcore
+-e git+git://github.com/fecgov/regulations-core@master#egg=regcore
+
+
+
