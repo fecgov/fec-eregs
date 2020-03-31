@@ -34,5 +34,5 @@ gevent==1.4.0
 -e eregs_extensions/
 
 #install a repostiory
--e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+-e git+git://github.com/fecgov/regulations-site@a11a00fe7e3d8e953220cbdad977375a6929e02d#egg=regulations
 
