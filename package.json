@@ -38,7 +38,7 @@
     "name": "FEC",
     "url": "https://www.fec.gov/"
   },
-  "license": "ISC",
+  "license": "CC0-1.0",
   "bugs": {
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
