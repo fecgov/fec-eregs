@@ -27,6 +27,11 @@ $ pip install -r requirements_dev.txt
 $ rm -rf node_modules/
 $ npm install
 ```
+Install the grunt package:
+
+```bash
+$ npm install -g grunt-cli
+```
 
 Then initialize the database, build the front-end, and run the server:
 
