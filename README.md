@@ -16,7 +16,7 @@ https://www.fec.gov/regulations
 [![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=requirements.txt)
 
 ## Local Development
-Like regulations-site and regulations-core, this application requires Python 3.6
+This application requires Python 3.7
 
 Use pip and npm to download the required libraries:
 
