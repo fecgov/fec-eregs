@@ -1,8 +1,8 @@
-{% overextends "regulations/base.html" %}
+{% extends "regulations/base.html" %}
 {% load static from staticfiles %}
 
 {% block preload %}
-<link rel="stylesheet" href="{% static "fec_eregs/css/main.css"%}">
+<link rel="stylesheet" href="{% static "fec_eregs/css/main.css" %}">
 <script type="text/javascript">
 window.API_VERSION = "{{ FEC_API_VERSION }}";
 window.API_KEY = "{{ FEC_API_KEY }}";

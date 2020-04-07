@@ -11,7 +11,7 @@ from regulations.settings.base import *
 REGSITE_APPS = tuple(INSTALLED_APPS)
 
 # dedupe apps:
-INSTALLED_APPS = ['overextends', 'fec_eregs']
+INSTALLED_APPS = ['fec_eregs']
 INSTALLED_APPS.extend(a for a in REGCORE_APPS if a not in INSTALLED_APPS)
 INSTALLED_APPS.extend(a for a in REGSITE_APPS if a not in INSTALLED_APPS)
 
@@ -22,11 +22,10 @@ NOSE_ARGS = [
     '--verbosity=3'
 ]
 
+
 TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'fec_eregs.context_processors.app_urls',
 )
-
-TEMPLATES[0]['OPTIONS']['builtins'] = ['overextends.templatetags.overextends_tags']
 
 TEST_RUNNER = 'django_nose.runner.NoseTestSuiteRunner'
 
@@ -40,6 +39,7 @@ API_BASE = 'http://localhost:{}/api/'.format(
 STATICFILES_DIRS = ['compiled']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'frontend_build')
+
 
 DATA_LAYERS = DATA_LAYERS or []
 
