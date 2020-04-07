@@ -36,10 +36,11 @@ DATABASES = REGCORE_DATABASES
 API_BASE = 'http://localhost:{}/api/'.format(
     os.environ.get('PORT', '8000'))
 
-STATICFILES_DIRS = ['compiled']
+# STATICFILES_DIRS = ['compiled']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'frontend_build')
 
+STATICFILES_DIRS = [os.path.join(os.path.dirname(BASE_DIR), 'compiled')]
 
 DATA_LAYERS = DATA_LAYERS or []
 
