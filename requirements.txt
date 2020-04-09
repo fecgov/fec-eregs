@@ -30,3 +30,12 @@ GitPython==2.1.15
 gevent==1.4.0
 
 -e eregs_extensions/
+
+# regparser
+-e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+
+# regsite
+-e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+
+# regcore
+-e git+git://github.com/fecgov/regulations-core@master#egg=regcore
