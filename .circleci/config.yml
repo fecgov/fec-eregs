@@ -47,6 +47,7 @@ jobs:
           command: |
             . .env/bin/activate
             npm run build
+            mkdir compiled
             python manage.py compile_frontend
 
       - store_artifacts:
