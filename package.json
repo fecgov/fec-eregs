@@ -1,7 +1,8 @@
 {
   "name": "fec-eregs",
   "version": "1.0.0",
-  "description": "eRegulations viewer for the Federal Election Commission's public legal resources.",
+  "description": "eRegulations viewer for the Federal Election Commission's public legal resources",
+  "main": "Gruntfile.js",
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
     "jquery": "^3.4.1"
@@ -9,11 +10,13 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "glossary-panel": "1.0.0",
-    "grunt": "^1.0.4",
+    "grunt": "^1.1.0",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "handlebars": "^4.3.0",
     "hbsfy": "^2.8.1",
+    "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1"
   },
   "scripts": {
@@ -35,14 +38,13 @@
     "name": "FEC",
     "url": "https://www.fec.gov/"
   },
-  "licenses": [
-    {
-      "type": "CC0-1.0",
-      "url": "http://github.com/fecgov/fec-eregs/blob/master/LICENSE.md"
-    }
-  ],
+  "license": "CC0-1.0",
   "bugs": {
     "url": "https://github.com/fecgov/fec-eregs/issues"
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.14.3"
   },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }

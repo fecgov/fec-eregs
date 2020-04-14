@@ -1,6 +1,6 @@
 # Python CircleCI 2.0 configuration file
 # Check https://circleci.com/docs/2.0/language-python/ for more details
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -9,7 +9,7 @@ jobs:
       # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
 
       # Python with node
-      - image: circleci/python:3.6.3
+      - image: circleci/python:3.7.5
         environment:
           TZ: America/New_York
 
@@ -26,9 +26,9 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-            nvm install v6.9.2
-            nvm use 6.9.2
-            nvm alias default 6.9.2
+            nvm install v10.16.0
+            nvm use 10.16.0
+            nvm alias default 10.16.0
             npm install -g grunt-cli
             npm install
             npm run build

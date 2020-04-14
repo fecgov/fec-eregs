@@ -16,13 +16,15 @@ https://www.fec.gov/regulations
 [![Known Vulnerabilities](https://snyk.io/test/github/fecgov/fec-eregs/badge.svg)](https://snyk.io/test/github/fecgov/fec-eregs?targetFile=requirements.txt)
 
 ## Local Development
-Like regulations-site and regulations-core, this application requires Python 3.6
+This application requires Python 3.7
 
 Use pip and npm to download the required libraries:
 
 ```bash
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
+# remove the node_modules from your local environement
+$ rm -rf node_modules/
 $ npm install
 ```
 
@@ -30,7 +32,7 @@ Then initialize the database, build the front-end, and run the server:
 
 ```bash
 $ npm run build
-$ python manage.py migrate --fake-initial
+$ python manage.py migrate
 $ python manage.py compile_frontend
 $ python manage.py runserver
 ```
