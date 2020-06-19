@@ -78,12 +78,11 @@ load_regs/fec_reg_parts.txt.
 
 If you are loading regs for a new year, you will need to reset the database. To do that, run:
 ```bash
-$ cf unbind-service eregs fec-eregs-db
-$ cf service-keys fec-eregs-db
-$ cf delete-service-key fec-eregs-db [name of service key from previous]
-$ cf delete-service fec-eregs-db
-$ cf create-service aws-rds shared-psql fec-eregs-db
-$ cf bind-service eregs fec-eregs-db
+$ cf unbind-service eregs fec-eregs-db-rdn
+$ cf service-keys fec-eregs-db-rdn
+$ cf rename-service fec-dev-eregs-rdn [new name of service from previous year, e.g., if parsing 2020, fec-dev-eregs-rdn-2019]
+$ cf create-service aws-rds medium-psql-redundant fec-eregs-db-rdn
+$ cf bind-service eregs fec-eregs-db-rdn
 $ cf restage eregs
 ```
 
