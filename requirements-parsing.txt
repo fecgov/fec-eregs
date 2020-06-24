@@ -77,8 +77,7 @@ PyYAML==3.12
 redis==2.10.6
 -e git+https://github.com/18F/regulations-core.git@d5443336b0ec287e62837614bf1e359465cc30fe#egg=regcore
 -e git+https://github.com/18F/regulations-parser.git@e757cb74aea1b4c7c29293c749561510d4adba1e#egg=regparser
-#regulations==8.4.2
-./regulations-8.4.2
+regulations==8.4.2
 requests==2.21.0
 requests-cache==0.4.13
 requests-toolbelt==0.8.0
