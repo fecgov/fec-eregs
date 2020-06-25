@@ -23,7 +23,7 @@ Use pip and npm to download the required libraries:
 ```bash
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
-# remove the node_modules from your local environement
+# remove the node_modules from your local environment
 $ rm -rf node_modules/
 $ npm install
 ```
@@ -46,6 +46,9 @@ It's also important to keep in mind that the `compile_frontend` management comma
 
 
 ### Loading FEC's regulations
+To parse the latest regulations, requires Python 3.6
+
+Make sure you have run `pip install -r requirements-parsing.txt`  before loading the latest regulations.
 
 When there is new data available (e.g. due to modifications in the parser, new
 Federal Register notices, etc.), that data must be sent to the `/api` endpoint
@@ -57,10 +60,7 @@ and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 
 _Note: It is usually possible to specify the credentials for HTTP Basic Auth in the URL itself using the format `https://<username>:<password>@rest-of-the-url`. Unfortunately, this method is deprecated and moreover, it does not work in `Python3` with long  usernames and passwords. Consequently, we have to use the workaround of specifying the credentials using [`.netrc`](http://docs.python-requests.org/en/master/user/authentication/#netrc-authentication)_.
 
-You will need access to FEC's org in cloud.gov for this.
-Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
-
-In the environment you wish to update regulations, first run:
+You will need access to FEC's org in cloud.gov for this. In the environment you wish to update regulations, first run:
 ```bash
 $ cf env eregs
 ```
