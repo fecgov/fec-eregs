@@ -23,7 +23,7 @@ Use pip and npm to download the required libraries:
 ```bash
 $ pip install -r requirements.txt
 $ pip install -r requirements_dev.txt
-# remove the node_modules from your local environement
+# remove the node_modules from your local environment
 $ rm -rf node_modules/
 $ npm install
 ```
@@ -46,6 +46,9 @@ It's also important to keep in mind that the `compile_frontend` management comma
 
 
 ### Loading FEC's regulations
+To parse the latest regulations, requires Python 3.6
+
+Make sure you have run `pip install -r requirements-parsing.txt`  before loading the latest regulations.
 
 When there is new data available (e.g. due to modifications in the parser, new
 Federal Register notices, etc.), that data must be sent to the `/api` endpoint
@@ -57,10 +60,7 @@ and password (effectively creating an API key). See the `HTTP_AUTH_USER` and
 
 _Note: It is usually possible to specify the credentials for HTTP Basic Auth in the URL itself using the format `https://<username>:<password>@rest-of-the-url`. Unfortunately, this method is deprecated and moreover, it does not work in `Python3` with long  usernames and passwords. Consequently, we have to use the workaround of specifying the credentials using [`.netrc`](http://docs.python-requests.org/en/master/user/authentication/#netrc-authentication)_.
 
-You will need access to FEC's org in cloud.gov for this.
-Make sure you have run `pip install -r requirements.txt && pip install -r requirements_dev.txt`.
-
-In the environment you wish to update regulations, first run:
+You will need access to FEC's org in cloud.gov for this. In the environment you wish to update regulations, first run:
 ```bash
 $ cf env eregs
 ```
@@ -78,12 +78,11 @@ load_regs/fec_reg_parts.txt.
 
 If you are loading regs for a new year, you will need to reset the database. To do that, run:
 ```bash
-$ cf unbind-service eregs fec-eregs-db
-$ cf service-keys fec-eregs-db
-$ cf delete-service-key fec-eregs-db [name of service key from previous]
-$ cf delete-service fec-eregs-db
-$ cf create-service aws-rds shared-psql fec-eregs-db
-$ cf bind-service eregs fec-eregs-db
+$ cf unbind-service eregs fec-eregs-db-rdn
+$ cf service-keys fec-eregs-db-rdn
+$ cf rename-service fec-eregs-db-rdn [new name of service from previous year, e.g., if parsing 2020, fec-eregs-db-rdn-2019]
+$ cf create-service aws-rds medium-psql-redundant fec-eregs-db-rdn
+$ cf bind-service eregs fec-eregs-db-rdn
 $ cf restage eregs
 ```
 
