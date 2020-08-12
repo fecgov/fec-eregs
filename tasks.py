@@ -63,6 +63,7 @@ DEPLOY_RULES = (
     ('dev', lambda _, branch: branch == 'develop'),
 )
 
+
 @task
 def deploy(ctx, space=None, branch=None, login=None, yes=False):
     """Deploy app to Cloud Foundry.
@@ -79,7 +80,7 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
     if space is None:
         return
 
-   # Set api
+    # Set api
     api = 'https://api.fr.cloud.gov'
     ctx.run('cf api {0}'.format(api), echo=True)
 
