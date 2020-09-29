@@ -30,6 +30,7 @@ whitenoise==3.3.1
 invoke==0.22.0
 GitPython==2.1.15
 gevent==1.4.0
+greenlet==0.4.16 # pinned to fix build problem (parent gevent)
 
 -e eregs_extensions/
 
