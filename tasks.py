@@ -1,10 +1,10 @@
 import os
 import json
-
 import git
-from invoke import task
-
 import cfenv
+import sys
+
+from invoke import task
 
 env = cfenv.AppEnv()
 
@@ -80,12 +80,11 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
     if space is None:
         return
 
-    # Set api
-    api = 'https://api.fr.cloud.gov'
-    ctx.run('cf api {0}'.format(api), echo=True)
-
-    # Log in if necessary
     if login == 'True':
+        # Set api
+        api = 'https://api.fr.cloud.gov'
+        ctx.run('cf api {0}'.format(api), echo=True)
+        # Authorize
         login_command = 'cf auth "$FEC_CF_USERNAME_{0}" "$FEC_CF_PASSWORD_{0}"'.format(space.upper())
         ctx.run(login_command, echo=True)
 
@@ -100,3 +99,6 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
     deployed = ctx.run('cf app eregs', echo=True, warn=True)
     cmd = 'zero-downtime-push' if deployed.ok else 'push'
     ctx.run('cf {0} eregs -f manifest_{1}.yml'.format(cmd, space), echo=True)
+
+    # Needed for CircleCI
+    return sys.exit(0)
