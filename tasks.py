@@ -117,11 +117,10 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
             ctx.run('cf app eregs', echo=True, warn=True)
             cancel_deploy = ctx.run('cf cancel-deployment eregs', echo=True, warn=True)
             if cancel_deploy.ok:
-                print("Successfully cancelled deploy. Check logs.")
-                ctx.run('cf app eregs', echo=True, warn=True)
+                print("Successfully cancelled deploy.")
             else:
-                print("Unable to cancel deploy. Check logs.")
-
+                print("Unable to cancel deploy.")
+        print("Check logs for more detail.")
         return sys.exit(1)
 
     # Needed for CircleCI
