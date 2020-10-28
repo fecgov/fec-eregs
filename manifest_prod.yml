@@ -5,11 +5,10 @@ applications:
     memory: 1GB
     disk_quota: 1G
     routes:
-    - route: fec-prod-eregs.app.cloud.gov
+      - route: fec-prod-eregs.app.cloud.gov
     stack: cflinuxfs3
     buildpacks:
       - python_buildpack
-    command: python manage.py migrate --fake-initial && gunicorn -k gevent -w 2 --bind=0.0.0.0:$PORT fec_eregs.wsgi:application
     services:
       - fec-eregs-creds # Must provide HTTP_AUTH_USER, HTTP_AUTH_PASSWORD
       - fec-eregs-db-rdn
