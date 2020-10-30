@@ -97,6 +97,7 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
 
     # Deploy eregs
     existing_deploy = ctx.run('cf app eregs', echo=True, warn=True)
+    print("\n")
     cmd = 'push --strategy rolling' if existing_deploy.ok else 'push'
     new_deploy = ctx.run('cf {0} eregs -f manifest_{1}.yml'.format(cmd, space),
         echo=True,
@@ -122,6 +123,9 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
                 print("Unable to cancel deploy.")
         print("Check logs for more detail.")
         return sys.exit(1)
+
+    print("\nA new version of your application 'eregs' has been successfully pushed!")
+    ctx.run('cf apps', echo=True, warn=True)
 
     # Needed for CircleCI
     return sys.exit(0)
