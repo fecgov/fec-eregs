@@ -208,5 +208,6 @@ Environment | URL                              | Proxy | Description
 $ pip install -r requirements.txt   # updates the -core/-site repositories
 $ npm run build
 $ python manage.py compile_frontend   # builds the frontend
-$ cf target -s ${cf_space} && cf zero-downtime-deploy eregs -f manifest.${cf_space}.yml
+$ cf target -s ${cf_space}
+$ cf push --strategy rolling eregs -f manifest.${cf_space}.yml
 ```
