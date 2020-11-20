@@ -124,6 +124,20 @@ def deploy(ctx, space=None, branch=None, login=None, yes=False):
         print("Check logs for more detail.")
         return sys.exit(1)
 
+    # Allow proxy to connect to eregs via internal route
+    add_network_policy = ctx.run('cf add-network-policy proxy eregs'.format(cmd, space),
+        echo=True,
+        warn=True
+    )
+    if not add_network_policy.ok:
+        print(
+            "Unable to add network policy. Make sure the proxy app is deployed.\n"
+            "For more information, check logs."
+        )
+
+        # Fail the build because eregs will be down until the proxy can connect
+        return sys.exit(1)
+
     print("\nA new version of your application 'eregs' has been successfully pushed!")
     ctx.run('cf apps', echo=True, warn=True)
 
