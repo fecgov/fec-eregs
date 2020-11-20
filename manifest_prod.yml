@@ -1,7 +1,7 @@
 ---
 applications:
   - name: eregs
-    instances: 1
+    instances: 2
     memory: 1GB
     disk_quota: 1G
     routes:
