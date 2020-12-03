@@ -5,7 +5,6 @@ applications:
     memory: 1GB
     disk_quota: 1G
     routes:
-      - route: fec-prod-eregs.app.cloud.gov
       - route: fec-prod-eregs.apps.internal
     stack: cflinuxfs3
     buildpacks:
