@@ -6,6 +6,7 @@ applications:
     disk_quota: 1G
     routes:
       - route: fec-stage-eregs.app.cloud.gov
+      - route: fec-stage-eregs.apps.internal
     stack: cflinuxfs3
     buildpacks:
       - python_buildpack
