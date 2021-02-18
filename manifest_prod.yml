@@ -18,7 +18,7 @@ applications:
       FEC_API_VERSION: v1
       SCRIPT_NAME: /regulations
       WEB_CONCURRENCY: 4
-      FEC_API_URL: https://api.open.fec.gov
+      FEC_API_URL: "https://api.open.fec.gov"
       FEC_CMS_URL: "https://www.fec.gov"
       FEC_WEB_URL: "/data"
       APP_NAME: fec-prod-eregs
