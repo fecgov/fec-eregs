@@ -18,7 +18,7 @@ applications:
       FEC_API_VERSION: v1
       SCRIPT_NAME: /regulations
       WEB_CONCURRENCY: 4
-      FEC_API_URL: https://api-stage.open.fec.gov
-      FEC_CMS_URL: "https://fec-stage-proxy.app.cloud.gov"
+      FEC_API_URL: "https://api-stage.open.fec.gov"
+      FEC_CMS_URL: "https://stage.fec.gov"
       FEC_WEB_URL: "/data"
       APP_NAME: fec-stage-eregs
