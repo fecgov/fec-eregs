@@ -53,7 +53,7 @@ jmespath==0.9.3
 json-delta==2.0
 jsonschema==2.5.1
 kombu==4.1.0
-lxml==4.2.1
+lxml==4.6.2
 marshmallow==2.19.2
 networkx==2.1
 newrelic==2.100.0.84
