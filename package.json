@@ -16,7 +16,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^2.0.0",
-    "handlebars": "^4.3.0",
+    "handlebars": "^4.7.7",
     "hbsfy": "^2.8.1",
     "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1"
