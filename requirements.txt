@@ -16,7 +16,7 @@ regcore==4.2.0
 enum34==1.1.6
 futures==3.1.1
 requests==2.23.0
-urllib3==1.25.11 # pin for compatibility with requests
+urllib3==1.26.5 # pin for compatibility with requests
 boto3==1.5.13
 celery==4.1.0
 requests-toolbelt==0.8.0
