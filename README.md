@@ -17,7 +17,7 @@ https://www.fec.gov/regulations
 
 ## Architecture
 
-![General Architecture (described below)](docs/architecture.png)
+![General Architecture (described below)](https://github.com/fecgov/fec-eregs/load_regs/eregs_general_architecture.png)
 
 This repository is a cloud.gov app which stitches together two large Django
 libraries with cloud.gov datastores and some FEC-specific styles and
@@ -88,7 +88,7 @@ $ cf push --strategy rolling eregs -f manifest.${cf_space}.yml
 
 ## Load FEC's regulations
 
-1. Follow the wiki to [parse regulations on local](https://github.com/fecgov/fec-eregs/wiki/Parsing-regulations-locally).
+1. Follow the wiki to [parse regulations on local](https://github.com/fecgov/fec-eregs/wiki/Parse-regulations-on-local).
 2. Follow this instructions to [parse regulations on cloud.gov space](https://github.com/fecgov/fec-eregs/tree/develop/load_regs#load-fecs-regulations-on-cloudgov-space).
 
 
