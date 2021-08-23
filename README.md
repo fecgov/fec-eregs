@@ -89,7 +89,7 @@ $ cf push --strategy rolling eregs -f manifest.${cf_space}.yml
 ## Load FEC's regulations
 
 1. Follow the wiki to [parse regulations on local](https://github.com/fecgov/fec-eregs/wiki/Parsing-regulations-locally).
-2. Follow this instructions to [parse regulations on cloud.gov space](https://github.com/fecgov/fec-eregs/tree/develop/load_regs).
+2. Follow this instructions to [parse regulations on cloud.gov space](https://github.com/fecgov/fec-eregs/tree/develop/load_regs#load-fecs-regulations-on-cloudgov-space).
 
 
 ### Ports
