@@ -17,7 +17,7 @@ https://www.fec.gov/regulations
 
 ## Architecture
 
-![General Architecture (described below)](https://github.com/fecgov/fec-eregs/load_regs/eregs_general_architecture.png)
+![General Architecture (described below)](https://github.com/fecgov/fec-eregs/blob/develop/load_regs/eregs_general_architecture.png)
 
 This repository is a cloud.gov app which stitches together two large Django
 libraries with cloud.gov datastores and some FEC-specific styles and
