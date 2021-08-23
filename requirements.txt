@@ -15,8 +15,8 @@ regcore==4.2.0
 # django, cached-property, six already covered
 enum34==1.1.6
 futures==3.1.1
-requests==2.23.0
-urllib3==1.25.11 # pin for compatibility with requests
+requests==2.26.0
+urllib3==1.26.6 # pin for compatibility with requests
 boto3==1.5.13
 celery==4.1.0
 requests-toolbelt==0.8.0
