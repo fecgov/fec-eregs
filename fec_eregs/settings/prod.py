@@ -14,6 +14,10 @@ env = AppEnv()
 
 DEBUG = False
 TEMPLATE_DEBUG = False
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 ANALYTICS = {
     'GOOGLE': {
         'GA_SITE_ID': 'UA-48605964-22',
