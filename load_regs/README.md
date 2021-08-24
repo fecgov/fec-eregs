@@ -4,7 +4,7 @@ When there are new regulations available in [GPO website](https://www.govinfo.go
 If any new regulation parts have been added, add those parts to the list located in load_regs/fec_reg_parts.txt.
 
 ### Parse FEC's regulations locally
-Follow Wiki [Parsing regulations locally](https://github.com/fecgov/fec-eregs/wiki/Parsing-regulations-locally)
+Follow Wiki [Parse regulations on local](https://github.com/fecgov/fec-eregs/wiki/Parse-regulations-on-local)
 
 ### Load FEC's regulations on cloud.gov space
 1. Create new eregs database service
