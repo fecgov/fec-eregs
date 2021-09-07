@@ -23,7 +23,6 @@ decorator==4.2.1
 dj-database-url==0.4.2
 Django==1.11.11
 django-click==2.0.0
-django-debug-toolbar==1.9.1
 django-haystack==2.4.1
 django-js-asset==1.0.0
 django-mptt==0.8.7
