@@ -1,5 +1,5 @@
 # regulations-core
-django>=1.11,<1.12
+django==2.2.24
 cached_property==1.3.1
 django-mptt~=0.8.6
 anyjson==0.3.3
@@ -9,7 +9,7 @@ webargs==6.0.0
 pyelasticsearch==1.4
 django-haystack==2.4.1
 psycopg2==2.7.3.2
-regcore==4.2.0
+#regcore==4.2.0
 
 # regulations-site
 # django, cached-property, six already covered
@@ -35,6 +35,12 @@ greenlet==0.4.16 # pinned to fix build problem (parent gevent)
 
 -e eregs_extensions/
 
-#install a repostiory
--e git+git://github.com/fecgov/regulations-site@a11a00fe7e3d8e953220cbdad977375a6929e02d#egg=regulations
+# regparser
+-e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+
+# regsite
+-e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+
+# regcore
+-e git+git://github.com/fecgov/regulations-core@master#egg=regcore
 
