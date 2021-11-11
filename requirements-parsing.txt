@@ -25,8 +25,7 @@ Django==2.2.24
 django-click==2.0.0
 django-haystack==2.4.1
 django-js-asset==1.0.0
-django-mptt==0.8.7
-django-overextends==0.4.3
+django-mptt==0.13.4
 django-rq==1.0.1
 djangorestframework==3.7.7
 docutils==0.14
