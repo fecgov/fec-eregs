@@ -58,7 +58,6 @@ Use pip and npm to download the required libraries:
 
 ```bash
 $ pip install -r requirements.txt
-$ pip install -r requirements_dev.txt
 # remove the node_modules from your local environment
 $ rm -rf node_modules/
 $ npm install
@@ -71,6 +70,11 @@ $ npm run build
 $ python manage.py migrate
 $ python manage.py compile_frontend
 $ python manage.py runserver
+```
+
+Create local_settings.py and point to ${cf_space} regulations API
+```bash
+$ echo "API_BASE = 'https://fec-${cf_space}-eregs.app.cloud.gov/regulations/api'" >> local_settings.py
 ```
 
 ## Deploying Code
@@ -110,7 +114,8 @@ $ export PORT=1234
 
 OR
 
+ Update the port# in local_settings.py
 ```bash
-$ echo "API_BASE = 'http://localhost:1234/api/'" >> local_settings.py
+  "API_BASE = 'http://localhost:1234/api/'" 
 ```
 
