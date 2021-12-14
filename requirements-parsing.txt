@@ -21,12 +21,11 @@ coloredlogs==9.0
 cryptography==3.2
 decorator==4.2.1
 dj-database-url==0.4.2
-Django==1.11.11
+Django==2.2.24
 django-click==2.0.0
 django-haystack==2.4.1
 django-js-asset==1.0.0
-django-mptt==0.8.7
-django-overextends==0.4.3
+django-mptt==0.13.4
 django-rq==1.0.1
 djangorestframework==3.7.7
 docutils==0.14
@@ -74,9 +73,15 @@ python-dateutil==2.7.2
 pytz==2018.3
 PyYAML==3.12
 redis==2.10.6
--e git+https://github.com/18F/regulations-core.git@d5443336b0ec287e62837614bf1e359465cc30fe#egg=regcore
--e git+https://github.com/18F/regulations-parser.git@e757cb74aea1b4c7c29293c749561510d4adba1e#egg=regparser
-regulations==8.4.2
+# regparser
+-e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+
+# regsite
+-e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+
+# regcore
+-e git+git://github.com/fecgov/regulations-core@master#egg=regcore
+
 requests==2.21.0
 requests-cache==0.4.13
 requests-toolbelt==0.8.0

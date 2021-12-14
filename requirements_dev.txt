@@ -1,7 +1,0 @@
-# regulations-parser (for loading regs)
-requests[security]
-ipdb==0.10.3
-ipython>=6.0,<7.0
-regparser==4.3.1
-django-rq==2.1.0 # required by regparser, pin django compatibility
-djangorestframework==3.11.2 # required by regparser, pin django compatibility
