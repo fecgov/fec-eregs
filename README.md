@@ -72,9 +72,9 @@ $ python manage.py compile_frontend
 $ python manage.py runserver
 ```
 
-Create local_settings.py and point to ${cf_space} regulations API
+Create local_settings.py and point to <cf_space> regulations API. Replace <cf_space> with dev/stage or prod in the following url.
 ```bash
-$ echo "API_BASE = 'https://fec-${cf_space}-eregs.app.cloud.gov/regulations/api'" >> local_settings.py
+$ echo "API_BASE = 'https://fec-<cf_space>-eregs.app.cloud.gov/regulations/api/'" >> local_settings.py
 ```
 
 ## Deploying Code
