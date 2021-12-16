@@ -5,11 +5,11 @@
   "main": "Gruntfile.js",
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
-    "lodash": "4.17.19",
     "elliptic": "^6.5.3",
     "glossary-panel": "1.0.0",
     "grunt": "^1.1.0",
@@ -19,7 +19,8 @@
     "handlebars": "^4.3.0",
     "hbsfy": "^2.8.1",
     "jsdom": "^16.2.1",
-    "load-grunt-tasks": "^3.4.1"
+    "load-grunt-tasks": "^3.4.1",
+    "lodash": "4.17.19"
   },
   "scripts": {
     "build": "grunt build:css && npm run build-js",
@@ -45,8 +46,8 @@
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
   "engines": {
-    "node": "10.16.0",
-    "npm": "6.14.3"
+    "node": "14.13.0",
+    "npm": "7.24.0"
   },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
