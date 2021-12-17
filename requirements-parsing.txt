@@ -21,17 +21,16 @@ coloredlogs==9.0
 cryptography==3.2
 decorator==4.2.1
 dj-database-url==0.4.2
-Django==2.2.24
+django==3.1.14
 django-click==2.0.0
-django-haystack==2.4.1
+django-haystack==3.1.1
 django-js-asset==1.0.0
 django-mptt==0.13.4
-django-rq==1.0.1
+django-rq==2.5.1
 djangorestframework==3.7.7
 docutils==0.14
 elasticsearch==1.9.0
 enum34==1.1.6
-#-e git+git@github.com:fecgov/fec-eregs.git@ca141fd5e431805df1a70ac76d91bd9a5ac4b9#76#egg=fec_regparser&subdirectory=eregs_extensions
 furl==1.0.1
 futures==3.1.1
 gevent==1.2.2
@@ -72,21 +71,20 @@ python-constraint==1.3.1
 python-dateutil==2.7.2
 pytz==2018.3
 PyYAML==3.12
-redis==2.10.6
+redis==3.1.0
 # regparser
--e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+-e git+https://github.com/fecgov/regulations-parser.git@pkfec-django3-parser#egg=regparser
 
 # regsite
--e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+-e git+git://github.com/fecgov/regulations-site@pkfec-django3-site#egg=regulations
 
 # regcore
--e git+git://github.com/fecgov/regulations-core@master#egg=regcore
-
+-e git+git://github.com/fecgov/regulations-core@pkfec-upgrade-django3-core#egg=regcore
 requests==2.21.0
 requests-cache==0.4.13
 requests-toolbelt==0.8.0
 roman==2.0.0
-rq==0.10.0
+rq==1.3.0
 s3transfer==0.1.13
 simplegeneric==0.8.1
 simplejson==3.13.2
