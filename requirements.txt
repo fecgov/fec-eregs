@@ -34,7 +34,7 @@ greenlet==0.4.16 # pinned to fix build problem (parent gevent)
 -e eregs_extensions/
 
 # regparser
--e git+https://github.com/fecgov/regulations-parser.git@pkfec-django3-parser#egg=regparser
+-e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
 
 # regsite
 -e git+git://github.com/fecgov/regulations-site@master#egg=regulations
