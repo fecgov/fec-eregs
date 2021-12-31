@@ -155,7 +155,8 @@ $toc-background: $neutral;
   top: $mainhead_height + $subhead_height;
   transition: none;
   width: auto;
-  z-index: 1;
+  z-index: 200;
+  margin-top: 0.4rem;
 
   a.current,
   a:hover {
