@@ -377,7 +377,7 @@ html, body, .landing-content, .search-panel {
   .supplement-section section:before,
   .footnotes li:before {
       height: $mainhead_small_height;
-      margin: -1 * $mainhead_height 0 0;
+      margin: -1 * $mainhead_small_height 0 0;
   }
 
   .reg-section .level-1 li,
@@ -403,6 +403,10 @@ div.footer-disclaimer {
 
 #site-header {
   position: static;
+}
+
+.landing-content  {
+    margin-top: 0;
 }
 
 #menu, .toc-head  {
