@@ -377,7 +377,7 @@ html, body, .landing-content, .search-panel {
   .supplement-section section:before,
   .footnotes li:before {
       height: $mainhead_small_height;
-      margin: -1 * $mainhead_small_height 0 0;
+      margin: -1 * $mainhead_height 0 0;
   }
 
   .reg-section .level-1 li,
@@ -397,3 +397,47 @@ div.footer-disclaimer {
     font-family: $sans-serif;
   }
 }
+
+
+//Overriding some styled above for mobile and responsive breakpoints
+
+#site-header {
+  position: static;
+}
+
+#menu, .toc-head  {
+   top: 179px;
+  }
+  .reg-section:before {
+     margin: -314px 0 0;
+  }
+
+@media only screen and ( min-width: 790px ) and ( max-width: 997px ) {
+  #menu, .toc-head  {
+   top: 229px;
+  }
+  .reg-section:before {
+     margin: -2 * $mainhead_height + 40 0 0;
+  }
+
+}
+
+@media only screen and ( min-width: 721px ) and ( max-width: 789px ) {
+  #menu, .toc-head {
+   top: 269px;
+  }
+   .reg-section:before {
+     margin: -2 * $mainhead_height + 80 0 0;
+  }
+
+}
+
+@media only screen and ( max-width: 720px ) {
+  #menu, .toc-head  {
+   top: 83px
+  }
+  .reg-section:before {
+     margin: -179px 0 0;
+  }
+}
+
