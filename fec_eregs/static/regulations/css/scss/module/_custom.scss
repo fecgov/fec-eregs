@@ -399,7 +399,8 @@ div.footer-disclaimer {
 }
 
 
-//Overriding some styled above for mobile and responsive breakpoints
+//Overriding some styles for mobile and responsive breakpoints above so regulations, toc and toggle are always fully visible 
+
 
 #site-header {
   position: static;
@@ -412,7 +413,13 @@ div.footer-disclaimer {
 #menu, .toc-head  {
    top: 179px;
   }
-  .reg-section:before {
+
+.reg-section{
+     margin-left: 20px
+  }
+
+
+.reg-section:before {
      margin: -314px 0 0;
   }
 
@@ -420,6 +427,7 @@ div.footer-disclaimer {
   #menu, .toc-head  {
    top: 229px;
   }
+
   .reg-section:before {
      margin: -2 * $mainhead_height + 40 0 0;
   }
