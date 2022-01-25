@@ -56,3 +56,5 @@ FEC_WEB_URL = os.environ.get('FEC_WEB_URL', '')
 SIDEBARS = (
     'regulations.generator.sidebar.help.Help',
 )
+# Satisfies Django3.2 auto-created primary keys, set to AutoField
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

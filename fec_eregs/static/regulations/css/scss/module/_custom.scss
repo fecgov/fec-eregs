@@ -150,12 +150,13 @@ $toc-background: $neutral;
   border-bottom: none;
   border-right: none;
   height: auto;
-  left: 188px;
+  left: 200px;
   position: fixed;
   top: $mainhead_height + $subhead_height;
   transition: none;
   width: auto;
-  z-index: 1;
+  z-index: 200;
+  margin-top: 0.4rem;
 
   a.current,
   a:hover {
@@ -396,3 +397,59 @@ div.footer-disclaimer {
     font-family: $sans-serif;
   }
 }
+
+
+//Overriding some styles for mobile and responsive breakpoints above so regulations, toc and toggle are always fully visible 
+
+
+#site-header {
+  position: static;
+}
+
+.landing-content  {
+    margin-top: 0;
+}
+
+#menu, .toc-head  {
+   top: 179px;
+  }
+
+.reg-section{
+     margin-left: 20px
+  }
+
+
+.reg-section:before {
+     margin: -314px 0 0;
+  }
+
+@media only screen and ( min-width: 790px ) and ( max-width: 997px ) {
+  #menu, .toc-head  {
+   top: 229px;
+  }
+
+  .reg-section:before {
+     margin: -2 * $mainhead_height + 40 0 0;
+  }
+
+}
+
+@media only screen and ( min-width: 721px ) and ( max-width: 789px ) {
+  #menu, .toc-head {
+   top: 269px;
+  }
+   .reg-section:before {
+     margin: -2 * $mainhead_height + 80 0 0;
+  }
+
+}
+
+@media only screen and ( max-width: 720px ) {
+  #menu, .toc-head  {
+   top: 83px
+  }
+  .reg-section:before {
+     margin: -179px 0 0;
+  }
+}
+
