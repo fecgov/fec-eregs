@@ -6,7 +6,7 @@
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
     "jquery": "^3.5.1",
-    "node-sass": "^7.0.0"
+    "node-sass": "^7.0.1"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
@@ -20,7 +20,7 @@
     "hbsfy": "^2.8.1",
     "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1",
-    "lodash": "4.17.19"
+    "lodash": "4.17.21"
   },
   "scripts": {
     "build": "grunt build:css && npm run build-js",
@@ -46,8 +46,8 @@
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
   "engines": {
-    "node": "14.13.0",
-    "npm": "7.24.0"
+    "node": "14.15.5",
+    "npm": "8.3.1"
   },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
