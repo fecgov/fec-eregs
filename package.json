@@ -5,8 +5,7 @@
   "main": "Gruntfile.js",
   "dependencies": {
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
-    "jquery": "^3.5.1",
-    "node-sass": "^7.0.1"
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
@@ -20,7 +19,8 @@
     "hbsfy": "^2.8.1",
     "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "node-sass": "^7.0.1"
   },
   "scripts": {
     "build": "grunt build:css && npm run build-js",
