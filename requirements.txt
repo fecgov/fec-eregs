@@ -17,7 +17,7 @@ futures==3.1.1
 requests==2.26.0
 urllib3==1.26.6 # pin for compatibility with requests
 boto3==1.5.13
-celery==4.1.0
+celery==5.2.3
 requests-toolbelt==0.8.0
 
 
