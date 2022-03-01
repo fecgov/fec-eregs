@@ -1,5 +1,5 @@
 # regulations-core
-django==3.2.10
+django==3.2.12
 cached_property==1.3.1
 django-mptt==0.13.4
 anyjson==0.3.3
@@ -27,18 +27,18 @@ dj-database-url==0.4.2
 gunicorn==19.10.0
 whitenoise==3.3.1
 invoke==0.22.0
-GitPython==2.1.15
+GitPython==3.1.27
 gevent==1.4.0
 greenlet==0.4.16 # pinned to fix build problem (parent gevent)
 
 -e eregs_extensions/
 
 # regparser
--e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
+-e git+https://github.com/fecgov/regulations-parser.git@upgrade-django-v3.2.12-parser#egg=regparser
 
 # regsite
--e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+-e git+git://github.com/fecgov/regulations-site@upgrade-django-v3.2.12-site#egg=regulations
 
 # regcore
--e git+git://github.com/fecgov/regulations-core@master#egg=regcore
+-e git+git://github.com/fecgov/regulations-core@upgrade-django-v3.2.12-core#egg=regcore
 
