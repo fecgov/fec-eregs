@@ -73,10 +73,10 @@ redis==3.1.0
 -e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
 
 # regsite
--e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+-e git+https://github.com/fecgov/regulations-site@master#egg=regulations
 
 # regcore
--e git+git://github.com/fecgov/regulations-core@master#egg=regcore
+-e git+https://github.com/fecgov/regulations-core@master#egg=regcore
 requests==2.25.1
 requests-cache==0.6.3
 requests-toolbelt==0.8.0

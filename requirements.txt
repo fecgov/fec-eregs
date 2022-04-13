@@ -37,8 +37,8 @@ greenlet==0.4.16 # pinned to fix build problem (parent gevent)
 -e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
 
 # regsite
--e git+git://github.com/fecgov/regulations-site@master#egg=regulations
+-e git+https://github.com/fecgov/regulations-site@master#egg=regulations
 
 # regcore
--e git+git://github.com/fecgov/regulations-core@master#egg=regcore
+-e git+https://github.com/fecgov/regulations-core@master#egg=regcore
 
