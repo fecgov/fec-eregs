@@ -49,7 +49,7 @@ jsonschema==2.5.1
 kombu==5.2.3
 lxml==4.6.5
 marshmallow==2.19.2
-networkx==2.1
+networkx==2.6
 newrelic==2.100.0.84
 orderedmultidict==0.7.11
 parso==0.1.1
