@@ -1,5 +1,4 @@
 amqp==5.0.9
-anyjson==0.3.3
 appnope==0.1.0
 asn1crypto==0.24.0
 attrs==18.2.0
