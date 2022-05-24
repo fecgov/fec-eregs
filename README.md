@@ -52,7 +52,7 @@ Running `npm run build` will compile both the JS and SCSS files (generating `/st
 It's also important to keep in mind that the `compile_frontend` management command will compile the base regulations styles located at `fec_eregs/static/regulations/*`.
 
 ## Local Development
-This application requires Python 3.7.X
+This application requires Python 3.8.X
 
 Use pip and npm to download the required libraries:
 
