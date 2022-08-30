@@ -8,12 +8,10 @@ jobs:
       # https://circleci.com/docs/2.0/circleci-images/
       # use `-browsers` prefix for selenium tests, e.g. `<image_name>-browsers`
 
-      # Python with node
-      - image: circleci/python:3.8.12
+      - image: cimg/python:3.8
         environment:
           TZ: America/New_York
 
-    working_directory: ~/repo
 
     steps:
       - checkout
