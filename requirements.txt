@@ -40,3 +40,4 @@ gevent==22.10.2
 # regcore
 -e git+https://github.com/fecgov/regulations-core@master#egg=regcore
 
+certifi>=2022.12.7 # not directly required, pinned by Snyk to avoid a vulnerability
