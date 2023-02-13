@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    sass: {
+    'dart-sass': {
       options: {
         includePaths: [
           'fec_eregs/static/fec_eregs/scss'
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build:css', ['sass']);
+  grunt.registerTask('build:css', ['dart-sass']);
   grunt.registerTask('build', ['build:css']);
 
   grunt.registerTask('default', ['build']);

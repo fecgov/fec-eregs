@@ -14,13 +14,12 @@
     "grunt": "^1.1.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-sass": "^2.0.0",
+    "grunt-dart-sass": "^2.0.1",
     "handlebars": "^4.3.0",
     "hbsfy": "^2.8.1",
     "jsdom": "^16.2.1",
     "load-grunt-tasks": "^3.4.1",
-    "lodash": "4.17.21",
-    "node-sass": "^7.0.1"
+    "lodash": "4.17.21"
   },
   "scripts": {
     "build": "grunt build:css && npm run build-js",
@@ -46,8 +45,8 @@
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
   "engines": {
-    "node": "14.15.5",
-    "npm": "8.3.1"
+    "node": "18.13.0",
+    "npm": "8.19.3"
   },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
