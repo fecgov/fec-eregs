@@ -12,6 +12,7 @@
 // $px-only - (bool) convert `rem` units to `px`
 // $base-size-px - (integer) sets the base size for a `rem` unit (only take effect when `$px-only` is true)
 //
+@use 'sass:math';
 $base-size-px: 10 !default;
 $px-only: false !default;
 
@@ -22,7 +23,7 @@ $px-only: false !default;
 // $n - the value to parse e.g. 2em
 //
 @function u-parse-int($n) {
-  @return $n / ($n * 0 + 1);
+  @return math.div($n, ($n * 0 + 1));
 }
 
 // u-scale-to-px($n)
