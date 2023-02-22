@@ -14,10 +14,10 @@ cffi==1.15.0
 chardet==3.0.4
 click==8.0.3
 coloredlogs==9.0
-cryptography==3.3.2
+cryptography==39.0.1
 decorator==4.2.1
 dj-database-url==0.4.2
-django==3.2.16
+django==3.2.18
 django-click==2.3.0
 django-haystack==3.1.1
 django-js-asset==1.0.0
@@ -38,7 +38,7 @@ idna==2.6
 inflection==0.3.1
 invoke==0.22.0
 ipdb==0.13.2
-ipython==8.7.0
+ipython==8.10.0
 ipython-genutils==0.2.0
 jedi==0.18.2
 jmespath==0.9.3
@@ -54,7 +54,7 @@ parso==0.8.3
 pbr==4.0.0
 pexpect==4.4.0
 pickleshare==0.7.4
-prompt-toolkit==3.0.28
+prompt-toolkit==3.0.30
 psycopg2==2.9.1
 ptyprocess==0.5.2
 pycparser==2.18
