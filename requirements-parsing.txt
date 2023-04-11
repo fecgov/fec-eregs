@@ -66,7 +66,7 @@ python-constraint==1.3.1
 python-dateutil==2.7.3
 pytz==2021.3
 PyYAML==5.4
-redis==3.1.0
+redis==4.5.4
 # regparser
 -e git+https://github.com/fecgov/regulations-parser.git@master#egg=regparser
 
