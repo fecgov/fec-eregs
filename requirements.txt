@@ -13,7 +13,7 @@ psycopg2==2.9.1
 # django, cached-property, six already covered
 enum34==1.1.6
 futures==3.1.1
-requests==2.26.0
+requests==2.31.0
 urllib3==1.26.6 # pin for compatibility with requests
 boto3==1.5.13
 celery==5.2.7
