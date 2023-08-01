@@ -40,3 +40,4 @@ gevent==22.10.2
 # regcore
 -e git+https://github.com/fecgov/regulations-core@master#egg=regcore
 
+botocore>=1.9.12 # not directly required, pinned by Snyk to avoid a vulnerability
