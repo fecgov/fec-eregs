@@ -15,7 +15,7 @@ enum34==1.1.6
 futures==3.1.1
 requests==2.31.0
 urllib3==1.26.6 # pin for compatibility with requests
-boto3==1.5.13
+boto3==1.7.84
 celery==5.2.7
 requests-toolbelt==0.8.0
 
@@ -26,7 +26,7 @@ dj-database-url==0.4.2
 gunicorn==19.10.0
 whitenoise==3.3.1
 invoke==0.22.0
-GitPython==3.1.30
+GitPython==3.1.32
 gevent==22.10.2
 
 -e eregs_extensions/
