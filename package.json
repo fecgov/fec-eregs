@@ -45,8 +45,8 @@
     "url": "https://github.com/fecgov/fec-eregs/issues"
   },
   "engines": {
-    "node": "18.13.0",
-    "npm": "8.19.3"
+    "node": "18.17.1",
+    "npm": "9.6.7"
   },
   "homepage": "https://github.com/fecgov/fec-eregs#readme"
 }
