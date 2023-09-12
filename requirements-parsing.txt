@@ -17,7 +17,7 @@ coloredlogs==9.0
 cryptography==41.0.3
 decorator==4.2.1
 dj-database-url==0.4.2
-django==3.2.20
+django==3.2.21
 django-click==2.3.0
 django-haystack==3.1.1
 django-js-asset==1.0.0
@@ -30,7 +30,7 @@ enum34==1.1.6
 furl==1.0.1
 futures==3.1.1
 gitdb2==2.0.3
-GitPython==3.1.32
+GitPython==3.1.35
 gevent==22.10.2
 gunicorn==19.10.0
 humanfriendly==4.9
