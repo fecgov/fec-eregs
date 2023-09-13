@@ -22,8 +22,7 @@ Note: Verify the location of db client command(pg_dump and pg_restore) on local 
 ```
 /Library/PostgreSQL/13/bin/pg_dump -F c --no-acl --no-owner -f /<path to the dumpfile>/<dump_file_name>.dump postgres://<username>:<password>@localhost:<port>/<dbname>
 ```
-OR
-
+    or
 ```
 /usr/local/opt/postgresql@13/bin/pg_dump -F c --no-acl --no-owner -f /<path to the dumpfile>/<dump_file_name>.dump postgres://<username>:<password>@localhost:<port>/<dbname>
 ```
@@ -60,12 +59,13 @@ $ cf restage eregs (or rebuild fec-eregs on circleci)
 ```
 cf run-task api --command "python cli.py load_regulations" -m 2G --name load_all_regulations
 ```
-open api log terminal to verify regulations load successfully.
+
+9. Open api log terminal to verify regulations load successfully.
 ```
 cf logs api |grep "<task_name>"
 ```
 
-9. Delete old eregs db service
+10. Delete old eregs db service
 ```
 # Get service key
 cf sk fec-eregs-db-rdn-<YEAR>
