@@ -7,7 +7,7 @@ If any new regulation parts have been added, add those parts to the list located
 After CLI upgrade, run the following command to install cf-service-connect plugin. 
 
 ```
-cf install-plugin https://github.com/18F/cf-service-connect/releases/download/1.1.3/cf-service-connect-darwin-amd64
+cf install-plugin https://github.com/cloud-gov/cf-service-connect/releases/download/1.1.3/cf-service-connect-darwin-amd64
 ```
 
 ### Load FEC's regulations on cloud.gov space
