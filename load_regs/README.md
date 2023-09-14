@@ -7,7 +7,7 @@ If any new regulation parts have been added, add those parts to the list located
 After CLI upgrade, run the following command to install cf-service-connect plugin. 
 
 ```
-cf install-plugin https://github.com/cloud-gov/cf-service-connect/releases/download/1.1.3/cf-service-connect-darwin-amd64
+cf install-plugin https://github.com/cloud-gov/cf-service-connect/releases/download/v1.1.3/cf-service-connect_darwin_amd64
 ```
 
 ### Load FEC's regulations on cloud.gov space
@@ -17,10 +17,10 @@ Follow Wiki [Parse regulations on local](https://github.com/fecgov/fec-eregs/wik
 
 2. Generate local eregs database dump file
 Note: Verify the location of db client command(pg_dump and pg_restore) on local before generating database dump file
-(e.g. `/usr/local/opt/postgresql@13/bin` or `/Library/PostgreSQL/13/bin/`)
+(e.g. `/opt/homebrew/opt/postgresql@13/bin/` or /usr/local/opt/postgresql@13/bin`)
 
 ```
-/Library/PostgreSQL/13/bin/pg_dump -F c --no-acl --no-owner -f /<path to the dumpfile>/<dump_file_name>.dump postgres://<username>:<password>@localhost:<port>/<dbname>
+/opt/homebrew/opt/postgresql@13/bin/pg_dump -F c --no-acl --no-owner -f /<path to the dumpfile>/<dump_file_name>.dump postgres://<username>:<password>@localhost:<port>/<dbname>
 ```
     or
 ```
@@ -42,7 +42,12 @@ $ cf connect-to-service -no-client eregs fec-eregs-db-rdn
 
 5. Restore eregs database dump file to database service on space
 ```
-/Library/PostgreSQL/13/bin/pg_restore --dbname postgres://<username>:<password>@localhost:<port>/<hostname> --no-acl --no-owner /<path to the dumpfile>/<dump_file_name>.dump
+/opt/homebrew/opt/postgresql@13/bin/pg_restore --dbname postgres://<username>:<password>@localhost:<port>/<hostname> --no-acl --no-owner /<path to the dumpfile>/<dump_file_name>.dump
+```
+    or 
+
+```
+/usr/local/opt/postgresql@13/bin/pg_restore --dbname postgres://<username>:<password>@localhost:<port>/<hostname> --no-acl --no-owner /<path to the dumpfile>/<dump_file_name>.dump
 ```
 
 6. Bind eregs app to the database service on space 
@@ -55,9 +60,9 @@ $ cf bind-service eregs fec-eregs-db-rdn
 $ cf restage eregs (or rebuild fec-eregs on circleci)
 ```
 
-8. Index regulations to elasticsearch service (to be able to perform a keyword search on Regulations page)
+8. Reload regulations to elasticsearch service (to be able to perform a keyword search on Regulations page)
 ```
-cf run-task api --command "python cli.py load_regulations" -m 2G --name load_all_regulations
+cf run-task api --command "python cli.py initialize_legal_data ao_index" -m 4G --name initialize_legal_data_ao
 ```
 
 9. Open api log terminal to verify regulations load successfully.
@@ -65,7 +70,7 @@ cf run-task api --command "python cli.py load_regulations" -m 2G --name load_all
 cf logs api |grep "<task_name>"
 ```
 
-10. Delete old eregs db service
+12. Delete old eregs db service
 ```
 # Get service key
 cf sk fec-eregs-db-rdn-<YEAR>
