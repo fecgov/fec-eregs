@@ -1,5 +1,5 @@
 # regulations-core
-django==3.2.23
+django==3.2.24
 cached_property==1.3.1
 django-mptt==0.13.4
 jsonschema==2.5.1
