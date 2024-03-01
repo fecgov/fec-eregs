@@ -52,7 +52,7 @@ orderedmultidict==0.7.11
 parso==0.8.3
 pbr==4.0.0
 pexpect==4.4.0
-pickleshare==0.7.4
+pickleshare==0.7.5
 prompt-toolkit==3.0.30
 psycopg2==2.9.1
 ptyprocess==0.5.2
