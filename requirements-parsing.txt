@@ -13,10 +13,10 @@ cffi==1.15.0
 chardet==3.0.4
 click==8.0.3
 coloredlogs==9.0
-cryptography==42.0.2
+cryptography==42.0.5
 decorator==4.2.1
 dj-database-url==0.4.2
-django==3.2.23
+django==4.2.11
 django-click==2.3.0
 django-haystack==3.1.1
 django-js-asset==1.0.0
