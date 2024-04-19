@@ -23,7 +23,7 @@ requests-toolbelt==0.8.0
 # fec-specific/cloud.gov
 cfenv==0.5.3
 dj-database-url==0.4.2
-gunicorn==19.10.0
+gunicorn==22.0.0
 whitenoise==3.3.1
 invoke==0.22.0
 GitPython==3.1.41
